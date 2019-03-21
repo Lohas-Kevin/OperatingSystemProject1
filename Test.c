@@ -16,6 +16,9 @@ typedef struct{
 	int cpuTime;
 	int turnaroundTime;
 	int waitTime;
+	int inReadyQueue;
+	int inCPUBurst;
+	int inIO;
 } Process;
 
 typedef struct{
@@ -101,6 +104,31 @@ void freeProcess(Process* p){
 	free(p);
 }
 
+/*
+int qadd(char* array, int* size, char info){
+	
+	if(array[*size] != NULL){return 1;}
+	
+	array[*size] = info;
+	(*size) += 1;
+	return 0;
+	
+}
+
+char qpop(char* array, int* size){
+	
+	if(array[*size] == 0){return NULL;}
+	
+	char result = array[0];
+	for(int i = 0; i < size-1; i++){
+		array[i] = array[i+1];
+	}
+	array[*size-1] = NULL;
+	*size -= 1;
+	return result;
+	
+}
+*/
 
 int main(int argc, char** argv){
 	
@@ -159,5 +187,15 @@ int main(int argc, char** argv){
 	free(t);
 	*/
 	
-
+	/*
+	char* c = calloc(5, sizeof(char));
+	for(int i =0; i < 5; i++){
+		if(c[i] == NULL){
+			printf("at position i in the array, the char is [%ld]\n", c[i]);
+		}
+		
+	}
+	
+	free(c);
+	*/
 }

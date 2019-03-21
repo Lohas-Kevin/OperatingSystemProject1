@@ -16,6 +16,11 @@ typedef struct{
 	int cpuTime;
 	int turnaroundTime;
 	int waitTime;
+	//these three ints indicates the status of the 
+	int inReadyQueue;
+	int inCPUBurst;
+	int inIO;
+	int tau;
 } Process;
 
 //this function is used to check whether the input
@@ -105,6 +110,10 @@ void ProcessViewer(Process* p){
 	printf("the cpuTime of p is [%i]\n", p->cpuTime);
 	printf("the turnaroundTime of p is [%i]\n", p->turnaroundTime);
 	printf("the waitTime of p is [%i]\n", p->waitTime);
+	printf("the inReadyQueue of p is [%i]\n", p->inReadyQueue);
+	printf("the inCPUBurst of p is [%i]\n", p->inCPUBurst);
+	printf("the inIO of p is [%i]\n", p->inIO);
+	printf("the tau of p is [%i]\n", p->tau);
 	
 	printf("The elements in burstTime are: \n");
 	for(int i = 0; i < p->burst; i++){
@@ -123,11 +132,18 @@ void ProcessViewer(Process* p){
 		}
 	}
 	printf("\n");
-	printf("\n");
+}
+
+
+
+void SRT(Process** ProcessArray, int processNum, int lambda, int alpha){
+	
 }
 
 
 int main( int argc, char* argv[]){
+	
+	
 	
 	//This part is for arguments variables;
 	int seed;
@@ -143,14 +159,16 @@ int main( int argc, char* argv[]){
 	//this part is for input check
 	//FIRSTLY
 	//we check the input arguments numbers
-	if(argc != 8){
+	if(argc != 9 && argc != 8){
 		perror("ERROR: Wrong amount of Inputs arguments\n");
 		return EXIT_FAILURE;
 	}
 	
+	
 	//SECONDLY
 	//we check the inputs
 	for(int i = 1; i <= 7; i++){
+		
 		if(i == 2){
 			//only special case is the second input
 			//we need to check whether the input is 
@@ -188,21 +206,29 @@ int main( int argc, char* argv[]){
 		}
 	}
 	
+	
 	//over here we check the last argument,
 	//if the argumnent is not "BEGINNING", we
 	//set the addPosition to "END"
-	if(strcmp("BEGINNING", argv[8]) != 0){
-		addPosition = "END";
+	if(argc == 9 ){
+		
+		if(strcmp("BEGINNING", argv[8]) != 0){
+			addPosition = "END";
+		}else{
+			addPosition = "BEGINNING";
+		}
 	}else{
-		addPosition = "BEGINNING";
+			addPosition = "END";
 	}
 	
 	Process** ProcessArray = calloc(processNum, sizeof(Process*));
 	srand48(seed);
 	
+	
 	for(int i = 0; i < processNum; i++){
 		ProcessArray[i] = calloc(1, sizeof(Process));
-		createProcess(ProcessArray[i],nameString[i],lambda,threshold);
+		createProcess(ProcessArray[i],nameString[i],lambda,threshold);\
+		ProcessViewer(ProcessArray[i]);
 	}
 	//
 	//insert algo here
@@ -212,6 +238,7 @@ int main( int argc, char* argv[]){
 	for(int i = 0; i < processNum; i++){
 		freeProcess(ProcessArray[i]);
 	}
+	
 	
 	return EXIT_SUCCESS;
 }
