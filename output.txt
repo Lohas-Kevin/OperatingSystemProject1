@@ -1,0 +1,12 @@
+Process A [NEW] (arrival time 9 ms) 16 CPU bursts
+Process B [NEW] (arrival time 18 ms) 21 CPU bursts
+Process C [NEW] (arrival time 84 ms) 82 CPU bursts
+Process D [NEW] (arrival time 86 ms) 36 CPU bursts
+Process E [NEW] (arrival time 2 ms) 26 CPU bursts
+Process F [NEW] (arrival time 25 ms) 39 CPU bursts
+Process G [NEW] (arrival time 13 ms) 76 CPU bursts
+Process H [NEW] (arrival time 46 ms) 82 CPU bursts
+Process I [NEW] (arrival time 64 ms) 63 CPU bursts
+Process J [NEW] (arrival time 31 ms) 21 CPU bursts
+Process K [NEW] (arrival time 56 ms) 1 CPU bursts
+Process L [NEW] (arrival time 12 ms) 3 CPU bursts

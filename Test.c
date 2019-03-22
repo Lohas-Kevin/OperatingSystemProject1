@@ -9,22 +9,33 @@
 typedef struct{
 	char name;
 	int arriveTime;
+	//number of bursts;
 	int burst;
-	int pointer;
+	//These two pointers indicates how many bursts or io
+	//have been finished
+	int burstPointer;
+	int ioPointer;
+	//the arrays to store the infomation
 	int* burstTime;
 	int* ioTime;
+	//The three counter to track the total time;
 	int cpuTime;
 	int turnaroundTime;
 	int waitTime;
-	int inReadyQueue;
-	int inCPUBurst;
-	int inIO;
+	//over here, -1 is finishd, 0 is in ready queue
+	//1 is not arrived, 2 is in io ;
+	//3 is in cpu burst, 4 is switch out
+	//5 is switch in
+	int status;
+	//timer is used for decreament
+	//basically, we copy the info here to decreament.
+	int timer;
+	int tau;
+	int returnStatus;
 } Process;
 
-typedef struct{
-	int a;
-	int* b;
-} TestStruct;
+
+
 
 int checkInt(char* input){
 	for(int i = 0; i < strlen(input); i++){
@@ -67,7 +78,6 @@ void testfunct(double *input){
 	
 }
 
-
 void createProcess(Process* p, char nameIn, double lambda, int threshold){
 	
 	//count is used to determine the process name
@@ -93,10 +103,15 @@ void createProcess(Process* p, char nameIn, double lambda, int threshold){
 		}
 	}
 	
-	//then set the remaning parts to 0
+	//set tau to default value 1/lambda
+	p->tau = (int)(ceil(1.0/lambda));
+	p->timer = p->arriveTime;
+	p->status = 1;
+	
 	
 	
 }
+
 
 void freeProcess(Process* p){
 	free(p->burstTime);
@@ -104,8 +119,99 @@ void freeProcess(Process* p){
 	free(p);
 }
 
-/*
-int qadd(char* array, int* size, char info){
+int calculateTau(double alpha, int tau0, int time){
+	double tau1 = (alpha*(double)time) + ((1-alpha)*(double)tau0);
+	return (int)(ceil(tau1));
+}
+
+int decreament(Process* p){
+	if(p->status == -1){
+		//if the process has ended
+		return -1;
+	}
+	//check the state
+	if(p->status == 0){
+		//the only situation we don't need to do
+		//the decreament is in ready queue
+		//so we will only add the turnaroundTime and Wait Time
+		(p->waitTime) += 1;
+		(p->turnaroundTime) += 1;
+		//return 0 means no status change
+		return 0;
+	}else{
+		//in other situations we need to decreament the TImer
+		
+		if(p->status == 1){
+			//if status == 1, not arrived
+			p->timer -= 1;
+			if(p->timer == 0){
+				//if after decreament, timer == 0, that means 
+				//this process has arrived and we need to take some actions;
+				//return 1 means the process has arrived
+				return 1;
+			}
+			//if timer doesn't equals 0
+			//return no status changes
+			return 0;
+		}
+		if(p->status == 3){
+			//if the in cpu burst status equals 1
+			//then the process is now ran by the cpu
+			p->timer -= 1;
+			p->turnaroundTime += 1;
+			p->cpuTime += 1;
+			if(p->timer == 0){
+				//over here, return 3 indicates that 
+				//cpu burst has ended;
+				return 3;
+			}
+			
+			//there is no status change
+			return 0;
+		}
+		if(p->status == 2){
+			//if the in io burst status equals 1
+			//then the process is now in io
+			p->timer -= 1;
+			p->turnaroundTime += 1;
+			if(p->timer == 0){
+				//over here, return 2 indicates that 
+				//io has ended;
+				return 2;
+			}
+			
+			//there is no status change
+			return 0;
+		}
+		if(p->status == 4){
+			//context switch out
+			p->timer -= 1;
+			p->turnaroundTime += 1;
+			if(p-> timer == 0){
+				//switch out finished
+				return 4;
+			}
+			
+			//there is no status change
+			return 0;
+		}
+		if(p->status == 5){
+			p->timer -= 1;
+			p->turnaroundTime +=1;
+			if(p->timer == 0){
+				//switch in finished;
+				return 5;
+			}
+			
+			return 0;
+		}
+		
+		
+	}
+}
+
+
+int qadd(Process** array, int* size, Process* info){
 	
 	if(array[*size] != NULL){return 1;}
 	
@@ -115,12 +221,12 @@ int qadd(char* array, int* size, char info){
 	
 }
 
-char qpop(char* array, int* size){
+Process* qpop(Process** array, int* size){
 	
-	if(array[*size] == 0){return NULL;}
+	if(array[0] == NULL){return NULL;}
 	
-	char result = array[0];
-	for(int i = 0; i < size-1; i++){
+	Process* result = array[0];
+	for(int i = 0; i < (*size)-1; i++){
 		array[i] = array[i+1];
 	}
 	array[*size-1] = NULL;
@@ -128,35 +234,18 @@ char qpop(char* array, int* size){
 	return result;
 	
 }
-*/
 
-int main(int argc, char** argv){
-	
-	int seed = 14;
-	double lambda = 0.002;
-	int threshold = 3000;
-	int processNum = 5;
-	int textSwitchTime = 132;
-	double alpha = 0.25;
-	int timeSlice = 15 ;
-	char* addPosition = "END";
-	char* nameString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	
-	srand48(seed);
-	//printf("drand48 returns [%f]\n", (-log(drand48()))/ 0.002);
-	//printf("The expRandom returns [%lf] \n", expRandom(lambda,threshold));
-	// the following part is logic for random 
-	
-	Process* p = calloc(1,sizeof(Process));
-	createProcess(p, 'C', lambda, threshold);
-	
+void ProcessViewer(Process* p){
 	printf("the name of p is [%c]\n", p->name);
 	printf("the arriveTime of p is [%i]\n", p->arriveTime);
 	printf("the burst of p is [%i]\n", p->burst);
-	printf("the pointer of p is [%i]\n", p->pointer);
+	printf("the burstPointer of p is [%i]\n", p->burstPointer);
+	printf("the ioPointer of p is [%i]\n", p->ioPointer);
 	printf("the cpuTime of p is [%i]\n", p->cpuTime);
 	printf("the turnaroundTime of p is [%i]\n", p->turnaroundTime);
-	printf("the waitTime of p is [%i]\n", p->waitTime);
+	printf("the Status of p is [%i]\n", p->status);
+	printf("the timer of p is [%i]\n", p->timer);
+	printf("the tau of p is [%i]\n", p->tau);
 	
 	printf("The elements in burstTime are: \n");
 	for(int i = 0; i < p->burst; i++){
@@ -175,8 +264,167 @@ int main(int argc, char** argv){
 		}
 	}
 	printf("\n");
+}
+
+int queueComparator(const void *p1, const void* p2){
+	int l = ((const Process* )p1)->tau;
+	int r = ((const Process* )p2)->tau;
 	
-	freeProcess(p);
+	return (l-r);
+}
+
+int printComparator(const void *p1, const void*p2){
+	int l = ((const Process*) p1)->returnStatus;
+	int r = ((const Process*) p2)->returnStatus;
+	
+	if(l > r){
+		return -1;
+	}
+	if(l == r){
+		char lc = ((const Process*) p1)->name;
+		char rc = ((const Process*) p2)->name;
+		if(lc < rc){return -1;}
+		if(lc == rc){return 0;}
+		if(lc > rc){return 1;}
+	}
+	if(l<r){
+		return 1;
+	}
+}
+
+void printInfo(Process* p, Process** queue){
+	int v = p->returnStatus;
+	if(v == 3){
+		//cpu burst end
+		
+	}
+}
+
+
+int main(int argc, char** argv){
+	
+	int seed = 2;
+	double lambda = 0.01;
+	int threshold = 200;
+	int processNum = 12;
+	int textSwitchTime = 4;
+	double alpha = 0.5;
+	int timeSlice = 120 ;
+	char* addPosition = "END";
+	char* nameString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	
+	
+	//printf("drand48 returns [%f]\n", (-log(drand48()))/ 0.002);
+	//printf("The expRandom returns [%lf] \n", expRandom(lambda,threshold));
+	// the following part is logic for random 
+	Process** ProcessArray = calloc(processNum, sizeof(Process*));
+	srand48(seed);
+	
+	
+	for(int i = 0; i < processNum; i++){
+		ProcessArray[i] = calloc(1, sizeof(Process));
+		createProcess(ProcessArray[i],nameString[i],lambda,threshold);
+		printf("Process %c [NEW] (arrival time %d ms) %d CPU bursts\n",
+		ProcessArray[i]->name, ProcessArray[i]->arriveTime, ProcessArray[i]->burst);
+		
+	}
+	
+	//the following part is for SJF
+	int tracker = 0;
+	int totalTime = 0;
+	Process** queue = calloc(processNum, sizeof(Process*));
+	int queueLength = 0;
+	Process* inCPU = NULL;
+	
+	while(tracker != processNum){
+		totalTime++;
+		Process** tempArray = calloc(processNum, sizeof(Process*));
+		int tempLength = 0;
+		for(int i = 0; i < processNum; i++){
+			//handle the decreament signal here
+			int temp = decreament(ProcessArray[i]);
+			if(temp == 1){
+				//process arrived
+				ProcessArray[i]->returnStatus = 1;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;
+				
+				//add the process direcly to ready queue
+				ProcessArray[i]->status = 0;
+				qadd(queue, &queueLength, ProcessArray[i]);
+				
+			}else if(temp == 2){
+				//io end
+				ProcessArray[i]->returnStatus = 2;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;
+				
+				//we directly add the process to ready queue
+				ProcessArray[i]->status = 0;
+				qadd(queue, &queueLength, ProcessArray[i]);
+				ProcessArray[i]->ioPointer += 1;
+				
+			}else if(temp == 3){
+				//cpu burst end
+				ProcessArray[i]->returnStatus = 3;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;
+				
+				//we start switch out
+				ProcessArray[i]->status = 4;
+				ProcessArray[i]->timer = textSwitchTime/2;
+				//recalculate tau
+				ProcessArray[i]->tau = calculateTau(alpha, ProcessArray[i]->tau, 
+					ProcessArray[i]->burstTime[ProcessArray[i]->burstPointer]);
+				ProcessArray[i]->burstPointer += 1;
+				
+				
+				
+			}else if(temp == 4){
+				//switch out end
+				ProcessArray[i]->returnStatus = 4;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;
+				
+				//we perform the io
+				ProcessArray[i]->status = 2;
+				ProcessArray[i]->timer = ProcessArray[i]->ioTime[ProcessArray[i]->ioPointer];
+				
+			}else if(temp == 5){
+				//switch in end
+				ProcessArray[i]->returnStatus = 5;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;
+				
+				//perform cpu burst
+				ProcessArray[i]->status = 3;
+				ProcessArray[i]->timer = ProcessArray[i]->burstTime[ProcessArray[i]->burstPointer];
+				
+			}
+		}
+		//before check the print info,, sort the queue firstly
+		qsort(queue, queueLength, sizeof(Process*), queueComparator);
+		
+		//after all increament
+		//check the print info
+		//1. nothing happened
+		if(tempLength == 0){free(tempArray);}
+		else{
+			qsort(tempArray, tempLength, sizeof(Process*), printComparator);
+			for(int i = 0; i < tempLength; i++){
+				printInfo(tempArray[i], queue);
+			}
+		}
+		
+	}
+	
+	
+	
+	for(int i = 0; i < processNum; i++){
+		freeProcess(ProcessArray[i]);
+	}
+	
+	free(ProcessArray);
 	
 	/*
 	TestStruct* t = calloc(1, sizeof(TestStruct));

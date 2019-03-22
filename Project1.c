@@ -9,18 +9,29 @@
 typedef struct{
 	char name;
 	int arriveTime;
+	//number of bursts;
 	int burst;
-	int pointer;
+	//These two pointers indicates how many bursts or io
+	//have been finished
+	int burstPointer;
+	int ioPointer;
+	//the arrays to store the infomation
 	int* burstTime;
 	int* ioTime;
+	//The three counter to track the total time;
 	int cpuTime;
 	int turnaroundTime;
 	int waitTime;
-	//these three ints indicates the status of the 
-	int inReadyQueue;
-	int inCPUBurst;
-	int inIO;
+	//over here, -1 is finishd, 0 is in ready queue
+	//1 is not arrived, 2 is in io ;
+	//3 is in cpu burst, 4 is switch out
+	//5 is switch in
+	int status;
+	//timer is used for decreament
+	//basically, we copy the info here to decreament.
+	int timer;
 	int tau;
+	int returnStatus;
 } Process;
 
 //this function is used to check whether the input
@@ -90,7 +101,10 @@ void createProcess(Process* p, char nameIn, double lambda, int threshold){
 		}
 	}
 	
-	//then set the remaning parts to 0
+	//set tau to default value 1/lambda
+	p->tau = (int)(ceil(1.0/lambda));
+	p->timer = p->arriveTime;
+	p->status = 1;
 	
 	
 }
@@ -106,13 +120,12 @@ void ProcessViewer(Process* p){
 	printf("the name of p is [%c]\n", p->name);
 	printf("the arriveTime of p is [%i]\n", p->arriveTime);
 	printf("the burst of p is [%i]\n", p->burst);
-	printf("the pointer of p is [%i]\n", p->pointer);
+	printf("the burstPointer of p is [%i]\n", p->burstPointer);
+	printf("the ioPointer of p is [%i]\n", p->ioPointer);
 	printf("the cpuTime of p is [%i]\n", p->cpuTime);
 	printf("the turnaroundTime of p is [%i]\n", p->turnaroundTime);
 	printf("the waitTime of p is [%i]\n", p->waitTime);
-	printf("the inReadyQueue of p is [%i]\n", p->inReadyQueue);
-	printf("the inCPUBurst of p is [%i]\n", p->inCPUBurst);
-	printf("the inIO of p is [%i]\n", p->inIO);
+	printf("the timer of p is [%i]\n", p->timer);
 	printf("the tau of p is [%i]\n", p->tau);
 	
 	printf("The elements in burstTime are: \n");
