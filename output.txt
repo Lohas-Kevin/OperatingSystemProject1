@@ -1,12 +1,117 @@
 Process A [NEW] (arrival time 9 ms) 16 CPU bursts
 Process B [NEW] (arrival time 18 ms) 21 CPU bursts
-Process C [NEW] (arrival time 84 ms) 82 CPU bursts
-Process D [NEW] (arrival time 86 ms) 36 CPU bursts
-Process E [NEW] (arrival time 2 ms) 26 CPU bursts
-Process F [NEW] (arrival time 25 ms) 39 CPU bursts
-Process G [NEW] (arrival time 13 ms) 76 CPU bursts
-Process H [NEW] (arrival time 46 ms) 82 CPU bursts
-Process I [NEW] (arrival time 64 ms) 63 CPU bursts
-Process J [NEW] (arrival time 31 ms) 21 CPU bursts
-Process K [NEW] (arrival time 56 ms) 1 CPU bursts
-Process L [NEW] (arrival time 12 ms) 3 CPU bursts
+time 9ms: Process A (tau 100ms) arrived; added to ready queue [Q A]
+time 11ms: Process A started using the CPU for 56ms burst [Q <empty>]
+time 18ms: Process B (tau 100ms) arrived; added to ready queue [Q B]
+time 67ms: Process A completed a CPU Burst; 15 bursts to go [Q B]
+time 67ms: Recalculate tau = 78ms for Process A [Q B]
+time 67ms: Process A switching out of CPU; will block on I/O until time 92ms
+time 71ms: Process B started using the CPU for 106ms burst [Q <empty>]
+time 92ms: Process A (tau 78ms) completed I/O; added to ready queue[Q A]
+time 177ms: Process B completed a CPU Burst; 20 bursts to go [Q A]
+time 177ms: Recalculate tau = 103ms for Process B [Q A]
+time 177ms: Process B switching out of CPU; will block on I/O until time 335ms
+time 181ms: Process A started using the CPU for 60ms burst [Q <empty>]
+time 241ms: Process A completed a CPU Burst; 14 bursts to go [Q <empty>]
+time 241ms: Recalculate tau = 69ms for Process A [Q <empty>]
+time 241ms: Process A switching out of CPU; will block on I/O until time 396ms
+time 335ms: Process B (tau 103ms) completed I/O; added to ready queue[Q B]
+time 337ms: Process B started using the CPU for 198ms burst [Q <empty>]
+time 396ms: Process A (tau 69ms) completed I/O; added to ready queue[Q A]
+time 535ms: Process B completed a CPU Burst; 19 bursts to go [Q A]
+time 535ms: Recalculate tau = 151ms for Process B [Q A]
+time 535ms: Process B switching out of CPU; will block on I/O until time 650ms
+time 539ms: Process A started using the CPU for 39ms burst [Q <empty>]
+time 578ms: Process A completed a CPU Burst; 13 bursts to go [Q <empty>]
+time 578ms: Recalculate tau = 54ms for Process A [Q <empty>]
+time 578ms: Process A switching out of CPU; will block on I/O until time 630ms
+time 630ms: Process A (tau 54ms) completed I/O; added to ready queue[Q A]
+time 632ms: Process A started using the CPU for 47ms burst [Q <empty>]
+time 650ms: Process B (tau 151ms) completed I/O; added to ready queue[Q B]
+time 679ms: Process A completed a CPU Burst; 12 bursts to go [Q B]
+time 679ms: Recalculate tau = 51ms for Process A [Q B]
+time 679ms: Process A switching out of CPU; will block on I/O until time 683ms
+time 683ms: Process A (tau 51ms) completed I/O; added to ready queue[Q A]
+time 683ms: Process B started using the CPU for 162ms burst [Q A]
+time 845ms: Process B completed a CPU Burst; 18 bursts to go [Q A]
+time 845ms: Recalculate tau = 157ms for Process B [Q A]
+time 845ms: Process B switching out of CPU; will block on I/O until time 897ms
+time 849ms: Process A started using the CPU for 137ms burst [Q <empty>]
+time 897ms: Process B (tau 157ms) completed I/O; added to ready queue[Q B]
+time 986ms: Process A completed a CPU Burst; 11 bursts to go [Q B]
+time 986ms: Recalculate tau = 94ms for Process A [Q B]
+time 986ms: Process A switching out of CPU; will block on I/O until time 1012ms
+time 990ms: Process B started using the CPU for 46ms burst [Q <empty>]
+time 1012ms: Process A (tau 94ms) completed I/O; added to ready queue[Q A]
+time 1036ms: Process B completed a CPU Burst; 17 bursts to go [Q A]
+time 1036ms: Recalculate tau = 102ms for Process B [Q A]
+time 1036ms: Process B switching out of CPU; will block on I/O until time 1120ms
+time 1040ms: Process A started using the CPU for 64ms burst [Q <empty>]
+time 1104ms: Process A completed a CPU Burst; 10 bursts to go [Q <empty>]
+time 1104ms: Recalculate tau = 79ms for Process A [Q <empty>]
+time 1104ms: Process A switching out of CPU; will block on I/O until time 1121ms
+time 1120ms: Process B (tau 102ms) completed I/O; added to ready queue[Q B]
+time 1121ms: Process A (tau 79ms) completed I/O; added to ready queue[Q A]
+time 1122ms: Process B started using the CPU for 16ms burst [Q A]
+time 1138ms: Process B completed a CPU Burst; 16 bursts to go [Q A]
+time 1138ms: Recalculate tau = 59ms for Process B [Q A]
+time 1138ms: Process B switching out of CPU; will block on I/O until time 1147ms
+time 1142ms: Process A started using the CPU for 68ms burst [Q <empty>]
+time 1147ms: Process B (tau 59ms) completed I/O; added to ready queue[Q B]
+time 1210ms: Process A completed a CPU Burst; 9 bursts to go [Q B]
+time 1210ms: Recalculate tau = 74ms for Process A [Q B]
+time 1210ms: Process A switching out of CPU; will block on I/O until time 1276ms
+time 1214ms: Process B started using the CPU for 30ms burst [Q <empty>]
+time 1244ms: Process B completed a CPU Burst; 15 bursts to go [Q <empty>]
+time 1244ms: Recalculate tau = 45ms for Process B [Q <empty>]
+time 1244ms: Process B switching out of CPU; will block on I/O until time 1298ms
+time 1276ms: Process A (tau 74ms) completed I/O; added to ready queue[Q A]
+time 1278ms: Process A started using the CPU for 113ms burst [Q <empty>]
+time 1298ms: Process B (tau 45ms) completed I/O; added to ready queue[Q B]
+time 1391ms: Process A completed a CPU Burst; 8 bursts to go [Q B]
+time 1391ms: Recalculate tau = 94ms for Process A [Q B]
+time 1391ms: Process A switching out of CPU; will block on I/O until time 1409ms
+time 1395ms: Process B started using the CPU for 12ms burst [Q <empty>]
+time 1407ms: Process B completed a CPU Burst; 14 bursts to go [Q <empty>]
+time 1407ms: Recalculate tau = 29ms for Process B [Q <empty>]
+time 1407ms: Process B switching out of CPU; will block on I/O until time 1486ms
+time 1409ms: Process A (tau 94ms) completed I/O; added to ready queue[Q A]
+time 1411ms: Process A started using the CPU for 11ms burst [Q <empty>]
+time 1422ms: Process A completed a CPU Burst; 7 bursts to go [Q <empty>]
+time 1422ms: Recalculate tau = 53ms for Process A [Q <empty>]
+time 1422ms: Process A switching out of CPU; will block on I/O until time 1586ms
+time 1486ms: Process B (tau 29ms) completed I/O; added to ready queue[Q B]
+time 1488ms: Process B started using the CPU for 138ms burst [Q <empty>]
+time 1586ms: Process A (tau 53ms) completed I/O; added to ready queue[Q A]
+time 1626ms: Process B completed a CPU Burst; 13 bursts to go [Q A]
+time 1626ms: Recalculate tau = 84ms for Process B [Q A]
+time 1626ms: Process B switching out of CPU; will block on I/O until time 1710ms
+time 1630ms: Process A started using the CPU for 24ms burst [Q <empty>]
+time 1654ms: Process A completed a CPU Burst; 6 bursts to go [Q <empty>]
+time 1654ms: Recalculate tau = 39ms for Process A [Q <empty>]
+time 1654ms: Process A switching out of CPU; will block on I/O until time 1773ms
+time 1710ms: Process B (tau 84ms) completed I/O; added to ready queue[Q B]
+time 1712ms: Process B started using the CPU for 67ms burst [Q <empty>]
+time 1773ms: Process A (tau 39ms) completed I/O; added to ready queue[Q A]
+time 1779ms: Process B completed a CPU Burst; 12 bursts to go [Q A]
+time 1779ms: Recalculate tau = 76ms for Process B [Q A]
+time 1779ms: Process B switching out of CPU; will block on I/O until time 1788ms
+time 1783ms: Process A started using the CPU for 76ms burst [Q <empty>]
+time 1788ms: Process B (tau 76ms) completed I/O; added to ready queue[Q B]
+time 1859ms: Process A completed a CPU Burst; 5 bursts to go [Q B]
+time 1859ms: Recalculate tau = 58ms for Process A [Q B]
+time 1859ms: Process A switching out of CPU; will block on I/O until time 1889ms
+time 1863ms: Process B started using the CPU for 120ms burst [Q <empty>]
+time 1889ms: Process A (tau 58ms) completed I/O; added to ready queue[Q A]
+time 1983ms: Process B completed a CPU Burst; 11 bursts to go [Q A]
+time 1983ms: Recalculate tau = 98ms for Process B [Q A]
+time 1983ms: Process B switching out of CPU; will block on I/O until time 1998ms
+time 1987ms: Process A started using the CPU for 122ms burst [Q <empty>]
+time 1998ms: Process B (tau 98ms) completed I/O; added to ready queue[Q B]
+time 2109ms: Process A completed a CPU Burst; 4 bursts to go [Q B]
+time 2109ms: Recalculate tau = 90ms for Process A [Q B]
+time 2109ms: Process A switching out of CPU; will block on I/O until time 2144ms
+time 2113ms: Process B started using the CPU for 49ms burst [Q <empty>]
+time 2144ms: Process A (tau 90ms) completed I/O; added to ready queue[Q A]
+time 2162ms: Process B completed a CPU Burst; 10 bursts to go [Q A]
+time 2162ms: Recalculate tau = 74ms for Pr
