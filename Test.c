@@ -346,7 +346,7 @@ int main(int argc, char** argv){
 	int seed = 2;
 	double lambda = 0.01;
 	int threshold = 200;
-	int processNum = 2;
+	int processNum = 12;
 	int textSwitchTime = 4;
 	double alpha = 0.5;
 	int timeSlice = 120 ;
@@ -376,6 +376,7 @@ int main(int argc, char** argv){
 	int queueLength = 0;
 	Process* inCPU = NULL;
 	
+	printf("time 0ms: Simulator started for SJF [Q <empty>]\n");
 	while(tracker != processNum){
 		totalTime++;
 		Process** tempArray = calloc(processNum, sizeof(Process*));
@@ -406,7 +407,7 @@ int main(int argc, char** argv){
 				
 			}else if(temp == 3){
 				//cpu burst end
-				if(ProcessArray[i]->burstPointer != ((ProcessArray[i]->burst) - 1)){
+				if(ProcessArray[i]->burstPointer < ((ProcessArray[i]->burst) - 1)){
 					ProcessArray[i]->returnStatus = 3;
 					tempArray[tempLength] = ProcessArray[i];
 					tempLength += 1;
@@ -425,7 +426,9 @@ int main(int argc, char** argv){
 					//print the end info here
 					ProcessArray[i]->returnStatus = -1;
 					printInfo(ProcessArray[i], queue, totalTime, queueLength);
-					tracker += 1;
+					//don't forget to move to context switch out
+					ProcessArray[i]->status = 4;
+					ProcessArray[i]->timer = textSwitchTime/2;
 				}
 				
 				
@@ -435,9 +438,21 @@ int main(int argc, char** argv){
 				//we don't need to print any info here
 				//we perform the io
 				//also set the cpu to not be used
-				ProcessArray[i]->status = 2;
-				ProcessArray[i]->timer = ProcessArray[i]->ioTime[ProcessArray[i]->ioPointer];
-				inCPU = NULL;
+				//PROBLEM HERE 
+				if(ProcessArray[i] -> returnStatus == 3){
+					//if the process has not ended
+					ProcessArray[i]->status = 2;
+					ProcessArray[i]->timer = ProcessArray[i]->ioTime[ProcessArray[i]->ioPointer];
+					inCPU = NULL;
+				}else if(ProcessArray[i] -> returnStatus == -1){
+					//if the process has ended
+					ProcessArray[i]->status = -1;
+					inCPU = NULL;
+					ProcessArray[i]->timer = -1;
+					tracker += 1;
+				}
+				
+				
 				
 			}else if(temp == 5){
 				//switch in end
@@ -474,7 +489,7 @@ int main(int argc, char** argv){
 			inCPU->timer = (textSwitchTime / 2);
 		}
 	}
-	printf("time %dms: Simulator ended for SJF [Q <empty>]\n",(totalTime+2));
+	printf("time %dms: Simulator ended for SJF [Q <empty>]\n",totalTime);
 	
 	
 	for(int i = 0; i < processNum; i++){

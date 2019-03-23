@@ -1,117 +1,2320 @@
 Process A [NEW] (arrival time 9 ms) 16 CPU bursts
 Process B [NEW] (arrival time 18 ms) 21 CPU bursts
+Process C [NEW] (arrival time 84 ms) 82 CPU bursts
+Process D [NEW] (arrival time 86 ms) 36 CPU bursts
+Process E [NEW] (arrival time 2 ms) 26 CPU bursts
+Process F [NEW] (arrival time 25 ms) 39 CPU bursts
+Process G [NEW] (arrival time 13 ms) 76 CPU bursts
+Process H [NEW] (arrival time 46 ms) 82 CPU bursts
+Process I [NEW] (arrival time 64 ms) 63 CPU bursts
+Process J [NEW] (arrival time 31 ms) 21 CPU bursts
+Process K [NEW] (arrival time 56 ms) 1 CPU bursts
+Process L [NEW] (arrival time 12 ms) 3 CPU bursts
+time 0ms: Simulator started for SJF [Q <empty>]
+time 2ms: Process E (tau 100ms) arrived; added to ready queue [Q E]
+time 4ms: Process E started using the CPU for 11ms burst [Q <empty>]
 time 9ms: Process A (tau 100ms) arrived; added to ready queue [Q A]
-time 11ms: Process A started using the CPU for 56ms burst [Q <empty>]
-time 18ms: Process B (tau 100ms) arrived; added to ready queue [Q B]
-time 67ms: Process A completed a CPU Burst; 15 bursts to go [Q B]
-time 67ms: Recalculate tau = 78ms for Process A [Q B]
-time 67ms: Process A switching out of CPU; will block on I/O until time 92ms
-time 71ms: Process B started using the CPU for 106ms burst [Q <empty>]
-time 92ms: Process A (tau 78ms) completed I/O; added to ready queue[Q A]
-time 177ms: Process B completed a CPU Burst; 20 bursts to go [Q A]
-time 177ms: Recalculate tau = 103ms for Process B [Q A]
-time 177ms: Process B switching out of CPU; will block on I/O until time 335ms
-time 181ms: Process A started using the CPU for 60ms burst [Q <empty>]
-time 241ms: Process A completed a CPU Burst; 14 bursts to go [Q <empty>]
-time 241ms: Recalculate tau = 69ms for Process A [Q <empty>]
-time 241ms: Process A switching out of CPU; will block on I/O until time 396ms
-time 335ms: Process B (tau 103ms) completed I/O; added to ready queue[Q B]
-time 337ms: Process B started using the CPU for 198ms burst [Q <empty>]
-time 396ms: Process A (tau 69ms) completed I/O; added to ready queue[Q A]
-time 535ms: Process B completed a CPU Burst; 19 bursts to go [Q A]
-time 535ms: Recalculate tau = 151ms for Process B [Q A]
-time 535ms: Process B switching out of CPU; will block on I/O until time 650ms
-time 539ms: Process A started using the CPU for 39ms burst [Q <empty>]
-time 578ms: Process A completed a CPU Burst; 13 bursts to go [Q <empty>]
-time 578ms: Recalculate tau = 54ms for Process A [Q <empty>]
-time 578ms: Process A switching out of CPU; will block on I/O until time 630ms
-time 630ms: Process A (tau 54ms) completed I/O; added to ready queue[Q A]
-time 632ms: Process A started using the CPU for 47ms burst [Q <empty>]
-time 650ms: Process B (tau 151ms) completed I/O; added to ready queue[Q B]
-time 679ms: Process A completed a CPU Burst; 12 bursts to go [Q B]
-time 679ms: Recalculate tau = 51ms for Process A [Q B]
-time 679ms: Process A switching out of CPU; will block on I/O until time 683ms
-time 683ms: Process A (tau 51ms) completed I/O; added to ready queue[Q A]
-time 683ms: Process B started using the CPU for 162ms burst [Q A]
-time 845ms: Process B completed a CPU Burst; 18 bursts to go [Q A]
-time 845ms: Recalculate tau = 157ms for Process B [Q A]
-time 845ms: Process B switching out of CPU; will block on I/O until time 897ms
-time 849ms: Process A started using the CPU for 137ms burst [Q <empty>]
-time 897ms: Process B (tau 157ms) completed I/O; added to ready queue[Q B]
-time 986ms: Process A completed a CPU Burst; 11 bursts to go [Q B]
-time 986ms: Recalculate tau = 94ms for Process A [Q B]
-time 986ms: Process A switching out of CPU; will block on I/O until time 1012ms
-time 990ms: Process B started using the CPU for 46ms burst [Q <empty>]
-time 1012ms: Process A (tau 94ms) completed I/O; added to ready queue[Q A]
-time 1036ms: Process B completed a CPU Burst; 17 bursts to go [Q A]
-time 1036ms: Recalculate tau = 102ms for Process B [Q A]
-time 1036ms: Process B switching out of CPU; will block on I/O until time 1120ms
-time 1040ms: Process A started using the CPU for 64ms burst [Q <empty>]
-time 1104ms: Process A completed a CPU Burst; 10 bursts to go [Q <empty>]
-time 1104ms: Recalculate tau = 79ms for Process A [Q <empty>]
-time 1104ms: Process A switching out of CPU; will block on I/O until time 1121ms
-time 1120ms: Process B (tau 102ms) completed I/O; added to ready queue[Q B]
-time 1121ms: Process A (tau 79ms) completed I/O; added to ready queue[Q A]
-time 1122ms: Process B started using the CPU for 16ms burst [Q A]
-time 1138ms: Process B completed a CPU Burst; 16 bursts to go [Q A]
-time 1138ms: Recalculate tau = 59ms for Process B [Q A]
-time 1138ms: Process B switching out of CPU; will block on I/O until time 1147ms
-time 1142ms: Process A started using the CPU for 68ms burst [Q <empty>]
-time 1147ms: Process B (tau 59ms) completed I/O; added to ready queue[Q B]
-time 1210ms: Process A completed a CPU Burst; 9 bursts to go [Q B]
-time 1210ms: Recalculate tau = 74ms for Process A [Q B]
-time 1210ms: Process A switching out of CPU; will block on I/O until time 1276ms
-time 1214ms: Process B started using the CPU for 30ms burst [Q <empty>]
-time 1244ms: Process B completed a CPU Burst; 15 bursts to go [Q <empty>]
-time 1244ms: Recalculate tau = 45ms for Process B [Q <empty>]
-time 1244ms: Process B switching out of CPU; will block on I/O until time 1298ms
-time 1276ms: Process A (tau 74ms) completed I/O; added to ready queue[Q A]
-time 1278ms: Process A started using the CPU for 113ms burst [Q <empty>]
-time 1298ms: Process B (tau 45ms) completed I/O; added to ready queue[Q B]
-time 1391ms: Process A completed a CPU Burst; 8 bursts to go [Q B]
-time 1391ms: Recalculate tau = 94ms for Process A [Q B]
-time 1391ms: Process A switching out of CPU; will block on I/O until time 1409ms
-time 1395ms: Process B started using the CPU for 12ms burst [Q <empty>]
-time 1407ms: Process B completed a CPU Burst; 14 bursts to go [Q <empty>]
-time 1407ms: Recalculate tau = 29ms for Process B [Q <empty>]
-time 1407ms: Process B switching out of CPU; will block on I/O until time 1486ms
-time 1409ms: Process A (tau 94ms) completed I/O; added to ready queue[Q A]
-time 1411ms: Process A started using the CPU for 11ms burst [Q <empty>]
-time 1422ms: Process A completed a CPU Burst; 7 bursts to go [Q <empty>]
-time 1422ms: Recalculate tau = 53ms for Process A [Q <empty>]
-time 1422ms: Process A switching out of CPU; will block on I/O until time 1586ms
-time 1486ms: Process B (tau 29ms) completed I/O; added to ready queue[Q B]
-time 1488ms: Process B started using the CPU for 138ms burst [Q <empty>]
-time 1586ms: Process A (tau 53ms) completed I/O; added to ready queue[Q A]
-time 1626ms: Process B completed a CPU Burst; 13 bursts to go [Q A]
-time 1626ms: Recalculate tau = 84ms for Process B [Q A]
-time 1626ms: Process B switching out of CPU; will block on I/O until time 1710ms
-time 1630ms: Process A started using the CPU for 24ms burst [Q <empty>]
-time 1654ms: Process A completed a CPU Burst; 6 bursts to go [Q <empty>]
-time 1654ms: Recalculate tau = 39ms for Process A [Q <empty>]
-time 1654ms: Process A switching out of CPU; will block on I/O until time 1773ms
-time 1710ms: Process B (tau 84ms) completed I/O; added to ready queue[Q B]
-time 1712ms: Process B started using the CPU for 67ms burst [Q <empty>]
-time 1773ms: Process A (tau 39ms) completed I/O; added to ready queue[Q A]
-time 1779ms: Process B completed a CPU Burst; 12 bursts to go [Q A]
-time 1779ms: Recalculate tau = 76ms for Process B [Q A]
-time 1779ms: Process B switching out of CPU; will block on I/O until time 1788ms
-time 1783ms: Process A started using the CPU for 76ms burst [Q <empty>]
-time 1788ms: Process B (tau 76ms) completed I/O; added to ready queue[Q B]
-time 1859ms: Process A completed a CPU Burst; 5 bursts to go [Q B]
-time 1859ms: Recalculate tau = 58ms for Process A [Q B]
-time 1859ms: Process A switching out of CPU; will block on I/O until time 1889ms
-time 1863ms: Process B started using the CPU for 120ms burst [Q <empty>]
-time 1889ms: Process A (tau 58ms) completed I/O; added to ready queue[Q A]
-time 1983ms: Process B completed a CPU Burst; 11 bursts to go [Q A]
-time 1983ms: Recalculate tau = 98ms for Process B [Q A]
-time 1983ms: Process B switching out of CPU; will block on I/O until time 1998ms
-time 1987ms: Process A started using the CPU for 122ms burst [Q <empty>]
-time 1998ms: Process B (tau 98ms) completed I/O; added to ready queue[Q B]
-time 2109ms: Process A completed a CPU Burst; 4 bursts to go [Q B]
-time 2109ms: Recalculate tau = 90ms for Process A [Q B]
-time 2109ms: Process A switching out of CPU; will block on I/O until time 2144ms
-time 2113ms: Process B started using the CPU for 49ms burst [Q <empty>]
-time 2144ms: Process A (tau 90ms) completed I/O; added to ready queue[Q A]
-time 2162ms: Process B completed a CPU Burst; 10 bursts to go [Q A]
-time 2162ms: Recalculate tau = 74ms for Pr
+time 12ms: Process L (tau 100ms) arrived; added to ready queue [Q A L]
+time 13ms: Process G (tau 100ms) arrived; added to ready queue [Q A L G]
+time 15ms: Process E completed a CPU Burst; 25 bursts to go [Q A L G]
+time 15ms: Recalculate tau = 56ms for Process E [Q A L G]
+time 15ms: Process E switching out of CPU; will block on I/O until time 34ms
+time 18ms: Process B (tau 100ms) arrived; added to ready queue [Q L G B]
+time 19ms: Process A started using the CPU for 56ms burst [Q L G B]
+time 25ms: Process F (tau 100ms) arrived; added to ready queue [Q L G B F]
+time 31ms: Process J (tau 100ms) arrived; added to ready queue [Q L G B F J]
+time 34ms: Process E (tau 56ms) completed I/O; added to ready queue[Q L G B F J E]
+time 46ms: Process H (tau 100ms) arrived; added to ready queue [Q L G B F J E H]
+time 56ms: Process K (tau 100ms) arrived; added to ready queue [Q J E H K B F G L]
+time 64ms: Process I (tau 100ms) arrived; added to ready queue [Q J E H K I B F L G]
+time 75ms: Process A completed a CPU Burst; 15 bursts to go [Q G H K J E F L I B]
+time 75ms: Recalculate tau = 78ms for Process A [Q G H K J E F L I B]
+time 75ms: Process A switching out of CPU; will block on I/O until time 100ms
+time 79ms: Process B started using the CPU for 106ms burst [Q G H J K E F I L]
+time 84ms: Process C (tau 100ms) arrived; added to ready queue [Q F E L I C K J H G]
+time 86ms: Process D (tau 100ms) arrived; added to ready queue [Q L I F E D C K H G J]
+time 100ms: Process A (tau 78ms) completed I/O; added to ready queue[Q L I E D F A C K H J G]
+time 185ms: Process B completed a CPU Burst; 20 bursts to go [Q H G L I J E D A C F K]
+time 185ms: Recalculate tau = 103ms for Process B [Q H G L I J E D A C F K]
+time 185ms: Process B switching out of CPU; will block on I/O until time 343ms
+time 189ms: Process K started using the CPU for 37ms burst [Q H G J I L E D F C A]
+time 226ms: Process K terminated [Q H G J I L E D F C A]
+time 230ms: Process E started using the CPU for 65ms burst [Q I A F D C L J H G]
+time 295ms: Process E completed a CPU Burst; 24 bursts to go [Q G F D I A J H C L]
+time 295ms: Recalculate tau = 61ms for Process E [Q G F D I A J H C L]
+time 295ms: Process E switching out of CPU; will block on I/O until time 352ms
+time 299ms: Process L started using the CPU for 133ms burst [Q G F I D A J C H]
+time 343ms: Process B (tau 103ms) completed I/O; added to ready queue[Q F G D I B J A C H]
+time 352ms: Process E (tau 61ms) completed I/O; added to ready queue[Q G D I B E C H A F J]
+time 432ms: Process L completed a CPU Burst; 2 bursts to go [Q G D B E I C H F J A]
+time 432ms: Recalculate tau = 117ms for Process L [Q G D B E I C H F J A]
+time 432ms: Process L switching out of CPU; will block on I/O until time 564ms
+time 436ms: Process G started using the CPU for 76ms burst [Q F I B D E J A C H]
+time 512ms: Process G completed a CPU Burst; 75 bursts to go [Q J D F H B C E I A]
+time 512ms: Recalculate tau = 88ms for Process G [Q J D F H B C E I A]
+time 512ms: Process G switching out of CPU; will block on I/O until time 657ms
+time 516ms: Process A started using the CPU for 60ms burst [Q J D H F B C I E]
+time 564ms: Process L (tau 117ms) completed I/O; added to ready queue[Q J D H F L B C E I]
+time 576ms: Process A completed a CPU Burst; 14 bursts to go [Q D C E L B F J I H]
+time 576ms: Recalculate tau = 69ms for Process A [Q D C E L B F J I H]
+time 576ms: Process A switching out of CPU; will block on I/O until time 731ms
+time 580ms: Process H started using the CPU for 9ms burst [Q D C L E B F I J]
+time 589ms: Process H completed a CPU Burst; 81 bursts to go [Q B F I J L E C D]
+time 589ms: Recalculate tau = 55ms for Process H [Q B F I J L E C D]
+time 589ms: Process H switching out of CPU; will block on I/O until time 770ms
+time 593ms: Process I started using the CPU for 190ms burst [Q J F B C D E L]
+time 657ms: Process G (tau 88ms) completed I/O; added to ready queue[Q D E L G B C F J]
+time 731ms: Process A (tau 69ms) completed I/O; added to ready queue[Q L G E D A F J B C]
+time 770ms: Process H (tau 55ms) completed I/O; added to ready queue[Q J B A F H C E L G D]
+time 783ms: Process I completed a CPU Burst; 62 bursts to go [Q C E L G D J B F H A]
+time 783ms: Recalculate tau = 145ms for Process I [Q C E L G D J B F H A]
+time 783ms: Process I switching out of CPU; will block on I/O until time 920ms
+time 787ms: Process C started using the CPU for 79ms burst [Q F D L E G H A J B]
+time 866ms: Process C completed a CPU Burst; 81 bursts to go [Q E G D L J B H A F]
+time 866ms: Recalculate tau = 90ms for Process C [Q E G D L J B H A F]
+time 866ms: Process C switching out of CPU; will block on I/O until time 1025ms
+time 870ms: Process F started using the CPU for 24ms burst [Q E G L D J B A H]
+time 894ms: Process F completed a CPU Burst; 38 bursts to go [Q E G L D J B A H]
+time 894ms: Recalculate tau = 62ms for Process F [Q E G L D J B A H]
+time 894ms: Process F switching out of CPU; will block on I/O until time 962ms
+time 898ms: Process L started using the CPU for 71ms burst [Q D G E A H B J]
+time 920ms: Process I (tau 145ms) completed I/O; added to ready queue[Q H B J I E A G D]
+time 962ms: Process F (tau 62ms) completed I/O; added to ready queue[Q J I B H F G D E A]
+time 969ms: Process L completed a CPU Burst; 1 bursts to go [Q H F I B E A G D J]
+time 969ms: Recalculate tau = 94ms for Process L [Q H F I B E A G D J]
+time 969ms: Process L switching out of CPU; will block on I/O until time 1039ms
+time 973ms: Process J started using the CPU for 97ms burst [Q H F B I E A D G]
+time 1025ms: Process C (tau 90ms) completed I/O; added to ready queue[Q F H I B C A E D G]
+time 1039ms: Process L (tau 94ms) completed I/O; added to ready queue[Q D C H E L A B G I F]
+time 1070ms: Process J completed a CPU Burst; 20 bursts to go [Q A B G I F D C E L H]
+time 1070ms: Recalculate tau = 99ms for Process J [Q A B G I F D C E L H]
+time 1070ms: Process J switching out of CPU; will block on I/O until time 1163ms
+time 1074ms: Process A started using the CPU for 39ms burst [Q E F G B I L H D C]
+time 1113ms: Process A completed a CPU Burst; 13 bursts to go [Q F H D I L B E C G]
+time 1113ms: Recalculate tau = 54ms for Process A [Q F H D I L B E C G]
+time 1113ms: Process A switching out of CPU; will block on I/O until time 1165ms
+time 1117ms: Process G started using the CPU for 184ms burst [Q F H I D L B C E]
+time 1163ms: Process J (tau 99ms) completed I/O; added to ready queue[Q D I F H J E C B L]
+time 1165ms: Process A (tau 54ms) completed I/O; added to ready queue[Q F H D I A J E B L C]
+time 1301ms: Process G completed a CPU Burst; 74 bursts to go [Q F H A D I J E C B L]
+time 1301ms: Recalculate tau = 136ms for Process G [Q F H A D I J E C B L]
+time 1301ms: Process G switching out of CPU; will block on I/O until time 1335ms
+time 1305ms: Process F started using the CPU for 15ms burst [Q C I A H D B L J E]
+time 1320ms: Process F completed a CPU Burst; 37 bursts to go [Q L C E B H D I A J]
+time 1320ms: Recalculate tau = 39ms for Process F [Q L C E B H D I A J]
+time 1320ms: Process F switching out of CPU; will block on I/O until time 1402ms
+time 1324ms: Process J started using the CPU for 39ms burst [Q L C B E H D A I]
+time 1335ms: Process G (tau 136ms) completed I/O; added to ready queue[Q A I D H G C L B E]
+time 1363ms: Process J completed a CPU Burst; 19 bursts to go [Q G C L B E D H A I]
+time 1363ms: Recalculate tau = 69ms for Process J [Q G C L B E D H A I]
+time 1363ms: Process J switching out of CPU; will block on I/O until time 1366ms
+time 1366ms: Process J (tau 69ms) completed I/O; added to ready queue[Q H A E D J G C L B]
+time 1367ms: Process I started using the CPU for 74ms burst [Q J G C L B E D H A]
+time 1402ms: Process F (tau 39ms) completed I/O; added to ready queue[Q A E D J F L B C H G]
+time 1441ms: Process I completed a CPU Burst; 61 bursts to go [Q L B H G C A E F D J]
+time 1441ms: Recalculate tau = 110ms for Process I [Q L B H G C A E F D J]
+time 1441ms: Process I switching out of CPU; will block on I/O until time 1447ms
+time 1445ms: Process L started using the CPU for 117ms burst [Q F C H B G D J A E]
+time 1447ms: Process I (tau 110ms) completed I/O; added to ready queue[Q H B F C I G D A E J]
+time 1562ms: Process L terminated [Q H B F C I G D A E J]
+time 1566ms: Process G started using the CPU for 82ms burst [Q C J A D E I F H B]
+time 1648ms: Process G completed a CPU Burst; 73 bursts to go [Q E I F H B A D C J]
+time 1648ms: Recalculate tau = 109ms for Process G [Q E I F H B A D C J]
+time 1648ms: Process G switching out of CPU; will block on I/O until time 1728ms
+time 1652ms: Process J started using the CPU for 137ms burst [Q E I H F B A C D]
+time 1728ms: Process G (tau 109ms) completed I/O; added to ready queue[Q I E F H G A B C D]
+time 1789ms: Process J completed a CPU Burst; 18 bursts to go [Q H G E F C D A B I]
+time 1789ms: Recalculate tau = 103ms for Process J [Q H G E F C D A B I]
+time 1789ms: Process J switching out of CPU; will block on I/O until time 1810ms
+time 1793ms: Process I started using the CPU for 42ms burst [Q H G F E C D B A]
+time 1810ms: Process J (tau 103ms) completed I/O; added to ready queue[Q C D B A J F E H G]
+time 1835ms: Process I completed a CPU Burst; 60 bursts to go [Q A J D B H G F E C]
+time 1835ms: Recalculate tau = 76ms for Process I [Q A J D B H G F E C]
+time 1835ms: Process I switching out of CPU; will block on I/O until time 1906ms
+time 1839ms: Process C started using the CPU for 148ms burst [Q A J B D H G E F]
+time 1906ms: Process I (tau 76ms) completed I/O; added to ready queue[Q E F G H I J A B D]
+time 1987ms: Process C completed a CPU Burst; 80 bursts to go [Q E F G H I J A B D]
+time 1987ms: Recalculate tau = 119ms for Process C [Q E F G H I J A B D]
+time 1987ms: Process C switching out of CPU; will block on I/O until time 1991ms
+time 1991ms: Process D started using the CPU for 22ms burst [Q E F H G C I J A B]
+time 1991ms: Process C (tau 119ms) completed I/O; added to ready queue[Q E F H G C I J A B]
+time 2013ms: Process D completed a CPU Burst; 35 bursts to go [Q I G E B H A C F J]
+time 2013ms: Recalculate tau = 61ms for Process D [Q I G E B H A C F J]
+time 2013ms: Process D switching out of CPU; will block on I/O until time 2030ms
+time 2017ms: Process J started using the CPU for 189ms burst [Q I G B E H A F C]
+time 2030ms: Process D (tau 61ms) completed I/O; added to ready queue[Q A H C F D E B G I]
+time 2206ms: Process J completed a CPU Burst; 17 bursts to go [Q C G D H B A I E F]
+time 2206ms: Recalculate tau = 146ms for Process J [Q C G D H B A I E F]
+time 2206ms: Process J switching out of CPU; will block on I/O until time 2371ms
+time 2210ms: Process F started using the CPU for 1ms burst [Q C G H D B A E I]
+time 2211ms: Process F completed a CPU Burst; 36 bursts to go [Q B A E I H D G C]
+time 2211ms: Recalculate tau = 20ms for Process F [Q B A E I H D G C]
+time 2211ms: Process F switching out of CPU; will block on I/O until time 2269ms
+time 2215ms: Process E started using the CPU for 52ms burst [Q I A B G C D H]
+time 2267ms: Process E completed a CPU Burst; 23 bursts to go [Q I A B G C D H]
+time 2267ms: Recalculate tau = 57ms for Process E [Q I A B G C D H]
+time 2267ms: Process E switching out of CPU; will block on I/O until time 2365ms
+time 2269ms: Process F (tau 20ms) completed I/O; added to ready queue[Q C D H F B G A I]
+time 2271ms: Process C started using the CPU for 9ms burst [Q D H F B G A I]
+time 2280ms: Process C completed a CPU Burst; 79 bursts to go [Q D H F B G A I]
+time 2280ms: Recalculate tau = 64ms for Process C [Q D H F B G A I]
+time 2280ms: Process C switching out of CPU; will block on I/O until time 2320ms
+time 2284ms: Process D started using the CPU for 52ms burst [Q H F B G A I]
+time 2320ms: Process C (tau 64ms) completed I/O; added to ready queue[Q H F B G A I C]
+time 2336ms: Process D completed a CPU Burst; 34 bursts to go [Q H F B G A I C]
+time 2336ms: Recalculate tau = 57ms for Process D [Q H F B G A I C]
+time 2336ms: Process D switching out of CPU; will block on I/O until time 2347ms
+time 2340ms: Process H started using the CPU for 100ms burst [Q F B G A I C]
+time 2347ms: Process D (tau 57ms) completed I/O; added to ready queue[Q F B G A I C D]
+time 2365ms: Process E (tau 57ms) completed I/O; added to ready queue[Q I C D E G A B F]
+time 2371ms: Process J (tau 146ms) completed I/O; added to ready queue[Q E D I C J F B A G]
+time 2440ms: Process H completed a CPU Burst; 80 bursts to go [Q B E G F C J D I A]
+time 2440ms: Recalculate tau = 78ms for Process H [Q B E G F C J D I A]
+time 2440ms: Process H switching out of CPU; will block on I/O until time 2507ms
+time 2444ms: Process A started using the CPU for 47ms burst [Q B E F G C J I D]
+time 2491ms: Process A completed a CPU Burst; 12 bursts to go [Q D I C J B E F G]
+time 2491ms: Recalculate tau = 51ms for Process A [Q D I C J B E F G]
+time 2491ms: Process A switching out of CPU; will block on I/O until time 2495ms
+time 2495ms: Process A (tau 51ms) completed I/O; added to ready queue[Q G E B A D F I J]
+time 2495ms: Process C started using the CPU for 4ms burst [Q G E B A D F I J]
+time 2499ms: Process C completed a CPU Burst; 78 bursts to go [Q E G A B F D J I]
+time 2499ms: Recalculate tau = 34ms for Process C [Q E G A B F D J I]
+time 2499ms: Process C switching out of CPU; will block on I/O until time 2549ms
+time 2503ms: Process A started using the CPU for 137ms burst [Q B G E J I D F]
+time 2507ms: Process H (tau 78ms) completed I/O; added to ready queue[Q I D F H E J G B]
+time 2549ms: Process C (tau 34ms) completed I/O; added to ready queue[Q F H D I C G B E J]
+time 2640ms: Process A completed a CPU Burst; 11 bursts to go [Q C G B E J D I F H]
+time 2640ms: Recalculate tau = 94ms for Process A [Q C G B E J D I F H]
+time 2640ms: Process A switching out of CPU; will block on I/O until time 2666ms
+time 2644ms: Process H started using the CPU for 32ms burst [Q C G E B J D F I]
+time 2666ms: Process A (tau 94ms) completed I/O; added to ready queue[Q B E C G A I F D J]
+time 2676ms: Process H completed a CPU Burst; 79 bursts to go [Q A I F D J C G B E]
+time 2676ms: Recalculate tau = 55ms for Process H [Q A I F D J C G B E]
+time 2676ms: Process H switching out of CPU; will block on I/O until time 2736ms
+time 2680ms: Process E started using the CPU for 199ms burst [Q A I D F J C B G]
+time 2736ms: Process H (tau 55ms) completed I/O; added to ready queue[Q A I D F H J C G B]
+time 2879ms: Process E completed a CPU Burst; 22 bursts to go [Q G B J C A I D F H]
+time 2879ms: Recalculate tau = 128ms for Process E [Q G B J C A I D F H]
+time 2879ms: Process E switching out of CPU; will block on I/O until time 2891ms
+time 2883ms: Process H started using the CPU for 174ms burst [Q G B C J A I F D]
+time 2891ms: Process E (tau 128ms) completed I/O; added to ready queue[Q G B C J E A I D F]
+time 3057ms: Process H completed a CPU Burst; 78 bursts to go [Q A J G F C D E B I]
+time 3057ms: Recalculate tau = 115ms for Process H [Q A J G F C D E B I]
+time 3057ms: Process H switching out of CPU; will block on I/O until time 3154ms
+time 3061ms: Process I started using the CPU for 95ms burst [Q A J F G C D B E]
+time 3154ms: Process H (tau 115ms) completed I/O; added to ready queue[Q D C E B H G F J A]
+time 3156ms: Process I completed a CPU Burst; 59 bursts to go [Q A E B D C F J H G]
+time 3156ms: Recalculate tau = 86ms for Process I [Q A E B D C F J H G]
+time 3156ms: Process I switching out of CPU; will block on I/O until time 3183ms
+time 3160ms: Process G started using the CPU for 6ms burst [Q A E D B C F H J]
+time 3166ms: Process G completed a CPU Burst; 72 bursts to go [Q B D A E J H C F]
+time 3166ms: Recalculate tau = 58ms for Process G [Q B D A E J H C F]
+time 3166ms: Process G switching out of CPU; will block on I/O until time 3184ms
+time 3170ms: Process A started using the CPU for 64ms burst [Q E D B C F H J]
+time 3183ms: Process I (tau 86ms) completed I/O; added to ready queue[Q F H J I B C D E]
+time 3184ms: Process G (tau 58ms) completed I/O; added to ready queue[Q B C D E G J I F H]
+time 3234ms: Process A completed a CPU Burst; 10 bursts to go [Q D F G C I B H J E]
+time 3234ms: Recalculate tau = 79ms for Process A [Q D F G C I B H J E]
+time 3234ms: Process A switching out of CPU; will block on I/O until time 3251ms
+time 3238ms: Process E started using the CPU for 35ms burst [Q D F C G I B J H]
+time 3251ms: Process A (tau 79ms) completed I/O; added to ready queue[Q B I H J A G C F D]
+time 3273ms: Process E completed a CPU Burst; 21 bursts to go [Q G J B D H F A I C]
+time 3273ms: Recalculate tau = 82ms for Process E [Q G J B D H F A I C]
+time 3273ms: Process E switching out of CPU; will block on I/O until time 3346ms
+time 3277ms: Process C started using the CPU for 149ms burst [Q G J D B H F I A]
+time 3346ms: Process E (tau 82ms) completed I/O; added to ready queue[Q F H A I E B D J G]
+time 3426ms: Process C completed a CPU Burst; 77 bursts to go [Q J G B D F H A I E]
+time 3426ms: Recalculate tau = 92ms for Process C [Q J G B D F H A I E]
+time 3426ms: Process C switching out of CPU; will block on I/O until time 3509ms
+time 3430ms: Process E started using the CPU for 44ms burst [Q J G D B F H I A]
+time 3474ms: Process E completed a CPU Burst; 20 bursts to go [Q G J B D H F A I]
+time 3474ms: Recalculate tau = 63ms for Process E [Q G J B D H F A I]
+time 3474ms: Process E switching out of CPU; will block on I/O until time 3500ms
+time 3478ms: Process B started using the CPU for 198ms burst [Q D J G A I F H]
+time 3500ms: Process E (tau 63ms) completed I/O; added to ready queue[Q I F H E G A J D]
+time 3509ms: Process C (tau 92ms) completed I/O; added to ready queue[Q G A J D C H E I F]
+time 3676ms: Process B completed a CPU Burst; 19 bursts to go [Q J I C A E G F H D]
+time 3676ms: Recalculate tau = 151ms for Process B [Q J I C A E G F H D]
+time 3676ms: Process B switching out of CPU; will block on I/O until time 3791ms
+time 3680ms: Process D started using the CPU for 90ms burst [Q J I A C E G H F]
+time 3770ms: Process D completed a CPU Burst; 33 bursts to go [Q A C I J H F G E]
+time 3770ms: Recalculate tau = 74ms for Process D [Q A C I J H F G E]
+time 3770ms: Process D switching out of CPU; will block on I/O until time 3776ms
+time 3774ms: Process I started using the CPU for 119ms burst [Q J C A G E F H]
+time 3776ms: Process D (tau 74ms) completed I/O; added to ready queue[Q E F H D A G C J]
+time 3791ms: Process B (tau 151ms) completed I/O; added to ready queue[Q J C A G B E F D H]
+time 3893ms: Process I completed a CPU Burst; 58 bursts to go [Q C F D B E G J H A]
+time 3893ms: Recalculate tau = 103ms for Process I [Q C F D B E G J H A]
+time 3893ms: Process I switching out of CPU; will block on I/O until time 3897ms
+time 3897ms: Process A started using the CPU for 68ms burst [Q C F B D I E G J H]
+time 3897ms: Process I (tau 103ms) completed I/O; added to ready queue[Q C F B D I E G J H]
+time 3965ms: Process A completed a CPU Burst; 9 bursts to go [Q B J I F G C H E D]
+time 3965ms: Recalculate tau = 74ms for Process A [Q B J I F G C H E D]
+time 3965ms: Process A switching out of CPU; will block on I/O until time 4031ms
+time 3969ms: Process D started using the CPU for 55ms burst [Q B J F I G C E H]
+time 4024ms: Process D completed a CPU Burst; 32 bursts to go [Q H E G C B J F I]
+time 4024ms: Recalculate tau = 65ms for Process D [Q H E G C B J F I]
+time 4024ms: Process D switching out of CPU; will block on I/O until time 4056ms
+time 4028ms: Process G started using the CPU for 55ms burst [Q C E H F I J B]
+time 4031ms: Process A (tau 74ms) completed I/O; added to ready queue[Q I J B A H F E C]
+time 4056ms: Process D (tau 65ms) completed I/O; added to ready queue[Q H F E C D B A I J]
+time 4083ms: Process G completed a CPU Burst; 71 bursts to go [Q H F E C D B A I J]
+time 4083ms: Recalculate tau = 57ms for Process G [Q H F E C D B A I J]
+time 4083ms: Process G switching out of CPU; will block on I/O until time 4227ms
+time 4087ms: Process J started using the CPU for 67ms burst [Q H F C E D B I A]
+time 4154ms: Process J completed a CPU Burst; 16 bursts to go [Q I A B D F H E C]
+time 4154ms: Recalculate tau = 107ms for Process J [Q I A B D F H E C]
+time 4154ms: Process J switching out of CPU; will block on I/O until time 4198ms
+time 4158ms: Process B started using the CPU for 162ms burst [Q D A I E C H F]
+time 4198ms: Process J (tau 107ms) completed I/O; added to ready queue[Q C H F J I E A D]
+time 4227ms: Process G (tau 57ms) completed I/O; added to ready queue[Q E I D A G J F H C]
+time 4320ms: Process B completed a CPU Burst; 18 bursts to go [Q I F H G J A E C D]
+time 4320ms: Recalculate tau = 157ms for Process B [Q I F H G J A E C D]
+time 4320ms: Process B switching out of CPU; will block on I/O until time 4372ms
+time 4324ms: Process D started using the CPU for 46ms burst [Q I F G H J A C E]
+time 4370ms: Process D completed a CPU Burst; 31 bursts to go [Q H G I F E C J A]
+time 4370ms: Recalculate tau = 56ms for Process D [Q H G I F E C J A]
+time 4370ms: Process D switching out of CPU; will block on I/O until time 4555ms
+time 4372ms: Process B (tau 157ms) completed I/O; added to ready queue[Q I F G H B J A E C]
+time 4374ms: Process I started using the CPU for 37ms burst [Q H B G F E C A J]
+time 4411ms: Process I completed a CPU Burst; 57 bursts to go [Q C E J A F G H B]
+time 4411ms: Recalculate tau = 70ms for Process I [Q C E J A F G H B]
+time 4411ms: Process I switching out of CPU; will block on I/O until time 4577ms
+time 4415ms: Process J started using the CPU for 35ms burst [Q A E C H B G F]
+time 4450ms: Process J completed a CPU Burst; 15 bursts to go [Q A E C H B G F]
+time 4450ms: Recalculate tau = 71ms for Process J [Q A E C H B G F]
+time 4450ms: Process J switching out of CPU; will block on I/O until time 4556ms
+time 4454ms: Process A started using the CPU for 113ms burst [Q E C H B G F]
+time 4555ms: Process D (tau 56ms) completed I/O; added to ready queue[Q E C H B G F D]
+time 4556ms: Process J (tau 71ms) completed I/O; added to ready queue[Q G F D J H B C E]
+time 4567ms: Process A completed a CPU Burst; 8 bursts to go [Q C E B H F G J D]
+time 4567ms: Recalculate tau = 94ms for Process A [Q C E B H F G J D]
+time 4567ms: Process A switching out of CPU; will block on I/O until time 4585ms
+time 4571ms: Process B started using the CPU for 46ms burst [Q H E C J D G F]
+time 4577ms: Process I (tau 70ms) completed I/O; added to ready queue[Q D G F I C J E H]
+time 4585ms: Process A (tau 94ms) completed I/O; added to ready queue[Q D G F I A C J H E]
+time 4617ms: Process B completed a CPU Burst; 17 bursts to go [Q F H A G J D E C I]
+time 4617ms: Recalculate tau = 102ms for Process B [Q F H A G J D E C I]
+time 4617ms: Process B switching out of CPU; will block on I/O until time 4701ms
+time 4621ms: Process I started using the CPU for 50ms burst [Q F H G A J D C E]
+time 4671ms: Process I completed a CPU Burst; 56 bursts to go [Q G A H F C E D J]
+time 4671ms: Recalculate tau = 60ms for Process I [Q G A H F C E D J]
+time 4671ms: Process I switching out of CPU; will block on I/O until time 4784ms
+time 4675ms: Process H started using the CPU for 142ms burst [Q F A G D J E C]
+time 4701ms: Process B (tau 102ms) completed I/O; added to ready queue[Q J E C B G D A F]
+time 4784ms: Process I (tau 60ms) completed I/O; added to ready queue[Q A F D G I E J C B]
+time 4817ms: Process H completed a CPU Burst; 77 bursts to go [Q J A B E G I F D C]
+time 4817ms: Recalculate tau = 129ms for Process H [Q J A B E G I F D C]
+time 4817ms: Process H switching out of CPU; will block on I/O until time 4897ms
+time 4821ms: Process C started using the CPU for 52ms burst [Q J A E B G I D F]
+time 4873ms: Process C completed a CPU Burst; 76 bursts to go [Q A J B E I G F D]
+time 4873ms: Recalculate tau = 72ms for Process C [Q A J B E I G F D]
+time 4873ms: Process C switching out of CPU; will block on I/O until time 4878ms
+time 4877ms: Process B started using the CPU for 16ms burst [Q E J A F D G I]
+time 4878ms: Process C (tau 72ms) completed I/O; added to ready queue[Q D G I C A F J E]
+time 4893ms: Process B completed a CPU Burst; 16 bursts to go [Q E J A F D G I C]
+time 4893ms: Recalculate tau = 59ms for Process B [Q E J A F D G I C]
+time 4893ms: Process B switching out of CPU; will block on I/O until time 4902ms
+time 4897ms: Process A started using the CPU for 11ms burst [Q C G D H E I J F]
+time 4897ms: Process H (tau 129ms) completed I/O; added to ready queue[Q C G D H E I J F]
+time 4902ms: Process B (tau 59ms) completed I/O; added to ready queue[Q I E F J B H D G C]
+time 4908ms: Process A completed a CPU Burst; 7 bursts to go [Q D I C H J B E F G]
+time 4908ms: Recalculate tau = 53ms for Process A [Q D I C H J B E F G]
+time 4908ms: Process A switching out of CPU; will block on I/O until time 5072ms
+time 4912ms: Process G started using the CPU for 97ms burst [Q D I H C J B F E]
+time 5009ms: Process G completed a CPU Burst; 70 bursts to go [Q J B F E H C I D]
+time 5009ms: Recalculate tau = 77ms for Process G [Q J B F E H C I D]
+time 5009ms: Process G switching out of CPU; will block on I/O until time 5073ms
+time 5013ms: Process F started using the CPU for 25ms burst [Q E B J I D C H]
+time 5038ms: Process F completed a CPU Burst; 35 bursts to go [Q E B J I D C H]
+time 5038ms: Recalculate tau = 23ms for Process F [Q E B J I D C H]
+time 5038ms: Process F switching out of CPU; will block on I/O until time 5043ms
+time 5042ms: Process E started using the CPU for 27ms burst [Q B J I D C H]
+time 5043ms: Process F (tau 23ms) completed I/O; added to ready queue[Q B J I D C H F]
+time 5069ms: Process E completed a CPU Burst; 19 bursts to go [Q B J I D C H F]
+time 5069ms: Recalculate tau = 45ms for Process E [Q B J I D C H F]
+time 5069ms: Process E switching out of CPU; will block on I/O until time 5194ms
+time 5072ms: Process A (tau 53ms) completed I/O; added to ready queue[Q J I D C H F A]
+time 5073ms: Process B started using the CPU for 30ms burst [Q H F A G D C I J]
+time 5073ms: Process G (tau 77ms) completed I/O; added to ready queue[Q H F A G D C I J]
+time 5103ms: Process B completed a CPU Burst; 15 bursts to go [Q G A H F J I D C]
+time 5103ms: Recalculate tau = 45ms for Process B [Q G A H F J I D C]
+time 5103ms: Process B switching out of CPU; will block on I/O until time 5157ms
+time 5107ms: Process H started using the CPU for 77ms burst [Q F A G D C I J]
+time 5157ms: Process B (tau 45ms) completed I/O; added to ready queue[Q C I J B G D A F]
+time 5184ms: Process H completed a CPU Burst; 76 bursts to go [Q A F D G I C B J]
+time 5184ms: Recalculate tau = 103ms for Process H [Q A F D G I C B J]
+time 5184ms: Process H switching out of CPU; will block on I/O until time 5217ms
+time 5188ms: Process D started using the CPU for 41ms burst [Q G F A B J C I]
+time 5194ms: Process E (tau 45ms) completed I/O; added to ready queue[Q J C I E A B F G]
+time 5217ms: Process H (tau 103ms) completed I/O; added to ready queue[Q G F A B H J C E I]
+time 5229ms: Process D completed a CPU Burst; 30 bursts to go [Q F C E H J B G I A]
+time 5229ms: Recalculate tau = 49ms for Process D [Q F C E H J B G I A]
+time 5229ms: Process D switching out of CPU; will block on I/O until time 5252ms
+time 5233ms: Process A started using the CPU for 24ms burst [Q F C H E J B I G]
+time 5252ms: Process D (tau 49ms) completed I/O; added to ready queue[Q I G B J D C F H E]
+time 5257ms: Process A completed a CPU Burst; 6 bursts to go [Q B H D G F I E C J]
+time 5257ms: Recalculate tau = 39ms for Process A [Q B H D G F I E C J]
+time 5257ms: Process A switching out of CPU; will block on I/O until time 5376ms
+time 5261ms: Process J started using the CPU for 2ms burst [Q B H G D F I C E]
+time 5263ms: Process J completed a CPU Burst; 14 bursts to go [Q G D H B C E I F]
+time 5263ms: Recalculate tau = 37ms for Process J [Q G D H B C E I F]
+time 5263ms: Process J switching out of CPU; will block on I/O until time 5395ms
+time 5267ms: Process H started using the CPU for 109ms burst [Q B D G I F E C]
+time 5376ms: Process A (tau 39ms) completed I/O; added to ready queue[Q F E C A G I D B]
+time 5376ms: Process H completed a CPU Burst; 75 bursts to go [Q F E C A G I D B]
+time 5376ms: Recalculate tau = 106ms for Process H [Q F E C A G I D B]
+time 5376ms: Process H switching out of CPU; will block on I/O until time 5475ms
+time 5380ms: Process C started using the CPU for 23ms burst [Q A E F D B I G]
+time 5395ms: Process J (tau 37ms) completed I/O; added to ready queue[Q B I G J F D E A]
+time 5403ms: Process C completed a CPU Burst; 75 bursts to go [Q B I G J F D E A]
+time 5403ms: Recalculate tau = 48ms for Process C [Q B I G J F D E A]
+time 5403ms: Process C switching out of CPU; will block on I/O until time 5599ms
+time 5407ms: Process G started using the CPU for 25ms burst [Q J I B E A D F]
+time 5432ms: Process G completed a CPU Burst; 69 bursts to go [Q J I B E A D F]
+time 5432ms: Recalculate tau = 51ms for Process G [Q J I B E A D F]
+time 5432ms: Process G switching out of CPU; will block on I/O until time 5516ms
+time 5436ms: Process J started using the CPU for 158ms burst [Q I B E A D F]
+time 5475ms: Process H (tau 106ms) completed I/O; added to ready queue[Q I B E A D F H]
+time 5516ms: Process G (tau 51ms) completed I/O; added to ready queue[Q D F H G E A B I]
+time 5594ms: Process J completed a CPU Burst; 13 bursts to go [Q G H D F I B E A]
+time 5594ms: Recalculate tau = 98ms for Process J [Q G H D F I B E A]
+time 5594ms: Process J switching out of CPU; will block on I/O until time 5787ms
+time 5598ms: Process D started using the CPU for 117ms burst [Q F H G E A B I]
+time 5599ms: Process C (tau 48ms) completed I/O; added to ready queue[Q A B I C G E H F]
+time 5715ms: Process D completed a CPU Burst; 29 bursts to go [Q B A C I E G F H]
+time 5715ms: Recalculate tau = 83ms for Process D [Q B A C I E G F H]
+time 5715ms: Process D switching out of CPU; will block on I/O until time 5818ms
+time 5719ms: Process C started using the CPU for 76ms burst [Q I A B F H G E]
+time 5787ms: Process J (tau 98ms) completed I/O; added to ready queue[Q H G E J B F A I]
+time 5795ms: Process C completed a CPU Burst; 74 bursts to go [Q H G E J B F A I]
+time 5795ms: Recalculate tau = 62ms for Process C [Q H G E J B F A I]
+time 5795ms: Process C switching out of CPU; will block on I/O until time 5870ms
+time 5799ms: Process E started using the CPU for 171ms burst [Q J G H A I F B]
+time 5818ms: Process D (tau 83ms) completed I/O; added to ready queue[Q I F B D H A G J]
+time 5870ms: Process C (tau 62ms) completed I/O; added to ready queue[Q F I D B C A H G J]
+time 5970ms: Process E completed a CPU Burst; 18 bursts to go [Q C A H G J D B F I]
+time 5970ms: Recalculate tau = 108ms for Process E [Q C A H G J D B F I]
+time 5970ms: Process E switching out of CPU; will block on I/O until time 6001ms
+time 5974ms: Process I started using the CPU for 17ms burst [Q C A G H J D F B]
+time 5991ms: Process I completed a CPU Burst; 55 bursts to go [Q J D F B G H A C]
+time 5991ms: Recalculate tau = 39ms for Process I [Q J D F B G H A C]
+time 5991ms: Process I switching out of CPU; will block on I/O until time 6069ms
+time 5995ms: Process F started using the CPU for 47ms burst [Q B D J A C H G]
+time 6001ms: Process E (tau 108ms) completed I/O; added to ready queue[Q C H G E J A D B]
+time 6042ms: Process F completed a CPU Burst; 34 bursts to go [Q J A D B G E H C]
+time 6042ms: Recalculate tau = 35ms for Process F [Q J A D B G E H C]
+time 6042ms: Process F switching out of CPU; will block on I/O until time 6233ms
+time 6046ms: Process D started using the CPU for 90ms burst [Q B A J H C E G]
+time 6069ms: Process I (tau 39ms) completed I/O; added to ready queue[Q C E G I J H A B]
+time 6136ms: Process D completed a CPU Burst; 28 bursts to go [Q A B H J E C I G]
+time 6136ms: Recalculate tau = 87ms for Process D [Q A B H J E C I G]
+time 6136ms: Process D switching out of CPU; will block on I/O until time 6140ms
+time 6140ms: Process D (tau 87ms) completed I/O; added to ready queue[Q G C E D A I B J]
+time 6140ms: Process H started using the CPU for 18ms burst [Q G C E D A I B J]
+time 6158ms: Process H completed a CPU Burst; 74 bursts to go [Q E D C G B J I A]
+time 6158ms: Recalculate tau = 62ms for Process H [Q E D C G B J I A]
+time 6158ms: Process H switching out of CPU; will block on I/O until time 6263ms
+time 6162ms: Process C started using the CPU for 50ms burst [Q G D E I A J B]
+time 6212ms: Process C completed a CPU Burst; 73 bursts to go [Q G D E I A J B]
+time 6212ms: Recalculate tau = 56ms for Process C [Q G D E I A J B]
+time 6212ms: Process C switching out of CPU; will block on I/O until time 6226ms
+time 6216ms: Process G started using the CPU for 37ms burst [Q D E I A J B]
+time 6226ms: Process C (tau 56ms) completed I/O; added to ready queue[Q D E I A J B C]
+time 6233ms: Process F (tau 35ms) completed I/O; added to ready queue[Q J B C F I A E D]
+time 6253ms: Process G completed a CPU Burst; 68 bursts to go [Q B J F C A I D E]
+time 6253ms: Recalculate tau = 44ms for Process G [Q B J F C A I D E]
+time 6253ms: Process G switching out of CPU; will block on I/O until time 6258ms
+time 6257ms: Process F started using the CPU for 84ms burst [Q C J B D E I A]
+time 6258ms: Process G (tau 44ms) completed I/O; added to ready queue[Q E I A G B D J C]
+time 6263ms: Process H (tau 62ms) completed I/O; added to ready queue[Q D B C J H G A I E]
+time 6341ms: Process F completed a CPU Burst; 33 bursts to go [Q A D E G J H B C I]
+time 6341ms: Recalculate tau = 60ms for Process F [Q A D E G J H B C I]
+time 6341ms: Process F switching out of CPU; will block on I/O until time 6438ms
+time 6345ms: Process I started using the CPU for 22ms burst [Q A D G E J H C B]
+time 6367ms: Process I completed a CPU Burst; 54 bursts to go [Q E G A D B C J H]
+time 6367ms: Recalculate tau = 31ms for Process I [Q E G A D B C J H]
+time 6367ms: Process I switching out of CPU; will block on I/O until time 6386ms
+time 6371ms: Process A started using the CPU for 76ms burst [Q D G E J H C B]
+time 6386ms: Process I (tau 31ms) completed I/O; added to ready queue[Q H C B I E J G D]
+time 6438ms: Process F (tau 60ms) completed I/O; added to ready queue[Q C H I B F J E G D]
+time 6447ms: Process A completed a CPU Burst; 5 bursts to go [Q C H I B F J E G D]
+time 6447ms: Recalculate tau = 58ms for Process A [Q C H I B F J E G D]
+time 6447ms: Process A switching out of CPU; will block on I/O until time 6477ms
+time 6451ms: Process D started using the CPU for 170ms burst [Q C H B I F J G E]
+time 6477ms: Process A (tau 58ms) completed I/O; added to ready queue[Q B I H C A G E F J]
+time 6621ms: Process D completed a CPU Burst; 27 bursts to go [Q B I H C A G E F J]
+time 6621ms: Recalculate tau = 129ms for Process D [Q B I H C A G E F J]
+time 6621ms: Process D switching out of CPU; will block on I/O until time 6681ms
+time 6625ms: Process J started using the CPU for 52ms burst [Q B I C H A G F E]
+time 6677ms: Process J completed a CPU Burst; 12 bursts to go [Q I B H C G A E F]
+time 6677ms: Recalculate tau = 75ms for Process J [Q I B H C G A E F]
+time 6677ms: Process J switching out of CPU; will block on I/O until time 6681ms
+time 6681ms: Process D (tau 129ms) completed I/O; added to ready queue[Q F A G D J I E C B]
+time 6681ms: Process H started using the CPU for 87ms burst [Q F A G D J I E C B]
+time 6681ms: Process J (tau 75ms) completed I/O; added to ready queue[Q F A G D J I E C B]
+time 6768ms: Process H completed a CPU Burst; 73 bursts to go [Q E F B I D J A G C]
+time 6768ms: Recalculate tau = 75ms for Process H [Q E F B I D J A G C]
+time 6768ms: Process H switching out of CPU; will block on I/O until time 6814ms
+time 6772ms: Process C started using the CPU for 24ms burst [Q E F I B D J G A]
+time 6796ms: Process C completed a CPU Burst; 72 bursts to go [Q E F I B D J G A]
+time 6796ms: Recalculate tau = 40ms for Process C [Q E F I B D J G A]
+time 6796ms: Process C switching out of CPU; will block on I/O until time 6823ms
+time 6800ms: Process I started using the CPU for 93ms burst [Q B F E G A J D]
+time 6814ms: Process H (tau 75ms) completed I/O; added to ready queue[Q A J D H E G F B]
+time 6823ms: Process C (tau 40ms) completed I/O; added to ready queue[Q E G F B C D H A J]
+time 6893ms: Process I completed a CPU Burst; 53 bursts to go [Q B C G F A J D H E]
+time 6893ms: Recalculate tau = 62ms for Process I [Q B C G F A J D H E]
+time 6893ms: Process I switching out of CPU; will block on I/O until time 6937ms
+time 6897ms: Process E started using the CPU for 3ms burst [Q B C F G A J H D]
+time 6900ms: Process E completed a CPU Burst; 17 bursts to go [Q H D J A C B G F]
+time 6900ms: Recalculate tau = 56ms for Process E [Q H D J A C B G F]
+time 6900ms: Process E switching out of CPU; will block on I/O until time 7032ms
+time 6904ms: Process J started using the CPU for 55ms burst [Q A D H G F B C]
+time 6937ms: Process I (tau 62ms) completed I/O; added to ready queue[Q F B C I H G D A]
+time 6959ms: Process J completed a CPU Burst; 11 bursts to go [Q I C F B A D H G]
+time 6959ms: Recalculate tau = 65ms for Process J [Q I C F B A D H G]
+time 6959ms: Process J switching out of CPU; will block on I/O until time 6976ms
+time 6963ms: Process F started using the CPU for 26ms burst [Q B C I H G D A]
+time 6976ms: Process J (tau 65ms) completed I/O; added to ready queue[Q G D A J I H C B]
+time 6989ms: Process F completed a CPU Burst; 32 bursts to go [Q H I B C J A G D]
+time 6989ms: Recalculate tau = 43ms for Process F [Q H I B C J A G D]
+time 6989ms: Process F switching out of CPU; will block on I/O until time 7159ms
+time 6993ms: Process B started using the CPU for 12ms burst [Q C I H G D A J]
+time 7005ms: Process B completed a CPU Burst; 14 bursts to go [Q C I H G D A J]
+time 7005ms: Recalculate tau = 29ms for Process B [Q C I H G D A J]
+time 7005ms: Process B switching out of CPU; will block on I/O until time 7084ms
+time 7009ms: Process C started using the CPU for 1ms burst [Q I H G D A J]
+time 7010ms: Process C completed a CPU Burst; 71 bursts to go [Q I H G D A J]
+time 7010ms: Recalculate tau = 21ms for Process C [Q I H G D A J]
+time 7010ms: Process C switching out of CPU; will block on I/O until time 7147ms
+time 7014ms: Process I started using the CPU for 79ms burst [Q H G D A J]
+time 7032ms: Process E (tau 56ms) completed I/O; added to ready queue[Q H G D A J E]
+time 7084ms: Process B (tau 29ms) completed I/O; added to ready queue[Q H G D A J E B]
+time 7093ms: Process I completed a CPU Burst; 52 bursts to go [Q H G D A J E B]
+time 7093ms: Recalculate tau = 71ms for Process I [Q H G D A J E B]
+time 7093ms: Process I switching out of CPU; will block on I/O until time 7209ms
+time 7097ms: Process H started using the CPU for 199ms burst [Q G D A J E B]
+time 7147ms: Process C (tau 21ms) completed I/O; added to ready queue[Q G D A J E B C]
+time 7159ms: Process F (tau 43ms) completed I/O; added to ready queue[Q E B C F A J D G]
+time 7209ms: Process I (tau 71ms) completed I/O; added to ready queue[Q C F B E I D G A J]
+time 7296ms: Process H completed a CPU Burst; 72 bursts to go [Q G C J D E I F B A]
+time 7296ms: Recalculate tau = 137ms for Process H [Q G C J D E I F B A]
+time 7296ms: Process H switching out of CPU; will block on I/O until time 7335ms
+time 7300ms: Process A started using the CPU for 122ms burst [Q G C D J E I B F]
+time 7335ms: Process H (tau 137ms) completed I/O; added to ready queue[Q B F I E H C G D J]
+time 7422ms: Process A completed a CPU Burst; 4 bursts to go [Q G B J C E H F I D]
+time 7422ms: Recalculate tau = 90ms for Process A [Q G B J C E H F I D]
+time 7422ms: Process A switching out of CPU; will block on I/O until time 7457ms
+time 7426ms: Process D started using the CPU for 154ms burst [Q G B C J E H I F]
+time 7457ms: Process A (tau 90ms) completed I/O; added to ready queue[Q F I E H A G B J C]
+time 7580ms: Process D completed a CPU Burst; 26 bursts to go [Q B F C G H A I E J]
+time 7580ms: Recalculate tau = 142ms for Process D [Q B F C G H A I E J]
+time 7580ms: Process D switching out of CPU; will block on I/O until time 7618ms
+time 7584ms: Process J started using the CPU for 32ms burst [Q B F G C H A E I]
+time 7616ms: Process J completed a CPU Burst; 10 bursts to go [Q B F G C H A E I]
+time 7616ms: Recalculate tau = 49ms for Process J [Q B F G C H A E I]
+time 7616ms: Process J switching out of CPU; will block on I/O until time 7710ms
+time 7618ms: Process D (tau 142ms) completed I/O; added to ready queue[Q G C F B D E I H A]
+time 7620ms: Process G started using the CPU for 10ms burst [Q B D F C H A I E]
+time 7630ms: Process G completed a CPU Burst; 67 bursts to go [Q F C D B I E A H]
+time 7630ms: Recalculate tau = 27ms for Process G [Q F C D B I E A H]
+time 7630ms: Process G switching out of CPU; will block on I/O until time 7638ms
+time 7634ms: Process D started using the CPU for 55ms burst [Q B C F A H E I]
+time 7638ms: Process G (tau 27ms) completed I/O; added to ready queue[Q H E I G F A C B]
+time 7689ms: Process D completed a CPU Burst; 25 bursts to go [Q C B A F E H G I]
+time 7689ms: Recalculate tau = 99ms for Process D [Q C B A F E H G I]
+time 7689ms: Process D switching out of CPU; will block on I/O until time 7816ms
+time 7693ms: Process A started using the CPU for 9ms burst [Q F B C G I H E]
+time 7702ms: Process A completed a CPU Burst; 3 bursts to go [Q F B C G I H E]
+time 7702ms: Recalculate tau = 50ms for Process A [Q F B C G I H E]
+time 7702ms: Process A switching out of CPU; will block on I/O until time 7772ms
+time 7706ms: Process F started using the CPU for 91ms burst [Q B C G I H E]
+time 7710ms: Process J (tau 49ms) completed I/O; added to ready queue[Q B C G I H E J]
+time 7772ms: Process A (tau 50ms) completed I/O; added to ready queue[Q H E J A G I C B]
+time 7797ms: Process F completed a CPU Burst; 31 bursts to go [Q G I C B J A E H]
+time 7797ms: Recalculate tau = 67ms for Process F [Q G I C B J A E H]
+time 7797ms: Process F switching out of CPU; will block on I/O until time 7834ms
+time 7801ms: Process C started using the CPU for 61ms burst [Q B I G E H A J]
+time 7816ms: Process D (tau 99ms) completed I/O; added to ready queue[Q H A J D G E I B]
+time 7834ms: Process F (tau 67ms) completed I/O; added to ready queue[Q J D A H F I B G E]
+time 7862ms: Process C completed a CPU Burst; 70 bursts to go [Q F I B G E A H J D]
+time 7862ms: Recalculate tau = 41ms for Process C [Q F I B G E A H J D]
+time 7862ms: Process C switching out of CPU; will block on I/O until time 8016ms
+time 7866ms: Process D started using the CPU for 27ms burst [Q F I G B E A J H]
+time 7893ms: Process D completed a CPU Burst; 24 bursts to go [Q J H A E I F B G]
+time 7893ms: Recalculate tau = 63ms for Process D [Q J H A E I F B G]
+time 7893ms: Process D switching out of CPU; will block on I/O until time 8017ms
+time 7897ms: Process A started using the CPU for 62ms burst [Q E H J B G F I]
+time 7959ms: Process A completed a CPU Burst; 2 bursts to go [Q E H J B G F I]
+time 7959ms: Recalculate tau = 56ms for Process A [Q E H J B G F I]
+time 7959ms: Process A switching out of CPU; will block on I/O until time 8038ms
+time 7963ms: Process E started using the CPU for 107ms burst [Q H J B G F I]
+time 8016ms: Process C (tau 41ms) completed I/O; added to ready queue[Q H J B G F I C]
+time 8017ms: Process D (tau 63ms) completed I/O; added to ready queue[Q F I C D B G J H]
+time 8038ms: Process A (tau 56ms) completed I/O; added to ready queue[Q G B H J A D C I F]
+time 8070ms: Process E completed a CPU Burst; 16 bursts to go [Q H I A B C G F D J]
+time 8070ms: Recalculate tau = 82ms for Process E [Q H I A B C G F D J]
+time 8070ms: Process E switching out of CPU; will block on I/O until time 8089ms
+time 8074ms: Process J started using the CPU for 101ms burst [Q H I B A C G D F]
+time 8089ms: Process E (tau 82ms) completed I/O; added to ready queue[Q F D C G E H I A B]
+time 8175ms: Process J completed a CPU Burst; 9 bursts to go [Q C A E D I F B H G]
+time 8175ms: Recalculate tau = 75ms for Process J [Q C A E D I F B H G]
+time 8175ms: Process J switching out of CPU; will block on I/O until time 8352ms
+time 8179ms: Process G started using the CPU for 189ms burst [Q C A D E I F H B]
+time 8352ms: Process J (tau 75ms) completed I/O; added to ready queue[Q F I B H J E D A C]
+time 8368ms: Process G completed a CPU Burst; 66 bursts to go [Q H J I B A C E D F]
+time 8368ms: Recalculate tau = 108ms for Process G [Q H J I B A C E D F]
+time 8368ms: Process G switching out of CPU; will block on I/O until time 8418ms
+time 8372ms: Process F started using the CPU for 166ms burst [Q H J B I A C D E]
+time 8418ms: Process G (tau 108ms) completed I/O; added to ready queue[Q I B H J G E D C A]
+time 8538ms: Process F completed a CPU Burst; 30 bursts to go [Q B D C G E J I A H]
+time 8538ms: Recalculate tau = 117ms for Process F [Q B D C G E J I A H]
+time 8538ms: Process F switching out of CPU; will block on I/O until time 8599ms
+time 8542ms: Process H started using the CPU for 90ms burst [Q B D G C E J A I]
+time 8599ms: Process F (tau 117ms) completed I/O; added to ready queue[Q E J A I F G C B D]
+time 8632ms: Process H completed a CPU Burst; 71 bursts to go [Q C E D G I F J A B]
+time 8632ms: Recalculate tau = 114ms for Process H [Q C E D G I F J A B]
+time 8632ms: Process H switching out of CPU; will block on I/O until time 8635ms
+time 8635ms: Process H (tau 114ms) completed I/O; added to ready queue[Q J A I F H C E D G]
+time 8636ms: Process B started using the CPU for 138ms burst [Q H C E D G I F J A]
+time 8774ms: Process B completed a CPU Burst; 13 bursts to go [Q C F J G I D H A E]
+time 8774ms: Recalculate tau = 84ms for Process B [Q C F J G I D H A E]
+time 8774ms: Process B switching out of CPU; will block on I/O until time 8858ms
+time 8778ms: Process E started using the CPU for 111ms burst [Q C F G J I D A H]
+time 8858ms: Process B (tau 84ms) completed I/O; added to ready queue[Q C F G J B I D H A]
+time 8889ms: Process E completed a CPU Burst; 15 bursts to go [Q I J C A G H B F D]
+time 8889ms: Recalculate tau = 97ms for Process E [Q I J C A G H B F D]
+time 8889ms: Process E switching out of CPU; will block on I/O until time 8922ms
+time 8893ms: Process D started using the CPU for 73ms burst [Q I J A C G H F B]
+time 8922ms: Process E (tau 97ms) completed I/O; added to ready queue[Q H G B F E C A J I]
+time 8966ms: Process D completed a CPU Burst; 23 bursts to go [Q J I C A H G B F E]
+time 8966ms: Recalculate tau = 68ms for Process D [Q J I C A H G B F E]
+time 8966ms: Process D switching out of CPU; will block on I/O until time 9023ms
+time 8970ms: Process E started using the CPU for 11ms burst [Q J I A C H G F B]
+time 8981ms: Process E completed a CPU Burst; 14 bursts to go [Q F B G H I J C A]
+time 8981ms: Recalculate tau = 54ms for Process E [Q F B G H I J C A]
+time 8981ms: Process E switching out of CPU; will block on I/O until time 9061ms
+time 8985ms: Process G started using the CPU for 134ms burst [Q H B F C A J I]
+time 9023ms: Process D (tau 68ms) completed I/O; added to ready queue[Q A J I D F C B H]
+time 9061ms: Process E (tau 54ms) completed I/O; added to ready queue[Q D I A J E H B C F]
+time 9119ms: Process G completed a CPU Burst; 65 bursts to go [Q H J D F A C E I B]
+time 9119ms: Recalculate tau = 121ms for Process G [Q H J D F A C E I B]
+time 9119ms: Process G switching out of CPU; will block on I/O until time 9154ms
+time 9123ms: Process B started using the CPU for 67ms burst [Q H J F D A C I E]
+time 9154ms: Process G (tau 121ms) completed I/O; added to ready queue[Q E I A C G H J D F]
+time 9190ms: Process B completed a CPU Burst; 12 bursts to go [Q E I A C G H J D F]
+time 9190ms: Recalculate tau = 76ms for Process B [Q E I A C G H J D F]
+time 9190ms: Process B switching out of CPU; will block on I/O until time 9199ms
+time 9194ms: Process F started using the CPU for 67ms burst [Q E I C A G H D J]
+time 9199ms: Process B (tau 76ms) completed I/O; added to ready queue[Q H G J D B A C I E]
+time 9261ms: Process F completed a CPU Burst; 29 bursts to go [Q I E A C H G J D B]
+time 9261ms: Recalculate tau = 92ms for Process F [Q I E A C H G J D B]
+time 9261ms: Process F switching out of CPU; will block on I/O until time 9454ms
+time 9265ms: Process B started using the CPU for 120ms burst [Q I E C A H G D J]
+time 9385ms: Process B completed a CPU Burst; 11 bursts to go [Q I E C A H G D J]
+time 9385ms: Recalculate tau = 98ms for Process B [Q I E C A H G D J]
+time 9385ms: Process B switching out of CPU; will block on I/O until time 9400ms
+time 9389ms: Process C started using the CPU for 46ms burst [Q A E I D J G H]
+time 9400ms: Process B (tau 98ms) completed I/O; added to ready queue[Q J G H B I D E A]
+time 9435ms: Process C completed a CPU Burst; 69 bursts to go [Q E A D I G J B H]
+time 9435ms: Recalculate tau = 44ms for Process C [Q E A D I G J B H]
+time 9435ms: Process C switching out of CPU; will block on I/O until time 9481ms
+time 9439ms: Process D started using the CPU for 66ms burst [Q I A E B H J G]
+time 9454ms: Process F (tau 92ms) completed I/O; added to ready queue[Q H J G F E B A I]
+time 9481ms: Process C (tau 44ms) completed I/O; added to ready queue[Q A I B E C J H G F]
+time 9505ms: Process D completed a CPU Burst; 22 bursts to go [Q H A F J E C I B G]
+time 9505ms: Recalculate tau = 67ms for Process D [Q H A F J E C I B G]
+time 9505ms: Process D switching out of CPU; will block on I/O until time 9531ms
+time 9509ms: Process G started using the CPU for 25ms burst [Q H A J F E C B I]
+time 9531ms: Process D (tau 67ms) completed I/O; added to ready queue[Q F J H A D I B C E]
+time 9534ms: Process G completed a CPU Burst; 64 bursts to go [Q J B C D I A F E H]
+time 9534ms: Recalculate tau = 73ms for Process G [Q J B C D I A F E H]
+time 9534ms: Process G switching out of CPU; will block on I/O until time 9617ms
+time 9538ms: Process H started using the CPU for 2ms burst [Q J B D C I A E F]
+time 9540ms: Process H completed a CPU Burst; 70 bursts to go [Q D C B J E F A I]
+time 9540ms: Recalculate tau = 58ms for Process H [Q D C B J E F A I]
+time 9540ms: Process H switching out of CPU; will block on I/O until time 9638ms
+time 9544ms: Process B started using the CPU for 49ms burst [Q J C D A I F E]
+time 9593ms: Process B completed a CPU Burst; 10 bursts to go [Q J C D A I F E]
+time 9593ms: Recalculate tau = 74ms for Process B [Q J C D A I F E]
+time 9593ms: Process B switching out of CPU; will block on I/O until time 9637ms
+time 9597ms: Process J started using the CPU for 77ms burst [Q C D A I F E]
+time 9617ms: Process G (tau 73ms) completed I/O; added to ready queue[Q C D A I F E G]
+time 9637ms: Process B (tau 74ms) completed I/O; added to ready queue[Q F E G B A I D C]
+time 9638ms: Process H (tau 58ms) completed I/O; added to ready queue[Q A I D C H G B F E]
+time 9674ms: Process J completed a CPU Burst; 8 bursts to go [Q A I D C H G B F E]
+time 9674ms: Recalculate tau = 76ms for Process J [Q A I D C H G B F E]
+time 9674ms: Process J switching out of CPU; will block on I/O until time 9680ms
+time 9678ms: Process E started using the CPU for 28ms burst [Q A I C D H G F B]
+time 9680ms: Process J (tau 76ms) completed I/O; added to ready queue[Q C D I A J F B H G]
+time 9706ms: Process E completed a CPU Burst; 13 bursts to go [Q H G F B C D I A J]
+time 9706ms: Recalculate tau = 41ms for Process E [Q H G F B C D I A J]
+time 9706ms: Process E switching out of CPU; will block on I/O until time 9714ms
+time 9710ms: Process J started using the CPU for 18ms burst [Q H G B F C D A I]
+time 9714ms: Process E (tau 41ms) completed I/O; added to ready queue[Q G H F B E D C A I]
+time 9728ms: Process J completed a CPU Burst; 7 bursts to go [Q F A E H C G I D B]
+time 9728ms: Recalculate tau = 47ms for Process J [Q F A E H C G I D B]
+time 9728ms: Process J switching out of CPU; will block on I/O until time 9813ms
+time 9732ms: Process B started using the CPU for 134ms burst [Q F A H E C G D I]
+time 9813ms: Process J (tau 47ms) completed I/O; added to ready queue[Q C G D I J H E F A]
+time 9866ms: Process B completed a CPU Burst; 9 bursts to go [Q F A H E C G D I J]
+time 9866ms: Recalculate tau = 104ms for Process B [Q F A H E C G D I J]
+time 9866ms: Process B switching out of CPU; will block on I/O until time 9900ms
+time 9870ms: Process J started using the CPU for 9ms burst [Q F A E H C G I D]
+time 9879ms: Process J completed a CPU Burst; 6 bursts to go [Q C G I D E H A F]
+time 9879ms: Recalculate tau = 28ms for Process J [Q C G I D E H A F]
+time 9879ms: Process J switching out of CPU; will block on I/O until time 9884ms
+time 9883ms: Process I started using the CPU for 18ms burst [Q D G C A F H E]
+time 9884ms: Process J (tau 28ms) completed I/O; added to ready queue[Q F H E J C A G D]
+time 9900ms: Process B (tau 104ms) completed I/O; added to ready queue[Q F H E J B C A D G]
+time 9901ms: Process I completed a CPU Burst; 51 bursts to go [Q B C A D G E J F H]
+time 9901ms: Recalculate tau = 45ms for Process I [Q B C A D G E J F H]
+time 9901ms: Process I switching out of CPU; will block on I/O until time 10100ms
+time 9905ms: Process H started using the CPU for 19ms burst [Q B C D A G E F J]
+time 9924ms: Process H completed a CPU Burst; 69 bursts to go [Q F J E G C B A D]
+time 9924ms: Recalculate tau = 39ms for Process H [Q F J E G C B A D]
+time 9924ms: Process H switching out of CPU; will block on I/O until time 10069ms
+time 9928ms: Process E started using the CPU for 137ms burst [Q G J F A D B C]
+time 10065ms: Process E completed a CPU Burst; 12 bursts to go [Q G J F A D B C]
+time 10065ms: Recalculate tau = 89ms for Process E [Q G J F A D B C]
+time 10065ms: Process E switching out of CPU; will block on I/O until time 10122ms
+time 10069ms: Process H (tau 39ms) completed I/O; added to ready queue[Q J F A D B C H]
+time 10069ms: Process G started using the CPU for 152ms burst [Q J F A D B C H]
+time 10100ms: Process I (tau 45ms) completed I/O; added to ready queue[Q B C H I A D F J]
+time 10122ms: Process E (tau 89ms) completed I/O; added to ready queue[Q I H B C E J F D A]
+time 10221ms: Process G completed a CPU Burst; 63 bursts to go [Q I H B C E J F D A]
+time 10221ms: Recalculate tau = 113ms for Process G [Q I H B C E J F D A]
+time 10221ms: Process G switching out of CPU; will block on I/O until time 10328ms
+time 10225ms: Process A started using the CPU for 200ms burst [Q I H C B E J D F]
+time 10328ms: Process G (tau 113ms) completed I/O; added to ready queue[Q F D E J G I H B C]
+time 10425ms: Process A completed a CPU Burst; 1 bursts to go [Q J G D E B C I H F]
+time 10425ms: Recalculate tau = 128ms for Process A [Q J G D E B C I H F]
+time 10425ms: Process A switching out of CPU; will block on I/O until time 10438ms
+time 10429ms: Process F started using the CPU for 78ms burst [Q J G E D B C H I]
+time 10438ms: Process A (tau 128ms) completed I/O; added to ready queue[Q B C H I A E D J G]
+time 10507ms: Process F completed a CPU Burst; 28 bursts to go [Q D B G E I A C H J]
+time 10507ms: Recalculate tau = 85ms for Process F [Q D B G E I A C H J]
+time 10507ms: Process F switching out of CPU; will block on I/O until time 10600ms
+time 10511ms: Process J started using the CPU for 18ms burst [Q D B E G I A H C]
+time 10529ms: Process J completed a CPU Burst; 5 bursts to go [Q E G B D H C A I]
+time 10529ms: Recalculate tau = 23ms for Process J [Q E G B D H C A I]
+time 10529ms: Process J switching out of CPU; will block on I/O until time 10606ms
+time 10533ms: Process B started using the CPU for 144ms burst [Q D G E A I C H]
+time 10600ms: Process F (tau 85ms) completed I/O; added to ready queue[Q I C H F E A G D]
+time 10606ms: Process J (tau 23ms) completed I/O; added to ready queue[Q F H I C J D G A E]
+time 10677ms: Process B completed a CPU Burst; 8 bursts to go [Q A E D G F H I C J]
+time 10677ms: Recalculate tau = 124ms for Process B [Q A E D G F H I C J]
+time 10677ms: Process B switching out of CPU; will block on I/O until time 10758ms
+time 10681ms: Process J started using the CPU for 20ms burst [Q A E G D F H C I]
+time 10701ms: Process J completed a CPU Burst; 4 bursts to go [Q E A D G H F I C]
+time 10701ms: Recalculate tau = 22ms for Process J [Q E A D G H F I C]
+time 10701ms: Process J switching out of CPU; will block on I/O until time 10794ms
+time 10705ms: Process D started using the CPU for 70ms burst [Q G A E I C F H]
+time 10758ms: Process B (tau 124ms) completed I/O; added to ready queue[Q C F H B E I A G]
+time 10775ms: Process D completed a CPU Burst; 21 bursts to go [Q E I A G H B F C]
+time 10775ms: Recalculate tau = 69ms for Process D [Q E I A G H B F C]
+time 10775ms: Process D switching out of CPU; will block on I/O until time 10808ms
+time 10779ms: Process A started using the CPU for 197ms burst [Q G I E F C B H]
+time 10794ms: Process J (tau 22ms) completed I/O; added to ready queue[Q C B H J E F I G]
+time 10808ms: Process D (tau 69ms) completed I/O; added to ready queue[Q J H C B D G I F E]
+time 10976ms: Process A terminated [Q C F D H I J E G B]
+time 10980ms: Process F started using the CPU for 38ms burst [Q I J G E B D C H]
+time 11018ms: Process F completed a CPU Burst; 27 bursts to go [Q E G I J H C B D]
+time 11018ms: Recalculate tau = 62ms for Process F [Q E G I J H C B D]
+time 11018ms: Process F switching out of CPU; will block on I/O until time 11031ms
+time 11022ms: Process I started using the CPU for 66ms burst [Q J G E B D C H]
+time 11031ms: Process F (tau 62ms) completed I/O; added to ready queue[Q D C H F E B G J]
+time 11088ms: Process I completed a CPU Burst; 50 bursts to go [Q E B G J H F C D]
+time 11088ms: Recalculate tau = 56ms for Process I [Q E B G J H F C D]
+time 11088ms: Process I switching out of CPU; will block on I/O until time 11271ms
+time 11092ms: Process G started using the CPU for 74ms burst [Q J B E C D F H]
+time 11166ms: Process G completed a CPU Burst; 62 bursts to go [Q J B E C D F H]
+time 11166ms: Recalculate tau = 94ms for Process G [Q J B E C D F H]
+time 11166ms: Process G switching out of CPU; will block on I/O until time 11243ms
+time 11170ms: Process J started using the CPU for 81ms burst [Q B E C D F H]
+time 11243ms: Process G (tau 94ms) completed I/O; added to ready queue[Q B E C D F H G]
+time 11251ms: Process J completed a CPU Burst; 3 bursts to go [Q B E C D F H G]
+time 11251ms: Recalculate tau = 52ms for Process J [Q B E C D F H G]
+time 11251ms: Process J switching out of CPU; will block on I/O until time 11319ms
+time 11255ms: Process B started using the CPU for 183ms burst [Q E C D F H G]
+time 11271ms: Process I (tau 56ms) completed I/O; added to ready queue[Q E C D F H G I]
+time 11319ms: Process J (tau 52ms) completed I/O; added to ready queue[Q H G I J D F C E]
+time 11438ms: Process B completed a CPU Burst; 7 bursts to go [Q E C D F H G I J]
+time 11438ms: Recalculate tau = 154ms for Process B [Q E C D F H G I J]
+time 11438ms: Process B switching out of CPU; will block on I/O until time 11446ms
+time 11442ms: Process D started using the CPU for 40ms burst [Q F C E I J G H]
+time 11446ms: Process B (tau 154ms) completed I/O; added to ready queue[Q J G H B E I C F]
+time 11482ms: Process D completed a CPU Burst; 20 bursts to go [Q G J B H I E F C]
+time 11482ms: Recalculate tau = 55ms for Process D [Q G J B H I E F C]
+time 11482ms: Process D switching out of CPU; will block on I/O until time 11490ms
+time 11486ms: Process B started using the CPU for 23ms burst [Q H J G F C E I]
+time 11490ms: Process D (tau 55ms) completed I/O; added to ready queue[Q C E I D G F J H]
+time 11509ms: Process B completed a CPU Burst; 6 bursts to go [Q J H F G E C D I]
+time 11509ms: Recalculate tau = 89ms for Process B [Q J H F G E C D I]
+time 11509ms: Process B switching out of CPU; will block on I/O until time 11575ms
+time 11513ms: Process F started using the CPU for 120ms burst [Q G H J D I C E]
+time 11575ms: Process B (tau 89ms) completed I/O; added to ready queue[Q I C E B J D H G]
+time 11633ms: Process F completed a CPU Burst; 26 bursts to go [Q E B C I H G D J]
+time 11633ms: Recalculate tau = 91ms for Process F [Q E B C I H G D J]
+time 11633ms: Process F switching out of CPU; will block on I/O until time 11755ms
+time 11637ms: Process C started using the CPU for 56ms burst [Q I B E D J G H]
+time 11693ms: Process C completed a CPU Burst; 68 bursts to go [Q I B E D J G H]
+time 11693ms: Recalculate tau = 50ms for Process C [Q I B E D J G H]
+time 11693ms: Process C switching out of CPU; will block on I/O until time 11697ms
+time 11697ms: Process C (tau 50ms) completed I/O; added to ready queue[Q B E D J G H C]
+time 11697ms: Process I started using the CPU for 103ms burst [Q B E D J G H C]
+time 11755ms: Process F (tau 91ms) completed I/O; added to ready queue[Q G H C F D J E B]
+time 11800ms: Process I completed a CPU Burst; 49 bursts to go [Q J D B E F C G H]
+time 11800ms: Recalculate tau = 80ms for Process I [Q J D B E F C G H]
+time 11800ms: Process I switching out of CPU; will block on I/O until time 11842ms
+time 11804ms: Process B started using the CPU for 80ms burst [Q E D J G H C F]
+time 11842ms: Process I (tau 80ms) completed I/O; added to ready queue[Q H C F I J G D E]
+time 11884ms: Process B completed a CPU Burst; 5 bursts to go [Q F I C H D E G J]
+time 11884ms: Recalculate tau = 85ms for Process B [Q F I C H D E G J]
+time 11884ms: Process B switching out of CPU; will block on I/O until time 11919ms
+time 11888ms: Process C started using the CPU for 25ms burst [Q H I F G J E D]
+time 11913ms: Process C completed a CPU Burst; 67 bursts to go [Q H I F G J E D]
+time 11913ms: Recalculate tau = 38ms for Process C [Q H I F G J E D]
+time 11913ms: Process C switching out of CPU; will block on I/O until time 11957ms
+time 11917ms: Process H started using the CPU for 73ms burst [Q I F G J E D]
+time 11919ms: Process B (tau 85ms) completed I/O; added to ready queue[Q I F G J E D B]
+time 11957ms: Process C (tau 38ms) completed I/O; added to ready queue[Q E D B C G J F I]
+time 11990ms: Process H completed a CPU Burst; 68 bursts to go [Q G J F I B C D E]
+time 11990ms: Recalculate tau = 56ms for Process H [Q G J F I B C D E]
+time 11990ms: Process H switching out of CPU; will block on I/O until time 12063ms
+time 11994ms: Process F started using the CPU for 62ms burst [Q I J G D E C B]
+time 12056ms: Process F completed a CPU Burst; 25 bursts to go [Q I J G D E C B]
+time 12056ms: Recalculate tau = 77ms for Process F [Q I J G D E C B]
+time 12056ms: Process F switching out of CPU; will block on I/O until time 12163ms
+time 12060ms: Process I started using the CPU for 171ms burst [Q J G D E C B]
+time 12063ms: Process H (tau 56ms) completed I/O; added to ready queue[Q J G D E C B H]
+time 12163ms: Process F (tau 77ms) completed I/O; added to ready queue[Q C B H F D E G J]
+time 12231ms: Process I completed a CPU Burst; 48 bursts to go [Q B C F H E D J G]
+time 12231ms: Recalculate tau = 126ms for Process I [Q B C F H E D J G]
+time 12231ms: Process I switching out of CPU; will block on I/O until time 12254ms
+time 12235ms: Process F started using the CPU for 40ms burst [Q H C B J G D E]
+time 12254ms: Process I (tau 126ms) completed I/O; added to ready queue[Q G D E I B J C H]
+time 12275ms: Process F completed a CPU Burst; 24 bursts to go [Q J B H C I E G D]
+time 12275ms: Recalculate tau = 59ms for Process F [Q J B H C I E G D]
+time 12275ms: Process F switching out of CPU; will block on I/O until time 12403ms
+time 12279ms: Process H started using the CPU for 3ms burst [Q C B J G D E I]
+time 12282ms: Process H completed a CPU Burst; 67 bursts to go [Q C B J G D E I]
+time 12282ms: Recalculate tau = 30ms for Process H [Q C B J G D E I]
+time 12282ms: Process H switching out of CPU; will block on I/O until time 12395ms
+time 12286ms: Process C started using the CPU for 5ms burst [Q B J G D E I]
+time 12291ms: Process C completed a CPU Burst; 66 bursts to go [Q B J G D E I]
+time 12291ms: Recalculate tau = 22ms for Process C [Q B J G D E I]
+time 12291ms: Process C switching out of CPU; will block on I/O until time 12401ms
+time 12295ms: Process B started using the CPU for 74ms burst [Q J G D E I]
+time 12369ms: Process B completed a CPU Burst; 4 bursts to go [Q J G D E I]
+time 12369ms: Recalculate tau = 80ms for Process B [Q J G D E I]
+time 12369ms: Process B switching out of CPU; will block on I/O until time 12434ms
+time 12373ms: Process J started using the CPU for 30ms burst [Q G D E I]
+time 12395ms: Process H (tau 30ms) completed I/O; added to ready queue[Q G D E I H]
+time 12401ms: Process C (tau 22ms) completed I/O; added to ready queue[Q G D E I H C]
+time 12403ms: Process F (tau 59ms) completed I/O; added to ready queue[Q G D E I H C F]
+time 12403ms: Process J completed a CPU Burst; 2 bursts to go [Q G D E I H C F]
+time 12403ms: Recalculate tau = 41ms for Process J [Q G D E I H C F]
+time 12403ms: Process J switching out of CPU; will block on I/O until time 12524ms
+time 12407ms: Process G started using the CPU for 68ms burst [Q D E I H C F]
+time 12434ms: Process B (tau 80ms) completed I/O; added to ready queue[Q D E I H C F B]
+time 12475ms: Process G completed a CPU Burst; 61 bursts to go [Q D E I H C F B]
+time 12475ms: Recalculate tau = 81ms for Process G [Q D E I H C F B]
+time 12475ms: Process G switching out of CPU; will block on I/O until time 12618ms
+time 12479ms: Process D started using the CPU for 65ms burst [Q E I H C F B]
+time 12524ms: Process J (tau 41ms) completed I/O; added to ready queue[Q E I H C F B J]
+time 12544ms: Process D completed a CPU Burst; 19 bursts to go [Q E I H C F B J]
+time 12544ms: Recalculate tau = 60ms for Process D [Q E I H C F B J]
+time 12544ms: Process D switching out of CPU; will block on I/O until time 12590ms
+time 12548ms: Process E started using the CPU for 124ms burst [Q I H C F B J]
+time 12590ms: Process D (tau 60ms) completed I/O; added to ready queue[Q I H C F B J D]
+time 12618ms: Process G (tau 81ms) completed I/O; added to ready queue[Q B J D G C F H I]
+time 12672ms: Process E completed a CPU Burst; 11 bursts to go [Q G D B J I H C F]
+time 12672ms: Recalculate tau = 107ms for Process E [Q G D B J I H C F]
+time 12672ms: Process E switching out of CPU; will block on I/O until time 12749ms
+time 12676ms: Process B started using the CPU for 170ms burst [Q J D G C F H I]
+time 12749ms: Process E (tau 107ms) completed I/O; added to ready queue[Q F H I E G C D J]
+time 12846ms: Process B completed a CPU Burst; 3 bursts to go [Q G C D J I E H F]
+time 12846ms: Recalculate tau = 125ms for Process B [Q G C D J I E H F]
+time 12846ms: Process B switching out of CPU; will block on I/O until time 12905ms
+time 12850ms: Process D started using the CPU for 13ms burst [Q J C G H F E I]
+time 12863ms: Process D completed a CPU Burst; 18 bursts to go [Q J C G H F E I]
+time 12863ms: Recalculate tau = 37ms for Process D [Q J C G H F E I]
+time 12863ms: Process D switching out of CPU; will block on I/O until time 12903ms
+time 12867ms: Process J started using the CPU for 156ms burst [Q C G H F E I]
+time 12903ms: Process D (tau 37ms) completed I/O; added to ready queue[Q C G H F E I D]
+time 12905ms: Process B (tau 125ms) completed I/O; added to ready queue[Q E I D B H F G C]
+time 13023ms: Process J completed a CPU Burst; 1 bursts to go [Q B D E I C G H F]
+time 13023ms: Recalculate tau = 99ms for Process J [Q B D E I C G H F]
+time 13023ms: Process J switching out of CPU; will block on I/O until time 13092ms
+time 13027ms: Process E started using the CPU for 108ms burst [Q I D B H F G C]
+time 13092ms: Process J (tau 99ms) completed I/O; added to ready queue[Q F G C J B H D I]
+time 13135ms: Process E completed a CPU Burst; 10 bursts to go [Q D I H B G F J C]
+time 13135ms: Recalculate tau = 108ms for Process E [Q D I H B G F J C]
+time 13135ms: Process E switching out of CPU; will block on I/O until time 13254ms
+time 13139ms: Process H started using the CPU for 106ms burst [Q B I D J C F G]
+time 13245ms: Process H completed a CPU Burst; 66 bursts to go [Q B I D J C F G]
+time 13245ms: Recalculate tau = 68ms for Process H [Q B I D J C F G]
+time 13245ms: Process H switching out of CPU; will block on I/O until time 13328ms
+time 13249ms: Process B started using the CPU for 43ms burst [Q I D J C F G]
+time 13254ms: Process E (tau 108ms) completed I/O; added to ready queue[Q I D J C F G E]
+time 13292ms: Process B completed a CPU Burst; 2 bursts to go [Q I D J C F G E]
+time 13292ms: Recalculate tau = 84ms for Process B [Q I D J C F G E]
+time 13292ms: Process B switching out of CPU; will block on I/O until time 13388ms
+time 13296ms: Process I started using the CPU for 200ms burst [Q D J C F G E]
+time 13328ms: Process H (tau 68ms) completed I/O; added to ready queue[Q D J C F G E H]
+time 13388ms: Process B (tau 84ms) completed I/O; added to ready queue[Q G E H B C F J D]
+time 13496ms: Process I completed a CPU Burst; 47 bursts to go [Q E G B H F C D J]
+time 13496ms: Recalculate tau = 163ms for Process I [Q E G B H F C D J]
+time 13496ms: Process I switching out of CPU; will block on I/O until time 13629ms
+time 13500ms: Process B started using the CPU for 158ms burst [Q H G E D J C F]
+time 13629ms: Process I (tau 163ms) completed I/O; added to ready queue[Q J C F I E D G H]
+time 13658ms: Process B completed a CPU Burst; 1 bursts to go [Q D E H G I F J C]
+time 13658ms: Recalculate tau = 121ms for Process B [Q D E H G I F J C]
+time 13658ms: Process B switching out of CPU; will block on I/O until time 13777ms
+time 13662ms: Process H started using the CPU for 98ms burst [Q G E D J C F I]
+time 13760ms: Process H completed a CPU Burst; 65 bursts to go [Q G E D J C F I]
+time 13760ms: Recalculate tau = 83ms for Process H [Q G E D J C F I]
+time 13760ms: Process H switching out of CPU; will block on I/O until time 13817ms
+time 13764ms: Process G started using the CPU for 8ms burst [Q E D J C F I]
+time 13772ms: Process G completed a CPU Burst; 60 bursts to go [Q E D J C F I]
+time 13772ms: Recalculate tau = 45ms for Process G [Q E D J C F I]
+time 13772ms: Process G switching out of CPU; will block on I/O until time 13837ms
+time 13776ms: Process E started using the CPU for 110ms burst [Q D J C F I]
+time 13777ms: Process B (tau 121ms) completed I/O; added to ready queue[Q D J C F I B]
+time 13817ms: Process H (tau 83ms) completed I/O; added to ready queue[Q D J C F I B H]
+time 13837ms: Process G (tau 45ms) completed I/O; added to ready queue[Q I B H G C F J D]
+time 13886ms: Process E completed a CPU Burst; 9 bursts to go [Q C F J D H G B I]
+time 13886ms: Recalculate tau = 109ms for Process E [Q C F J D H G B I]
+time 13886ms: Process E switching out of CPU; will block on I/O until time 14045ms
+time 13890ms: Process J started using the CPU for 106ms burst [Q D F C B I G H]
+time 13996ms: Process J terminated [Q D F C B I G H]
+time 14000ms: Process D started using the CPU for 128ms burst [Q F C B I G H]
+time 14045ms: Process E (tau 109ms) completed I/O; added to ready queue[Q F C B I G H E]
+time 14128ms: Process D completed a CPU Burst; 17 bursts to go [Q F C B I G H E]
+time 14128ms: Recalculate tau = 83ms for Process D [Q F C B I G H E]
+time 14128ms: Process D switching out of CPU; will block on I/O until time 14145ms
+time 14132ms: Process F started using the CPU for 167ms burst [Q C B I G H E]
+time 14145ms: Process D (tau 83ms) completed I/O; added to ready queue[Q C B I G H E D]
+time 14299ms: Process F completed a CPU Burst; 23 bursts to go [Q C B I G H E D]
+time 14299ms: Recalculate tau = 113ms for Process F [Q C B I G H E D]
+time 14299ms: Process F switching out of CPU; will block on I/O until time 14375ms
+time 14303ms: Process C started using the CPU for 9ms burst [Q B I G H E D]
+time 14312ms: Process C completed a CPU Burst; 65 bursts to go [Q B I G H E D]
+time 14312ms: Recalculate tau = 16ms for Process C [Q B I G H E D]
+time 14312ms: Process C switching out of CPU; will block on I/O until time 14320ms
+time 14316ms: Process B started using the CPU for 17ms burst [Q I G H E D]
+time 14320ms: Process C (tau 16ms) completed I/O; added to ready queue[Q I G H E D C]
+time 14333ms: Process B terminated [Q I G H E D C]
+time 14337ms: Process I started using the CPU for 117ms burst [Q G H E D C]
+time 14375ms: Process F (tau 113ms) completed I/O; added to ready queue[Q G H E D C F]
+time 14454ms: Process I completed a CPU Burst; 46 bursts to go [Q G H E D C F]
+time 14454ms: Recalculate tau = 140ms for Process I [Q G H E D C F]
+time 14454ms: Process I switching out of CPU; will block on I/O until time 14590ms
+time 14458ms: Process G started using the CPU for 71ms burst [Q H E D C F]
+time 14529ms: Process G completed a CPU Burst; 59 bursts to go [Q H E D C F]
+time 14529ms: Recalculate tau = 58ms for Process G [Q H E D C F]
+time 14529ms: Process G switching out of CPU; will block on I/O until time 14624ms
+time 14533ms: Process H started using the CPU for 20ms burst [Q E D C F]
+time 14553ms: Process H completed a CPU Burst; 64 bursts to go [Q E D C F]
+time 14553ms: Recalculate tau = 52ms for Process H [Q E D C F]
+time 14553ms: Process H switching out of CPU; will block on I/O until time 14706ms
+time 14557ms: Process E started using the CPU for 77ms burst [Q D C F]
+time 14590ms: Process I (tau 140ms) completed I/O; added to ready queue[Q D C F I]
+time 14624ms: Process G (tau 58ms) completed I/O; added to ready queue[Q D C F I G]
+time 14634ms: Process E completed a CPU Burst; 8 bursts to go [Q D C F I G]
+time 14634ms: Recalculate tau = 93ms for Process E [Q D C F I G]
+time 14634ms: Process E switching out of CPU; will block on I/O until time 14658ms
+time 14638ms: Process D started using the CPU for 94ms burst [Q C F I G]
+time 14658ms: Process E (tau 93ms) completed I/O; added to ready queue[Q C F I G E]
+time 14706ms: Process H (tau 52ms) completed I/O; added to ready queue[Q C F I G E H]
+time 14732ms: Process D completed a CPU Burst; 16 bursts to go [Q C F I G E H]
+time 14732ms: Recalculate tau = 89ms for Process D [Q C F I G E H]
+time 14732ms: Process D switching out of CPU; will block on I/O until time 14846ms
+time 14736ms: Process C started using the CPU for 32ms burst [Q F I G E H]
+time 14768ms: Process C completed a CPU Burst; 64 bursts to go [Q F I G E H]
+time 14768ms: Recalculate tau = 24ms for Process C [Q F I G E H]
+time 14768ms: Process C switching out of CPU; will block on I/O until time 14882ms
+time 14772ms: Process F started using the CPU for 45ms burst [Q I G E H]
+time 14817ms: Process F completed a CPU Burst; 22 bursts to go [Q I G E H]
+time 14817ms: Recalculate tau = 79ms for Process F [Q I G E H]
+time 14817ms: Process F switching out of CPU; will block on I/O until time 14913ms
+time 14821ms: Process I started using the CPU for 6ms burst [Q G E H]
+time 14827ms: Process I completed a CPU Burst; 45 bursts to go [Q G E H]
+time 14827ms: Recalculate tau = 73ms for Process I [Q G E H]
+time 14827ms: Process I switching out of CPU; will block on I/O until time 14862ms
+time 14831ms: Process G started using the CPU for 64ms burst [Q E H]
+time 14846ms: Process D (tau 89ms) completed I/O; added to ready queue[Q E H D]
+time 14862ms: Process I (tau 73ms) completed I/O; added to ready queue[Q E H D I]
+time 14882ms: Process C (tau 24ms) completed I/O; added to ready queue[Q E H D I C]
+time 14895ms: Process G completed a CPU Burst; 58 bursts to go [Q E H D I C]
+time 14895ms: Recalculate tau = 61ms for Process G [Q E H D I C]
+time 14895ms: Process G switching out of CPU; will block on I/O until time 14934ms
+time 14899ms: Process E started using the CPU for 187ms burst [Q H D I C]
+time 14913ms: Process F (tau 79ms) completed I/O; added to ready queue[Q H D I C F]
+time 14934ms: Process G (tau 61ms) completed I/O; added to ready queue[Q H D I C F G]
+time 15086ms: Process E completed a CPU Burst; 7 bursts to go [Q H D I C F G]
+time 15086ms: Recalculate tau = 140ms for Process E [Q H D I C F G]
+time 15086ms: Process E switching out of CPU; will block on I/O until time 15150ms
+time 15090ms: Process H started using the CPU for 50ms burst [Q D I C F G]
+time 15140ms: Process H completed a CPU Burst; 63 bursts to go [Q D I C F G]
+time 15140ms: Recalculate tau = 51ms for Process H [Q D I C F G]
+time 15140ms: Process H switching out of CPU; will block on I/O until time 15204ms
+time 15144ms: Process D started using the CPU for 43ms burst [Q I C F G]
+time 15150ms: Process E (tau 140ms) completed I/O; added to ready queue[Q I C F G E]
+time 15187ms: Process D completed a CPU Burst; 15 bursts to go [Q I C F G E]
+time 15187ms: Recalculate tau = 66ms for Process D [Q I C F G E]
+time 15187ms: Process D switching out of CPU; will block on I/O until time 15219ms
+time 15191ms: Process I started using the CPU for 141ms burst [Q C F G E]
+time 15204ms: Process H (tau 51ms) completed I/O; added to ready queue[Q C F G E H]
+time 15219ms: Process D (tau 66ms) completed I/O; added to ready queue[Q C F G E H D]
+time 15332ms: Process I completed a CPU Burst; 44 bursts to go [Q C F G E H D]
+time 15332ms: Recalculate tau = 107ms for Process I [Q C F G E H D]
+time 15332ms: Process I switching out of CPU; will block on I/O until time 15356ms
+time 15336ms: Process C started using the CPU for 111ms burst [Q F G E H D]
+time 15356ms: Process I (tau 107ms) completed I/O; added to ready queue[Q F G E H D I]
+time 15447ms: Process C completed a CPU Burst; 63 bursts to go [Q F G E H D I]
+time 15447ms: Recalculate tau = 68ms for Process C [Q F G E H D I]
+time 15447ms: Process C switching out of CPU; will block on I/O until time 15461ms
+time 15451ms: Process F started using the CPU for 96ms burst [Q G E H D I]
+time 15461ms: Process C (tau 68ms) completed I/O; added to ready queue[Q G E H D I C]
+time 15547ms: Process F completed a CPU Burst; 21 bursts to go [Q G E H D I C]
+time 15547ms: Recalculate tau = 88ms for Process F [Q G E H D I C]
+time 15547ms: Process F switching out of CPU; will block on I/O until time 15732ms
+time 15551ms: Process G started using the CPU for 17ms burst [Q E H D I C]
+time 15568ms: Process G completed a CPU Burst; 57 bursts to go [Q E H D I C]
+time 15568ms: Recalculate tau = 39ms for Process G [Q E H D I C]
+time 15568ms: Process G switching out of CPU; will block on I/O until time 15590ms
+time 15572ms: Process E started using the CPU for 22ms burst [Q H D I C]
+time 15590ms: Process G (tau 39ms) completed I/O; added to ready queue[Q H D I C G]
+time 15594ms: Process E completed a CPU Burst; 6 bursts to go [Q H D I C G]
+time 15594ms: Recalculate tau = 81ms for Process E [Q H D I C G]
+time 15594ms: Process E switching out of CPU; will block on I/O until time 15712ms
+time 15598ms: Process H started using the CPU for 55ms burst [Q D I C G]
+time 15653ms: Process H completed a CPU Burst; 62 bursts to go [Q D I C G]
+time 15653ms: Recalculate tau = 53ms for Process H [Q D I C G]
+time 15653ms: Process H switching out of CPU; will block on I/O until time 15673ms
+time 15657ms: Process D started using the CPU for 47ms burst [Q I C G]
+time 15673ms: Process H (tau 53ms) completed I/O; added to ready queue[Q I C G H]
+time 15704ms: Process D completed a CPU Burst; 14 bursts to go [Q I C G H]
+time 15704ms: Recalculate tau = 57ms for Process D [Q I C G H]
+time 15704ms: Process D switching out of CPU; will block on I/O until time 15756ms
+time 15708ms: Process I started using the CPU for 13ms burst [Q C G H]
+time 15712ms: Process E (tau 81ms) completed I/O; added to ready queue[Q C G H E]
+time 15721ms: Process I completed a CPU Burst; 43 bursts to go [Q C G H E]
+time 15721ms: Recalculate tau = 60ms for Process I [Q C G H E]
+time 15721ms: Process I switching out of CPU; will block on I/O until time 15735ms
+time 15725ms: Process C started using the CPU for 45ms burst [Q G H E]
+time 15732ms: Process F (tau 88ms) completed I/O; added to ready queue[Q G H E F]
+time 15735ms: Process I (tau 60ms) completed I/O; added to ready queue[Q G H E F I]
+time 15756ms: Process D (tau 57ms) completed I/O; added to ready queue[Q G H E F I D]
+time 15770ms: Process C completed a CPU Burst; 62 bursts to go [Q G H E F I D]
+time 15770ms: Recalculate tau = 57ms for Process C [Q G H E F I D]
+time 15770ms: Process C switching out of CPU; will block on I/O until time 15781ms
+time 15774ms: Process G started using the CPU for 2ms burst [Q H E F I D]
+time 15776ms: Process G completed a CPU Burst; 56 bursts to go [Q H E F I D]
+time 15776ms: Recalculate tau = 21ms for Process G [Q H E F I D]
+time 15776ms: Process G switching out of CPU; will block on I/O until time 15926ms
+time 15780ms: Process H started using the CPU for 47ms burst [Q E F I D]
+time 15781ms: Process C (tau 57ms) completed I/O; added to ready queue[Q E F I D C]
+time 15827ms: Process H completed a CPU Burst; 61 bursts to go [Q E F I D C]
+time 15827ms: Recalculate tau = 50ms for Process H [Q E F I D C]
+time 15827ms: Process H switching out of CPU; will block on I/O until time 15962ms
+time 15831ms: Process E started using the CPU for 80ms burst [Q F I D C]
+time 15911ms: Process E completed a CPU Burst; 5 bursts to go [Q F I D C]
+time 15911ms: Recalculate tau = 81ms for Process E [Q F I D C]
+time 15911ms: Process E switching out of CPU; will block on I/O until time 16040ms
+time 15915ms: Process F started using the CPU for 37ms burst [Q I D C]
+time 15926ms: Process G (tau 21ms) completed I/O; added to ready queue[Q I D C G]
+time 15952ms: Process F completed a CPU Burst; 20 bursts to go [Q I D C G]
+time 15952ms: Recalculate tau = 63ms for Process F [Q I D C G]
+time 15952ms: Process F switching out of CPU; will block on I/O until time 16013ms
+time 15956ms: Process I started using the CPU for 103ms burst [Q D C G]
+time 15962ms: Process H (tau 50ms) completed I/O; added to ready queue[Q D C G H]
+time 16013ms: Process F (tau 63ms) completed I/O; added to ready queue[Q D C G H F]
+time 16040ms: Process E (tau 81ms) completed I/O; added to ready queue[Q D C G H F E]
+time 16059ms: Process I completed a CPU Burst; 42 bursts to go [Q D C G H F E]
+time 16059ms: Recalculate tau = 82ms for Process I [Q D C G H F E]
+time 16059ms: Process I switching out of CPU; will block on I/O until time 16075ms
+time 16063ms: Process D started using the CPU for 5ms burst [Q C G H F E]
+time 16068ms: Process D completed a CPU Burst; 13 bursts to go [Q C G H F E]
+time 16068ms: Recalculate tau = 31ms for Process D [Q C G H F E]
+time 16068ms: Process D switching out of CPU; will block on I/O until time 16268ms
+time 16072ms: Process C started using the CPU for 67ms burst [Q G H F E]
+time 16075ms: Process I (tau 82ms) completed I/O; added to ready queue[Q G H F E I]
+time 16139ms: Process C completed a CPU Burst; 61 bursts to go [Q G H F E I]
+time 16139ms: Recalculate tau = 62ms for Process C [Q G H F E I]
+time 16139ms: Process C switching out of CPU; will block on I/O until time 16203ms
+time 16143ms: Process G started using the CPU for 21ms burst [Q H F E I]
+time 16164ms: Process G completed a CPU Burst; 55 bursts to go [Q H F E I]
+time 16164ms: Recalculate tau = 21ms for Process G [Q H F E I]
+time 16164ms: Process G switching out of CPU; will block on I/O until time 16307ms
+time 16168ms: Process H started using the CPU for 11ms burst [Q F E I]
+time 16179ms: Process H completed a CPU Burst; 60 bursts to go [Q F E I]
+time 16179ms: Recalculate tau = 31ms for Process H [Q F E I]
+time 16179ms: Process H switching out of CPU; will block on I/O until time 16357ms
+time 16183ms: Process F started using the CPU for 15ms burst [Q E I]
+time 16198ms: Process F completed a CPU Burst; 19 bursts to go [Q E I]
+time 16198ms: Recalculate tau = 39ms for Process F [Q E I]
+time 16198ms: Process F switching out of CPU; will block on I/O until time 16224ms
+time 16202ms: Process E started using the CPU for 46ms burst [Q I]
+time 16203ms: Process C (tau 62ms) completed I/O; added to ready queue[Q I C]
+time 16224ms: Process F (tau 39ms) completed I/O; added to ready queue[Q I C F]
+time 16248ms: Process E completed a CPU Burst; 4 bursts to go [Q I C F]
+time 16248ms: Recalculate tau = 64ms for Process E [Q I C F]
+time 16248ms: Process E switching out of CPU; will block on I/O until time 16405ms
+time 16252ms: Process I started using the CPU for 15ms burst [Q C F]
+time 16267ms: Process I completed a CPU Burst; 41 bursts to go [Q C F]
+time 16267ms: Recalculate tau = 49ms for Process I [Q C F]
+time 16267ms: Process I switching out of CPU; will block on I/O until time 16380ms
+time 16268ms: Process D (tau 31ms) completed I/O; added to ready queue[Q C F D]
+time 16271ms: Process C started using the CPU for 60ms burst [Q F D]
+time 16307ms: Process G (tau 21ms) completed I/O; added to ready queue[Q F D G]
+time 16331ms: Process C completed a CPU Burst; 60 bursts to go [Q F D G]
+time 16331ms: Recalculate tau = 61ms for Process C [Q F D G]
+time 16331ms: Process C switching out of CPU; will block on I/O until time 16526ms
+time 16335ms: Process F started using the CPU for 62ms burst [Q D G]
+time 16357ms: Process H (tau 31ms) completed I/O; added to ready queue[Q D G H]
+time 16380ms: Process I (tau 49ms) completed I/O; added to ready queue[Q D G H I]
+time 16397ms: Process F completed a CPU Burst; 18 bursts to go [Q D G H I]
+time 16397ms: Recalculate tau = 51ms for Process F [Q D G H I]
+time 16397ms: Process F switching out of CPU; will block on I/O until time 16479ms
+time 16401ms: Process D started using the CPU for 122ms burst [Q G H I]
+time 16405ms: Process E (tau 64ms) completed I/O; added to ready queue[Q G H I E]
+time 16479ms: Process F (tau 51ms) completed I/O; added to ready queue[Q G H I E F]
+time 16523ms: Process D completed a CPU Burst; 12 bursts to go [Q G H I E F]
+time 16523ms: Recalculate tau = 77ms for Process D [Q G H I E F]
+time 16523ms: Process D switching out of CPU; will block on I/O until time 16560ms
+time 16526ms: Process C (tau 61ms) completed I/O; added to ready queue[Q H I E F C]
+time 16527ms: Process G started using the CPU for 22ms burst [Q H I E F C]
+time 16549ms: Process G completed a CPU Burst; 54 bursts to go [Q H I E F C]
+time 16549ms: Recalculate tau = 22ms for Process G [Q H I E F C]
+time 16549ms: Process G switching out of CPU; will block on I/O until time 16637ms
+time 16553ms: Process H started using the CPU for 18ms burst [Q I E F C]
+time 16560ms: Process D (tau 77ms) completed I/O; added to ready queue[Q I E F C D]
+time 16571ms: Process H completed a CPU Burst; 59 bursts to go [Q I E F C D]
+time 16571ms: Recalculate tau = 25ms for Process H [Q I E F C D]
+time 16571ms: Process H switching out of CPU; will block on I/O until time 16724ms
+time 16575ms: Process I started using the CPU for 26ms burst [Q E F C D]
+time 16601ms: Process I completed a CPU Burst; 40 bursts to go [Q E F C D]
+time 16601ms: Recalculate tau = 38ms for Process I [Q E F C D]
+time 16601ms: Process I switching out of CPU; will block on I/O until time 16663ms
+time 16605ms: Process E started using the CPU for 54ms burst [Q F C D]
+time 16637ms: Process G (tau 22ms) completed I/O; added to ready queue[Q F C D G]
+time 16659ms: Process E completed a CPU Burst; 3 bursts to go [Q F C D G]
+time 16659ms: Recalculate tau = 59ms for Process E [Q F C D G]
+time 16659ms: Process E switching out of CPU; will block on I/O until time 16667ms
+time 16663ms: Process F started using the CPU for 83ms burst [Q C D G I]
+time 16663ms: Process I (tau 38ms) completed I/O; added to ready queue[Q C D G I]
+time 16667ms: Process E (tau 59ms) completed I/O; added to ready queue[Q C D G I E]
+time 16724ms: Process H (tau 25ms) completed I/O; added to ready queue[Q C D G I E H]
+time 16746ms: Process F completed a CPU Burst; 17 bursts to go [Q C D G I E H]
+time 16746ms: Recalculate tau = 67ms for Process F [Q C D G I E H]
+time 16746ms: Process F switching out of CPU; will block on I/O until time 16781ms
+time 16750ms: Process C started using the CPU for 54ms burst [Q D G I E H]
+time 16781ms: Process F (tau 67ms) completed I/O; added to ready queue[Q D G I E H F]
+time 16804ms: Process C completed a CPU Burst; 59 bursts to go [Q D G I E H F]
+time 16804ms: Recalculate tau = 58ms for Process C [Q D G I E H F]
+time 16804ms: Process C switching out of CPU; will block on I/O until time 16901ms
+time 16808ms: Process D started using the CPU for 31ms burst [Q G I E H F]
+time 16839ms: Process D completed a CPU Burst; 11 bursts to go [Q G I E H F]
+time 16839ms: Recalculate tau = 54ms for Process D [Q G I E H F]
+time 16839ms: Process D switching out of CPU; will block on I/O until time 16848ms
+time 16843ms: Process G started using the CPU for 72ms burst [Q I E H F]
+time 16848ms: Process D (tau 54ms) completed I/O; added to ready queue[Q I E H F D]
+time 16901ms: Process C (tau 58ms) completed I/O; added to ready queue[Q I E H F D C]
+time 16915ms: Process G completed a CPU Burst; 53 bursts to go [Q I E H F D C]
+time 16915ms: Recalculate tau = 47ms for Process G [Q I E H F D C]
+time 16915ms: Process G switching out of CPU; will block on I/O until time 17109ms
+time 16919ms: Process I started using the CPU for 74ms burst [Q E H F D C]
+time 16993ms: Process I completed a CPU Burst; 39 bursts to go [Q E H F D C]
+time 16993ms: Recalculate tau = 56ms for Process I [Q E H F D C]
+time 16993ms: Process I switching out of CPU; will block on I/O until time 17116ms
+time 16997ms: Process E started using the CPU for 164ms burst [Q H F D C]
+time 17109ms: Process G (tau 47ms) completed I/O; added to ready queue[Q H F D C G]
+time 17116ms: Process I (tau 56ms) completed I/O; added to ready queue[Q H F D C G I]
+time 17161ms: Process E completed a CPU Burst; 2 bursts to go [Q H F D C G I]
+time 17161ms: Recalculate tau = 112ms for Process E [Q H F D C G I]
+time 17161ms: Process E switching out of CPU; will block on I/O until time 17178ms
+time 17165ms: Process H started using the CPU for 46ms burst [Q F D C G I]
+time 17178ms: Process E (tau 112ms) completed I/O; added to ready queue[Q F D C G I E]
+time 17211ms: Process H completed a CPU Burst; 58 bursts to go [Q F D C G I E]
+time 17211ms: Recalculate tau = 36ms for Process H [Q F D C G I E]
+time 17211ms: Process H switching out of CPU; will block on I/O until time 17319ms
+time 17215ms: Process F started using the CPU for 165ms burst [Q D C G I E]
+time 17319ms: Process H (tau 36ms) completed I/O; added to ready queue[Q D C G I E H]
+time 17380ms: Process F completed a CPU Burst; 16 bursts to go [Q D C G I E H]
+time 17380ms: Recalculate tau = 116ms for Process F [Q D C G I E H]
+time 17380ms: Process F switching out of CPU; will block on I/O until time 17457ms
+time 17384ms: Process D started using the CPU for 61ms burst [Q C G I E H]
+time 17445ms: Process D completed a CPU Burst; 10 bursts to go [Q C G I E H]
+time 17445ms: Recalculate tau = 58ms for Process D [Q C G I E H]
+time 17445ms: Process D switching out of CPU; will block on I/O until time 17521ms
+time 17449ms: Process C started using the CPU for 126ms burst [Q G I E H]
+time 17457ms: Process F (tau 116ms) completed I/O; added to ready queue[Q G I E H F]
+time 17521ms: Process D (tau 58ms) completed I/O; added to ready queue[Q G I E H F D]
+time 17575ms: Process C completed a CPU Burst; 58 bursts to go [Q G I E H F D]
+time 17575ms: Recalculate tau = 92ms for Process C [Q G I E H F D]
+time 17575ms: Process C switching out of CPU; will block on I/O until time 17775ms
+time 17579ms: Process G started using the CPU for 13ms burst [Q I E H F D]
+time 17592ms: Process G completed a CPU Burst; 52 bursts to go [Q I E H F D]
+time 17592ms: Recalculate tau = 30ms for Process G [Q I E H F D]
+time 17592ms: Process G switching out of CPU; will block on I/O until time 17703ms
+time 17596ms: Process I started using the CPU for 6ms burst [Q E H F D]
+time 17602ms: Process I completed a CPU Burst; 38 bursts to go [Q E H F D]
+time 17602ms: Recalculate tau = 31ms for Process I [Q E H F D]
+time 17602ms: Process I switching out of CPU; will block on I/O until time 17708ms
+time 17606ms: Process E started using the CPU for 131ms burst [Q H F D]
+time 17703ms: Process G (tau 30ms) completed I/O; added to ready queue[Q H F D G]
+time 17708ms: Process I (tau 31ms) completed I/O; added to ready queue[Q H F D G I]
+time 17737ms: Process E completed a CPU Burst; 1 bursts to go [Q H F D G I]
+time 17737ms: Recalculate tau = 122ms for Process E [Q H F D G I]
+time 17737ms: Process E switching out of CPU; will block on I/O until time 17747ms
+time 17741ms: Process H started using the CPU for 51ms burst [Q F D G I]
+time 17747ms: Process E (tau 122ms) completed I/O; added to ready queue[Q F D G I E]
+time 17775ms: Process C (tau 92ms) completed I/O; added to ready queue[Q F D G I E C]
+time 17792ms: Process H completed a CPU Burst; 57 bursts to go [Q F D G I E C]
+time 17792ms: Recalculate tau = 44ms for Process H [Q F D G I E C]
+time 17792ms: Process H switching out of CPU; will block on I/O until time 17892ms
+time 17796ms: Process F started using the CPU for 7ms burst [Q D G I E C]
+time 17803ms: Process F completed a CPU Burst; 15 bursts to go [Q D G I E C]
+time 17803ms: Recalculate tau = 62ms for Process F [Q D G I E C]
+time 17803ms: Process F switching out of CPU; will block on I/O until time 17821ms
+time 17807ms: Process D started using the CPU for 7ms burst [Q G I E C]
+time 17814ms: Process D completed a CPU Burst; 9 bursts to go [Q G I E C]
+time 17814ms: Recalculate tau = 33ms for Process D [Q G I E C]
+time 17814ms: Process D switching out of CPU; will block on I/O until time 17980ms
+time 17818ms: Process G started using the CPU for 44ms burst [Q I E C]
+time 17821ms: Process F (tau 62ms) completed I/O; added to ready queue[Q I E C F]
+time 17862ms: Process G completed a CPU Burst; 51 bursts to go [Q I E C F]
+time 17862ms: Recalculate tau = 37ms for Process G [Q I E C F]
+time 17862ms: Process G switching out of CPU; will block on I/O until time 17959ms
+time 17866ms: Process I started using the CPU for 120ms burst [Q E C F]
+time 17892ms: Process H (tau 44ms) completed I/O; added to ready queue[Q E C F H]
+time 17959ms: Process G (tau 37ms) completed I/O; added to ready queue[Q E C F H G]
+time 17980ms: Process D (tau 33ms) completed I/O; added to ready queue[Q E C F H G D]
+time 17986ms: Process I completed a CPU Burst; 37 bursts to go [Q E C F H G D]
+time 17986ms: Recalculate tau = 76ms for Process I [Q E C F H G D]
+time 17986ms: Process I switching out of CPU; will block on I/O until time 17991ms
+time 17990ms: Process E started using the CPU for 17ms burst [Q C F H G D]
+time 17991ms: Process I (tau 76ms) completed I/O; added to ready queue[Q C F H G D I]
+time 18007ms: Process E terminated [Q C F H G D I]
+time 18011ms: Process C started using the CPU for 168ms burst [Q F H G D I]
+time 18179ms: Process C completed a CPU Burst; 57 bursts to go [Q F H G D I]
+time 18179ms: Recalculate tau = 130ms for Process C [Q F H G D I]
+time 18179ms: Process C switching out of CPU; will block on I/O until time 18231ms
+time 18183ms: Process F started using the CPU for 103ms burst [Q H G D I]
+time 18231ms: Process C (tau 130ms) completed I/O; added to ready queue[Q H G D I C]
+time 18286ms: Process F completed a CPU Burst; 14 bursts to go [Q H G D I C]
+time 18286ms: Recalculate tau = 83ms for Process F [Q H G D I C]
+time 18286ms: Process F switching out of CPU; will block on I/O until time 18466ms
+time 18290ms: Process H started using the CPU for 14ms burst [Q G D I C]
+time 18304ms: Process H completed a CPU Burst; 56 bursts to go [Q G D I C]
+time 18304ms: Recalculate tau = 29ms for Process H [Q G D I C]
+time 18304ms: Process H switching out of CPU; will block on I/O until time 18317ms
+time 18308ms: Process G started using the CPU for 28ms burst [Q D I C]
+time 18317ms: Process H (tau 29ms) completed I/O; added to ready queue[Q D I C H]
+time 18336ms: Process G completed a CPU Burst; 50 bursts to go [Q D I C H]
+time 18336ms: Recalculate tau = 33ms for Process G [Q D I C H]
+time 18336ms: Process G switching out of CPU; will block on I/O until time 18368ms
+time 18340ms: Process D started using the CPU for 2ms burst [Q I C H]
+time 18342ms: Process D completed a CPU Burst; 8 bursts to go [Q I C H]
+time 18342ms: Recalculate tau = 18ms for Process D [Q I C H]
+time 18342ms: Process D switching out of CPU; will block on I/O until time 18355ms
+time 18346ms: Process I started using the CPU for 25ms burst [Q C H]
+time 18355ms: Process D (tau 18ms) completed I/O; added to ready queue[Q C H D]
+time 18368ms: Process G (tau 33ms) completed I/O; added to ready queue[Q C H D G]
+time 18371ms: Process I completed a CPU Burst; 36 bursts to go [Q C H D G]
+time 18371ms: Recalculate tau = 51ms for Process I [Q C H D G]
+time 18371ms: Process I switching out of CPU; will block on I/O until time 18440ms
+time 18375ms: Process C started using the CPU for 23ms burst [Q H D G]
+time 18398ms: Process C completed a CPU Burst; 56 bursts to go [Q H D G]
+time 18398ms: Recalculate tau = 77ms for Process C [Q H D G]
+time 18398ms: Process C switching out of CPU; will block on I/O until time 18409ms
+time 18402ms: Process H started using the CPU for 4ms burst [Q D G]
+time 18406ms: Process H completed a CPU Burst; 55 bursts to go [Q D G]
+time 18406ms: Recalculate tau = 17ms for Process H [Q D G]
+time 18406ms: Process H switching out of CPU; will block on I/O until time 18427ms
+time 18409ms: Process C (tau 77ms) completed I/O; added to ready queue[Q G C]
+time 18410ms: Process D started using the CPU for 48ms burst [Q G C]
+time 18427ms: Process H (tau 17ms) completed I/O; added to ready queue[Q G C H]
+time 18440ms: Process I (tau 51ms) completed I/O; added to ready queue[Q G C H I]
+time 18458ms: Process D completed a CPU Burst; 7 bursts to go [Q G C H I]
+time 18458ms: Recalculate tau = 33ms for Process D [Q G C H I]
+time 18458ms: Process D switching out of CPU; will block on I/O until time 18466ms
+time 18462ms: Process G started using the CPU for 19ms burst [Q C H I]
+time 18466ms: Process F (tau 83ms) completed I/O; added to ready queue[Q C H I D F]
+time 18466ms: Process D (tau 33ms) completed I/O; added to ready queue[Q C H I D F]
+time 18481ms: Process G completed a CPU Burst; 49 bursts to go [Q C H I D F]
+time 18481ms: Recalculate tau = 26ms for Process G [Q C H I D F]
+time 18481ms: Process G switching out of CPU; will block on I/O until time 18504ms
+time 18485ms: Process C started using the CPU for 68ms burst [Q H I D F]
+time 18504ms: Process G (tau 26ms) completed I/O; added to ready queue[Q H I D F G]
+time 18553ms: Process C completed a CPU Burst; 55 bursts to go [Q H I D F G]
+time 18553ms: Recalculate tau = 73ms for Process C [Q H I D F G]
+time 18553ms: Process C switching out of CPU; will block on I/O until time 18613ms
+time 18557ms: Process H started using the CPU for 19ms burst [Q I D F G]
+time 18576ms: Process H completed a CPU Burst; 54 bursts to go [Q I D F G]
+time 18576ms: Recalculate tau = 18ms for Process H [Q I D F G]
+time 18576ms: Process H switching out of CPU; will block on I/O until time 18637ms
+time 18580ms: Process I started using the CPU for 29ms burst [Q D F G]
+time 18609ms: Process I completed a CPU Burst; 35 bursts to go [Q D F G]
+time 18609ms: Recalculate tau = 40ms for Process I [Q D F G]
+time 18609ms: Process I switching out of CPU; will block on I/O until time 18655ms
+time 18613ms: Process D started using the CPU for 148ms burst [Q F G C]
+time 18613ms: Process C (tau 73ms) completed I/O; added to ready queue[Q F G C]
+time 18637ms: Process H (tau 18ms) completed I/O; added to ready queue[Q F G C H]
+time 18655ms: Process I (tau 40ms) completed I/O; added to ready queue[Q F G C H I]
+time 18761ms: Process D completed a CPU Burst; 6 bursts to go [Q F G C H I]
+time 18761ms: Recalculate tau = 91ms for Process D [Q F G C H I]
+time 18761ms: Process D switching out of CPU; will block on I/O until time 18800ms
+time 18765ms: Process F started using the CPU for 53ms burst [Q G C H I]
+time 18800ms: Process D (tau 91ms) completed I/O; added to ready queue[Q G C H I D]
+time 18818ms: Process F completed a CPU Burst; 13 bursts to go [Q G C H I D]
+time 18818ms: Recalculate tau = 68ms for Process F [Q G C H I D]
+time 18818ms: Process F switching out of CPU; will block on I/O until time 18861ms
+time 18822ms: Process G started using the CPU for 2ms burst [Q C H I D]
+time 18824ms: Process G completed a CPU Burst; 48 bursts to go [Q C H I D]
+time 18824ms: Recalculate tau = 14ms for Process G [Q C H I D]
+time 18824ms: Process G switching out of CPU; will block on I/O until time 18897ms
+time 18828ms: Process C started using the CPU for 41ms burst [Q H I D]
+time 18861ms: Process F (tau 68ms) completed I/O; added to ready queue[Q H I D F]
+time 18869ms: Process C completed a CPU Burst; 54 bursts to go [Q H I D F]
+time 18869ms: Recalculate tau = 57ms for Process C [Q H I D F]
+time 18869ms: Process C switching out of CPU; will block on I/O until time 18891ms
+time 18873ms: Process H started using the CPU for 10ms burst [Q I D F]
+time 18883ms: Process H completed a CPU Burst; 53 bursts to go [Q I D F]
+time 18883ms: Recalculate tau = 14ms for Process H [Q I D F]
+time 18883ms: Process H switching out of CPU; will block on I/O until time 18977ms
+time 18887ms: Process I started using the CPU for 19ms burst [Q D F]
+time 18891ms: Process C (tau 57ms) completed I/O; added to ready queue[Q D F C]
+time 18897ms: Process G (tau 14ms) completed I/O; added to ready queue[Q D F C G]
+time 18906ms: Process I completed a CPU Burst; 34 bursts to go [Q D F C G]
+time 18906ms: Recalculate tau = 30ms for Process I [Q D F C G]
+time 18906ms: Process I switching out of CPU; will block on I/O until time 19048ms
+time 18910ms: Process D started using the CPU for 131ms burst [Q F C G]
+time 18977ms: Process H (tau 14ms) completed I/O; added to ready queue[Q F C G H]
+time 19041ms: Process D completed a CPU Burst; 5 bursts to go [Q F C G H]
+time 19041ms: Recalculate tau = 111ms for Process D [Q F C G H]
+time 19041ms: Process D switching out of CPU; will block on I/O until time 19058ms
+time 19045ms: Process F started using the CPU for 12ms burst [Q C G H]
+time 19048ms: Process I (tau 30ms) completed I/O; added to ready queue[Q C G H I]
+time 19057ms: Process F completed a CPU Burst; 12 bursts to go [Q C G H I]
+time 19057ms: Recalculate tau = 40ms for Process F [Q C G H I]
+time 19057ms: Process F switching out of CPU; will block on I/O until time 19079ms
+time 19058ms: Process D (tau 111ms) completed I/O; added to ready queue[Q C G H I D]
+time 19061ms: Process C started using the CPU for 44ms burst [Q G H I D]
+time 19079ms: Process F (tau 40ms) completed I/O; added to ready queue[Q G H I D F]
+time 19105ms: Process C completed a CPU Burst; 53 bursts to go [Q G H I D F]
+time 19105ms: Recalculate tau = 51ms for Process C [Q G H I D F]
+time 19105ms: Process C switching out of CPU; will block on I/O until time 19168ms
+time 19109ms: Process G started using the CPU for 26ms burst [Q H I D F]
+time 19135ms: Process G completed a CPU Burst; 47 bursts to go [Q H I D F]
+time 19135ms: Recalculate tau = 20ms for Process G [Q H I D F]
+time 19135ms: Process G switching out of CPU; will block on I/O until time 19164ms
+time 19139ms: Process H started using the CPU for 126ms burst [Q I D F]
+time 19164ms: Process G (tau 20ms) completed I/O; added to ready queue[Q I D F G]
+time 19168ms: Process C (tau 51ms) completed I/O; added to ready queue[Q I D F G C]
+time 19265ms: Process H completed a CPU Burst; 52 bursts to go [Q I D F G C]
+time 19265ms: Recalculate tau = 70ms for Process H [Q I D F G C]
+time 19265ms: Process H switching out of CPU; will block on I/O until time 19296ms
+time 19269ms: Process I started using the CPU for 73ms burst [Q D F G C]
+time 19296ms: Process H (tau 70ms) completed I/O; added to ready queue[Q D F G C H]
+time 19342ms: Process I completed a CPU Burst; 33 bursts to go [Q D F G C H]
+time 19342ms: Recalculate tau = 52ms for Process I [Q D F G C H]
+time 19342ms: Process I switching out of CPU; will block on I/O until time 19431ms
+time 19346ms: Process D started using the CPU for 22ms burst [Q F G C H]
+time 19368ms: Process D completed a CPU Burst; 4 bursts to go [Q F G C H]
+time 19368ms: Recalculate tau = 67ms for Process D [Q F G C H]
+time 19368ms: Process D switching out of CPU; will block on I/O until time 19417ms
+time 19372ms: Process F started using the CPU for 96ms burst [Q G C H]
+time 19417ms: Process D (tau 67ms) completed I/O; added to ready queue[Q G C H D]
+time 19431ms: Process I (tau 52ms) completed I/O; added to ready queue[Q G C H D I]
+time 19468ms: Process F completed a CPU Burst; 11 bursts to go [Q G C H D I]
+time 19468ms: Recalculate tau = 68ms for Process F [Q G C H D I]
+time 19468ms: Process F switching out of CPU; will block on I/O until time 19537ms
+time 19472ms: Process G started using the CPU for 49ms burst [Q C H D I]
+time 19521ms: Process G completed a CPU Burst; 46 bursts to go [Q C H D I]
+time 19521ms: Recalculate tau = 35ms for Process G [Q C H D I]
+time 19521ms: Process G switching out of CPU; will block on I/O until time 19540ms
+time 19525ms: Process C started using the CPU for 74ms burst [Q H D I]
+time 19537ms: Process F (tau 68ms) completed I/O; added to ready queue[Q H D I F]
+time 19540ms: Process G (tau 35ms) completed I/O; added to ready queue[Q H D I F G]
+time 19599ms: Process C completed a CPU Burst; 52 bursts to go [Q H D I F G]
+time 19599ms: Recalculate tau = 63ms for Process C [Q H D I F G]
+time 19599ms: Process C switching out of CPU; will block on I/O until time 19787ms
+time 19603ms: Process H started using the CPU for 3ms burst [Q D I F G]
+time 19606ms: Process H completed a CPU Burst; 51 bursts to go [Q D I F G]
+time 19606ms: Recalculate tau = 37ms for Process H [Q D I F G]
+time 19606ms: Process H switching out of CPU; will block on I/O until time 19702ms
+time 19610ms: Process D started using the CPU for 76ms burst [Q I F G]
+time 19686ms: Process D completed a CPU Burst; 3 bursts to go [Q I F G]
+time 19686ms: Recalculate tau = 72ms for Process D [Q I F G]
+time 19686ms: Process D switching out of CPU; will block on I/O until time 19770ms
+time 19690ms: Process I started using the CPU for 36ms burst [Q F G]
+time 19702ms: Process H (tau 37ms) completed I/O; added to ready queue[Q F G H]
+time 19726ms: Process I completed a CPU Burst; 32 bursts to go [Q F G H]
+time 19726ms: Recalculate tau = 44ms for Process I [Q F G H]
+time 19726ms: Process I switching out of CPU; will block on I/O until time 19916ms
+time 19730ms: Process F started using the CPU for 48ms burst [Q G H]
+time 19770ms: Process D (tau 72ms) completed I/O; added to ready queue[Q G H D]
+time 19778ms: Process F completed a CPU Burst; 10 bursts to go [Q G H D]
+time 19778ms: Recalculate tau = 58ms for Process F [Q G H D]
+time 19778ms: Process F switching out of CPU; will block on I/O until time 19802ms
+time 19782ms: Process G started using the CPU for 185ms burst [Q H D]
+time 19787ms: Process C (tau 63ms) completed I/O; added to ready queue[Q H D C]
+time 19802ms: Process F (tau 58ms) completed I/O; added to ready queue[Q H D C F]
+time 19916ms: Process I (tau 44ms) completed I/O; added to ready queue[Q H D C F I]
+time 19967ms: Process G completed a CPU Burst; 45 bursts to go [Q H D C F I]
+time 19967ms: Recalculate tau = 110ms for Process G [Q H D C F I]
+time 19967ms: Process G switching out of CPU; will block on I/O until time 20003ms
+time 19971ms: Process H started using the CPU for 12ms burst [Q D C F I]
+time 19983ms: Process H completed a CPU Burst; 50 bursts to go [Q D C F I]
+time 19983ms: Recalculate tau = 25ms for Process H [Q D C F I]
+time 19983ms: Process H switching out of CPU; will block on I/O until time 19996ms
+time 19987ms: Process D started using the CPU for 3ms burst [Q C F I]
+time 19990ms: Process D completed a CPU Burst; 2 bursts to go [Q C F I]
+time 19990ms: Recalculate tau = 38ms for Process D [Q C F I]
+time 19990ms: Process D switching out of CPU; will block on I/O until time 20049ms
+time 19994ms: Process C started using the CPU for 117ms burst [Q F I]
+time 19996ms: Process H (tau 25ms) completed I/O; added to ready queue[Q F I H]
+time 20003ms: Process G (tau 110ms) completed I/O; added to ready queue[Q F I H G]
+time 20049ms: Process D (tau 38ms) completed I/O; added to ready queue[Q F I H G D]
+time 20111ms: Process C completed a CPU Burst; 51 bursts to go [Q F I H G D]
+time 20111ms: Recalculate tau = 90ms for Process C [Q F I H G D]
+time 20111ms: Process C switching out of CPU; will block on I/O until time 20213ms
+time 20115ms: Process F started using the CPU for 72ms burst [Q I H G D]
+time 20187ms: Process F completed a CPU Burst; 9 bursts to go [Q I H G D]
+time 20187ms: Recalculate tau = 65ms for Process F [Q I H G D]
+time 20187ms: Process F switching out of CPU; will block on I/O until time 20231ms
+time 20191ms: Process I started using the CPU for 36ms burst [Q H G D]
+time 20213ms: Process C (tau 90ms) completed I/O; added to ready queue[Q H G D C]
+time 20227ms: Process I completed a CPU Burst; 31 bursts to go [Q H G D C]
+time 20227ms: Recalculate tau = 40ms for Process I [Q H G D C]
+time 20227ms: Process I switching out of CPU; will block on I/O until time 20260ms
+time 20231ms: Process F (tau 65ms) completed I/O; added to ready queue[Q G D C F]
+time 20231ms: Process H started using the CPU for 188ms burst [Q G D C F]
+time 20260ms: Process I (tau 40ms) completed I/O; added to ready queue[Q G D C F I]
+time 20419ms: Process H completed a CPU Burst; 49 bursts to go [Q G D C F I]
+time 20419ms: Recalculate tau = 107ms for Process H [Q G D C F I]
+time 20419ms: Process H switching out of CPU; will block on I/O until time 20566ms
+time 20423ms: Process G started using the CPU for 81ms burst [Q D C F I]
+time 20504ms: Process G completed a CPU Burst; 44 bursts to go [Q D C F I]
+time 20504ms: Recalculate tau = 96ms for Process G [Q D C F I]
+time 20504ms: Process G switching out of CPU; will block on I/O until time 20551ms
+time 20508ms: Process D started using the CPU for 21ms burst [Q C F I]
+time 20529ms: Process D completed a CPU Burst; 1 bursts to go [Q C F I]
+time 20529ms: Recalculate tau = 30ms for Process D [Q C F I]
+time 20529ms: Process D switching out of CPU; will block on I/O until time 20620ms
+time 20533ms: Process C started using the CPU for 14ms burst [Q F I]
+time 20547ms: Process C completed a CPU Burst; 50 bursts to go [Q F I]
+time 20547ms: Recalculate tau = 52ms for Process C [Q F I]
+time 20547ms: Process C switching out of CPU; will block on I/O until time 20551ms
+time 20551ms: Process F started using the CPU for 12ms burst [Q I C G]
+time 20551ms: Process C (tau 52ms) completed I/O; added to ready queue[Q I C G]
+time 20551ms: Process G (tau 96ms) completed I/O; added to ready queue[Q I C G]
+time 20563ms: Process F completed a CPU Burst; 8 bursts to go [Q I C G]
+time 20563ms: Recalculate tau = 39ms for Process F [Q I C G]
+time 20563ms: Process F switching out of CPU; will block on I/O until time 20578ms
+time 20566ms: Process H (tau 107ms) completed I/O; added to ready queue[Q C G H]
+time 20567ms: Process I started using the CPU for 110ms burst [Q C G H]
+time 20578ms: Process F (tau 39ms) completed I/O; added to ready queue[Q C G H F]
+time 20620ms: Process D (tau 30ms) completed I/O; added to ready queue[Q C G H F D]
+time 20677ms: Process I completed a CPU Burst; 30 bursts to go [Q C G H F D]
+time 20677ms: Recalculate tau = 75ms for Process I [Q C G H F D]
+time 20677ms: Process I switching out of CPU; will block on I/O until time 20808ms
+time 20681ms: Process C started using the CPU for 156ms burst [Q G H F D]
+time 20808ms: Process I (tau 75ms) completed I/O; added to ready queue[Q G H F D I]
+time 20837ms: Process C completed a CPU Burst; 49 bursts to go [Q G H F D I]
+time 20837ms: Recalculate tau = 104ms for Process C [Q G H F D I]
+time 20837ms: Process C switching out of CPU; will block on I/O until time 20939ms
+time 20841ms: Process G started using the CPU for 57ms burst [Q H F D I]
+time 20898ms: Process G completed a CPU Burst; 43 bursts to go [Q H F D I]
+time 20898ms: Recalculate tau = 77ms for Process G [Q H F D I]
+time 20898ms: Process G switching out of CPU; will block on I/O until time 20967ms
+time 20902ms: Process H started using the CPU for 114ms burst [Q F D I]
+time 20939ms: Process C (tau 104ms) completed I/O; added to ready queue[Q F D I C]
+time 20967ms: Process G (tau 77ms) completed I/O; added to ready queue[Q F D I C G]
+time 21016ms: Process H completed a CPU Burst; 48 bursts to go [Q F D I C G]
+time 21016ms: Recalculate tau = 111ms for Process H [Q F D I C G]
+time 21016ms: Process H switching out of CPU; will block on I/O until time 21052ms
+time 21020ms: Process F started using the CPU for 41ms burst [Q D I C G]
+time 21052ms: Process H (tau 111ms) completed I/O; added to ready queue[Q D I C G H]
+time 21061ms: Process F completed a CPU Burst; 7 bursts to go [Q D I C G H]
+time 21061ms: Recalculate tau = 40ms for Process F [Q D I C G H]
+time 21061ms: Process F switching out of CPU; will block on I/O until time 21084ms
+time 21065ms: Process D started using the CPU for 92ms burst [Q I C G H]
+time 21084ms: Process F (tau 40ms) completed I/O; added to ready queue[Q I C G H F]
+time 21157ms: Process D terminated [Q I C G H F]
+time 21161ms: Process I started using the CPU for 47ms burst [Q C G H F]
+time 21208ms: Process I completed a CPU Burst; 29 bursts to go [Q C G H F]
+time 21208ms: Recalculate tau = 61ms for Process I [Q C G H F]
+time 21208ms: Process I switching out of CPU; will block on I/O until time 21215ms
+time 21212ms: Process C started using the CPU for 18ms burst [Q G H F]
+time 21215ms: Process I (tau 61ms) completed I/O; added to ready queue[Q G H F I]
+time 21230ms: Process C completed a CPU Burst; 48 bursts to go [Q G H F I]
+time 21230ms: Recalculate tau = 61ms for Process C [Q G H F I]
+time 21230ms: Process C switching out of CPU; will block on I/O until time 21276ms
+time 21234ms: Process G started using the CPU for 100ms burst [Q H F I]
+time 21276ms: Process C (tau 61ms) completed I/O; added to ready queue[Q H F I C]
+time 21334ms: Process G completed a CPU Burst; 42 bursts to go [Q H F I C]
+time 21334ms: Recalculate tau = 89ms for Process G [Q H F I C]
+time 21334ms: Process G switching out of CPU; will block on I/O until time 21373ms
+time 21338ms: Process H started using the CPU for 99ms burst [Q F I C]
+time 21373ms: Process G (tau 89ms) completed I/O; added to ready queue[Q F I C G]
+time 21437ms: Process H completed a CPU Burst; 47 bursts to go [Q F I C G]
+time 21437ms: Recalculate tau = 105ms for Process H [Q F I C G]
+time 21437ms: Process H switching out of CPU; will block on I/O until time 21440ms
+time 21440ms: Process H (tau 105ms) completed I/O; added to ready queue[Q I C G H]
+time 21441ms: Process F started using the CPU for 160ms burst [Q I C G H]
+time 21601ms: Process F completed a CPU Burst; 6 bursts to go [Q I C G H]
+time 21601ms: Recalculate tau = 100ms for Process F [Q I C G H]
+time 21601ms: Process F switching out of CPU; will block on I/O until time 21663ms
+time 21605ms: Process I started using the CPU for 15ms burst [Q C G H]
+time 21620ms: Process I completed a CPU Burst; 28 bursts to go [Q C G H]
+time 21620ms: Recalculate tau = 38ms for Process I [Q C G H]
+time 21620ms: Process I switching out of CPU; will block on I/O until time 21738ms
+time 21624ms: Process C started using the CPU for 9ms burst [Q G H]
+time 21633ms: Process C completed a CPU Burst; 47 bursts to go [Q G H]
+time 21633ms: Recalculate tau = 35ms for Process C [Q G H]
+time 21633ms: Process C switching out of CPU; will block on I/O until time 21743ms
+time 21637ms: Process G started using the CPU for 51ms burst [Q H]
+time 21663ms: Process F (tau 100ms) completed I/O; added to ready queue[Q H F]
+time 21688ms: Process G completed a CPU Burst; 41 bursts to go [Q H F]
+time 21688ms: Recalculate tau = 70ms for Process G [Q H F]
+time 21688ms: Process G switching out of CPU; will block on I/O until time 21696ms
+time 21692ms: Process H started using the CPU for 31ms burst [Q F]
+time 21696ms: Process G (tau 70ms) completed I/O; added to ready queue[Q F G]
+time 21723ms: Process H completed a CPU Burst; 46 bursts to go [Q F G]
+time 21723ms: Recalculate tau = 68ms for Process H [Q F G]
+time 21723ms: Process H switching out of CPU; will block on I/O until time 21888ms
+time 21727ms: Process F started using the CPU for 28ms burst [Q G]
+time 21738ms: Process I (tau 38ms) completed I/O; added to ready queue[Q G I]
+time 21743ms: Process C (tau 35ms) completed I/O; added to ready queue[Q G I C]
+time 21755ms: Process F completed a CPU Burst; 5 bursts to go [Q G I C]
+time 21755ms: Recalculate tau = 64ms for Process F [Q G I C]
+time 21755ms: Process F switching out of CPU; will block on I/O until time 21853ms
+time 21759ms: Process G started using the CPU for 138ms burst [Q I C]
+time 21853ms: Process F (tau 64ms) completed I/O; added to ready queue[Q I C F]
+time 21888ms: Process H (tau 68ms) completed I/O; added to ready queue[Q I C F H]
+time 21897ms: Process G completed a CPU Burst; 40 bursts to go [Q I C F H]
+time 21897ms: Recalculate tau = 104ms for Process G [Q I C F H]
+time 21897ms: Process G switching out of CPU; will block on I/O until time 21911ms
+time 21901ms: Process I started using the CPU for 87ms burst [Q C F H]
+time 21911ms: Process G (tau 104ms) completed I/O; added to ready queue[Q C F H G]
+time 21988ms: Process I completed a CPU Burst; 27 bursts to go [Q C F H G]
+time 21988ms: Recalculate tau = 63ms for Process I [Q C F H G]
+time 21988ms: Process I switching out of CPU; will block on I/O until time 22022ms
+time 21992ms: Process C started using the CPU for 1ms burst [Q F H G]
+time 21993ms: Process C completed a CPU Burst; 46 bursts to go [Q F H G]
+time 21993ms: Recalculate tau = 18ms for Process C [Q F H G]
+time 21993ms: Process C switching out of CPU; will block on I/O until time 22061ms
+time 21997ms: Process F started using the CPU for 51ms burst [Q H G]
+time 22022ms: Process I (tau 63ms) completed I/O; added to ready queue[Q H G I]
+time 22048ms: Process F completed a CPU Burst; 4 bursts to go [Q H G I]
+time 22048ms: Recalculate tau = 58ms for Process F [Q H G I]
+time 22048ms: Process F switching out of CPU; will block on I/O until time 22073ms
+time 22052ms: Process H started using the CPU for 2ms burst [Q G I]
+time 22054ms: Process H completed a CPU Burst; 45 bursts to go [Q G I]
+time 22054ms: Recalculate tau = 35ms for Process H [Q G I]
+time 22054ms: Process H switching out of CPU; will block on I/O until time 22252ms
+time 22058ms: Process G started using the CPU for 63ms burst [Q I]
+time 22061ms: Process C (tau 18ms) completed I/O; added to ready queue[Q I C]
+time 22073ms: Process F (tau 58ms) completed I/O; added to ready queue[Q I C F]
+time 22121ms: Process G completed a CPU Burst; 39 bursts to go [Q I C F]
+time 22121ms: Recalculate tau = 84ms for Process G [Q I C F]
+time 22121ms: Process G switching out of CPU; will block on I/O until time 22162ms
+time 22125ms: Process I started using the CPU for 15ms burst [Q C F]
+time 22140ms: Process I completed a CPU Burst; 26 bursts to go [Q C F]
+time 22140ms: Recalculate tau = 39ms for Process I [Q C F]
+time 22140ms: Process I switching out of CPU; will block on I/O until time 22276ms
+time 22144ms: Process C started using the CPU for 168ms burst [Q F]
+time 22162ms: Process G (tau 84ms) completed I/O; added to ready queue[Q F G]
+time 22252ms: Process H (tau 35ms) completed I/O; added to ready queue[Q F G H]
+time 22276ms: Process I (tau 39ms) completed I/O; added to ready queue[Q F G H I]
+time 22312ms: Process C completed a CPU Burst; 45 bursts to go [Q F G H I]
+time 22312ms: Recalculate tau = 93ms for Process C [Q F G H I]
+time 22312ms: Process C switching out of CPU; will block on I/O until time 22432ms
+time 22316ms: Process F started using the CPU for 87ms burst [Q G H I]
+time 22403ms: Process F completed a CPU Burst; 3 bursts to go [Q G H I]
+time 22403ms: Recalculate tau = 73ms for Process F [Q G H I]
+time 22403ms: Process F switching out of CPU; will block on I/O until time 22462ms
+time 22407ms: Process G started using the CPU for 126ms burst [Q H I]
+time 22432ms: Process C (tau 93ms) completed I/O; added to ready queue[Q H I C]
+time 22462ms: Process F (tau 73ms) completed I/O; added to ready queue[Q H I C F]
+time 22533ms: Process G completed a CPU Burst; 38 bursts to go [Q H I C F]
+time 22533ms: Recalculate tau = 105ms for Process G [Q H I C F]
+time 22533ms: Process G switching out of CPU; will block on I/O until time 22569ms
+time 22537ms: Process H started using the CPU for 108ms burst [Q I C F]
+time 22569ms: Process G (tau 105ms) completed I/O; added to ready queue[Q I C F G]
+time 22645ms: Process H completed a CPU Burst; 44 bursts to go [Q I C F G]
+time 22645ms: Recalculate tau = 72ms for Process H [Q I C F G]
+time 22645ms: Process H switching out of CPU; will block on I/O until time 22722ms
+time 22649ms: Process I started using the CPU for 181ms burst [Q C F G]
+time 22722ms: Process H (tau 72ms) completed I/O; added to ready queue[Q C F G H]
+time 22830ms: Process I completed a CPU Burst; 25 bursts to go [Q C F G H]
+time 22830ms: Recalculate tau = 110ms for Process I [Q C F G H]
+time 22830ms: Process I switching out of CPU; will block on I/O until time 22837ms
+time 22834ms: Process C started using the CPU for 10ms burst [Q F G H]
+time 22837ms: Process I (tau 110ms) completed I/O; added to ready queue[Q F G H I]
+time 22844ms: Process C completed a CPU Burst; 44 bursts to go [Q F G H I]
+time 22844ms: Recalculate tau = 52ms for Process C [Q F G H I]
+time 22844ms: Process C switching out of CPU; will block on I/O until time 22893ms
+time 22848ms: Process F started using the CPU for 156ms burst [Q G H I]
+time 22893ms: Process C (tau 52ms) completed I/O; added to ready queue[Q G H I C]
+time 23004ms: Process F completed a CPU Burst; 2 bursts to go [Q G H I C]
+time 23004ms: Recalculate tau = 115ms for Process F [Q G H I C]
+time 23004ms: Process F switching out of CPU; will block on I/O until time 23062ms
+time 23008ms: Process G started using the CPU for 52ms burst [Q H I C]
+time 23060ms: Process G completed a CPU Burst; 37 bursts to go [Q H I C]
+time 23060ms: Recalculate tau = 79ms for Process G [Q H I C]
+time 23060ms: Process G switching out of CPU; will block on I/O until time 23229ms
+time 23062ms: Process F (tau 115ms) completed I/O; added to ready queue[Q H I C F]
+time 23064ms: Process H started using the CPU for 66ms burst [Q I C F]
+time 23130ms: Process H completed a CPU Burst; 43 bursts to go [Q I C F]
+time 23130ms: Recalculate tau = 69ms for Process H [Q I C F]
+time 23130ms: Process H switching out of CPU; will block on I/O until time 23172ms
+time 23134ms: Process I started using the CPU for 37ms burst [Q C F]
+time 23171ms: Process I completed a CPU Burst; 24 bursts to go [Q C F]
+time 23171ms: Recalculate tau = 74ms for Process I [Q C F]
+time 23171ms: Process I switching out of CPU; will block on I/O until time 23305ms
+time 23172ms: Process H (tau 69ms) completed I/O; added to ready queue[Q C F H]
+time 23175ms: Process C started using the CPU for 68ms burst [Q F H]
+time 23229ms: Process G (tau 79ms) completed I/O; added to ready queue[Q F H G]
+time 23243ms: Process C completed a CPU Burst; 43 bursts to go [Q F H G]
+time 23243ms: Recalculate tau = 60ms for Process C [Q F H G]
+time 23243ms: Process C switching out of CPU; will block on I/O until time 23300ms
+time 23247ms: Process F started using the CPU for 184ms burst [Q H G]
+time 23300ms: Process C (tau 60ms) completed I/O; added to ready queue[Q H G C]
+time 23305ms: Process I (tau 74ms) completed I/O; added to ready queue[Q H G C I]
+time 23431ms: Process F completed a CPU Burst; 1 bursts to go [Q H G C I]
+time 23431ms: Recalculate tau = 150ms for Process F [Q H G C I]
+time 23431ms: Process F switching out of CPU; will block on I/O until time 23459ms
+time 23435ms: Process H started using the CPU for 115ms burst [Q G C I]
+time 23459ms: Process F (tau 150ms) completed I/O; added to ready queue[Q G C I F]
+time 23550ms: Process H completed a CPU Burst; 42 bursts to go [Q G C I F]
+time 23550ms: Recalculate tau = 92ms for Process H [Q G C I F]
+time 23550ms: Process H switching out of CPU; will block on I/O until time 23583ms
+time 23554ms: Process G started using the CPU for 88ms burst [Q C I F]
+time 23583ms: Process H (tau 92ms) completed I/O; added to ready queue[Q C I F H]
+time 23642ms: Process G completed a CPU Burst; 36 bursts to go [Q C I F H]
+time 23642ms: Recalculate tau = 84ms for Process G [Q C I F H]
+time 23642ms: Process G switching out of CPU; will block on I/O until time 23648ms
+time 23646ms: Process C started using the CPU for 30ms burst [Q I F H]
+time 23648ms: Process G (tau 84ms) completed I/O; added to ready queue[Q I F H G]
+time 23676ms: Process C completed a CPU Burst; 42 bursts to go [Q I F H G]
+time 23676ms: Recalculate tau = 45ms for Process C [Q I F H G]
+time 23676ms: Process C switching out of CPU; will block on I/O until time 23775ms
+time 23680ms: Process I started using the CPU for 164ms burst [Q F H G]
+time 23775ms: Process C (tau 45ms) completed I/O; added to ready queue[Q F H G C]
+time 23844ms: Process I completed a CPU Burst; 23 bursts to go [Q F H G C]
+time 23844ms: Recalculate tau = 119ms for Process I [Q F H G C]
+time 23844ms: Process I switching out of CPU; will block on I/O until time 23865ms
+time 23848ms: Process F started using the CPU for 2ms burst [Q H G C]
+time 23850ms: Process F terminated [Q H G C]
+time 23854ms: Process H started using the CPU for 183ms burst [Q G C]
+time 23865ms: Process I (tau 119ms) completed I/O; added to ready queue[Q G C I]
+time 24037ms: Process H completed a CPU Burst; 41 bursts to go [Q G C I]
+time 24037ms: Recalculate tau = 138ms for Process H [Q G C I]
+time 24037ms: Process H switching out of CPU; will block on I/O until time 24072ms
+time 24041ms: Process G started using the CPU for 168ms burst [Q C I]
+time 24072ms: Process H (tau 138ms) completed I/O; added to ready queue[Q C I H]
+time 24209ms: Process G completed a CPU Burst; 35 bursts to go [Q C I H]
+time 24209ms: Recalculate tau = 126ms for Process G [Q C I H]
+time 24209ms: Process G switching out of CPU; will block on I/O until time 24256ms
+time 24213ms: Process C started using the CPU for 54ms burst [Q I H]
+time 24256ms: Process G (tau 126ms) completed I/O; added to ready queue[Q I H G]
+time 24267ms: Process C completed a CPU Burst; 41 bursts to go [Q I H G]
+time 24267ms: Recalculate tau = 50ms for Process C [Q I H G]
+time 24267ms: Process C switching out of CPU; will block on I/O until time 24315ms
+time 24271ms: Process I started using the CPU for 109ms burst [Q H G]
+time 24315ms: Process C (tau 50ms) completed I/O; added to ready queue[Q H G C]
+time 24380ms: Process I completed a CPU Burst; 22 bursts to go [Q H G C]
+time 24380ms: Recalculate tau = 114ms for Process I [Q H G C]
+time 24380ms: Process I switching out of CPU; will block on I/O until time 24401ms
+time 24384ms: Process H started using the CPU for 50ms burst [Q G C]
+time 24401ms: Process I (tau 114ms) completed I/O; added to ready queue[Q G C I]
+time 24434ms: Process H completed a CPU Burst; 40 bursts to go [Q G C I]
+time 24434ms: Recalculate tau = 94ms for Process H [Q G C I]
+time 24434ms: Process H switching out of CPU; will block on I/O until time 24467ms
+time 24438ms: Process G started using the CPU for 32ms burst [Q C I]
+time 24467ms: Process H (tau 94ms) completed I/O; added to ready queue[Q C I H]
+time 24470ms: Process G completed a CPU Burst; 34 bursts to go [Q C I H]
+time 24470ms: Recalculate tau = 79ms for Process G [Q C I H]
+time 24470ms: Process G switching out of CPU; will block on I/O until time 24533ms
+time 24474ms: Process C started using the CPU for 132ms burst [Q I H]
+time 24533ms: Process G (tau 79ms) completed I/O; added to ready queue[Q I H G]
+time 24606ms: Process C completed a CPU Burst; 40 bursts to go [Q I H G]
+time 24606ms: Recalculate tau = 91ms for Process C [Q I H G]
+time 24606ms: Process C switching out of CPU; will block on I/O until time 24771ms
+time 24610ms: Process I started using the CPU for 46ms burst [Q H G]
+time 24656ms: Process I completed a CPU Burst; 21 bursts to go [Q H G]
+time 24656ms: Recalculate tau = 80ms for Process I [Q H G]
+time 24656ms: Process I switching out of CPU; will block on I/O until time 24780ms
+time 24660ms: Process H started using the CPU for 106ms burst [Q G]
+time 24766ms: Process H completed a CPU Burst; 39 bursts to go [Q G]
+time 24766ms: Recalculate tau = 100ms for Process H [Q G]
+time 24766ms: Process H switching out of CPU; will block on I/O until time 24923ms
+time 24770ms: Process G started using the CPU for 25ms burst [Q <empty>]
+time 24771ms: Process C (tau 91ms) completed I/O; added to ready queue[Q C]
+time 24780ms: Process I (tau 80ms) completed I/O; added to ready queue[Q C I]
+time 24795ms: Process G completed a CPU Burst; 33 bursts to go [Q C I]
+time 24795ms: Recalculate tau = 52ms for Process G [Q C I]
+time 24795ms: Process G switching out of CPU; will block on I/O until time 24951ms
+time 24799ms: Process C started using the CPU for 37ms burst [Q I]
+time 24836ms: Process C completed a CPU Burst; 39 bursts to go [Q I]
+time 24836ms: Recalculate tau = 64ms for Process C [Q I]
+time 24836ms: Process C switching out of CPU; will block on I/O until time 24944ms
+time 24840ms: Process I started using the CPU for 80ms burst [Q <empty>]
+time 24920ms: Process I completed a CPU Burst; 20 bursts to go [Q <empty>]
+time 24920ms: Recalculate tau = 80ms for Process I [Q <empty>]
+time 24920ms: Process I switching out of CPU; will block on I/O until time 25050ms
+time 24923ms: Process H (tau 100ms) completed I/O; added to ready queue[Q H]
+time 24925ms: Process H started using the CPU for 22ms burst [Q <empty>]
+time 24944ms: Process C (tau 64ms) completed I/O; added to ready queue[Q C]
+time 24947ms: Process H completed a CPU Burst; 38 bursts to go [Q C]
+time 24947ms: Recalculate tau = 61ms for Process H [Q C]
+time 24947ms: Process H switching out of CPU; will block on I/O until time 24969ms
+time 24951ms: Process C started using the CPU for 2ms burst [Q G]
+time 24951ms: Process G (tau 52ms) completed I/O; added to ready queue[Q G]
+time 24953ms: Process C completed a CPU Burst; 38 bursts to go [Q G]
+time 24953ms: Recalculate tau = 33ms for Process C [Q G]
+time 24953ms: Process C switching out of CPU; will block on I/O until time 25041ms
+time 24957ms: Process G started using the CPU for 172ms burst [Q <empty>]
+time 24969ms: Process H (tau 61ms) completed I/O; added to ready queue[Q H]
+time 25041ms: Process C (tau 33ms) completed I/O; added to ready queue[Q H C]
+time 25050ms: Process I (tau 80ms) completed I/O; added to ready queue[Q H C I]
+time 25129ms: Process G completed a CPU Burst; 32 bursts to go [Q H C I]
+time 25129ms: Recalculate tau = 112ms for Process G [Q H C I]
+time 25129ms: Process G switching out of CPU; will block on I/O until time 25153ms
+time 25133ms: Process H started using the CPU for 176ms burst [Q C I]
+time 25153ms: Process G (tau 112ms) completed I/O; added to ready queue[Q C I G]
+time 25309ms: Process H completed a CPU Burst; 37 bursts to go [Q C I G]
+time 25309ms: Recalculate tau = 119ms for Process H [Q C I G]
+time 25309ms: Process H switching out of CPU; will block on I/O until time 25323ms
+time 25313ms: Process C started using the CPU for 102ms burst [Q I G]
+time 25323ms: Process H (tau 119ms) completed I/O; added to ready queue[Q I G H]
+time 25415ms: Process C completed a CPU Burst; 37 bursts to go [Q I G H]
+time 25415ms: Recalculate tau = 68ms for Process C [Q I G H]
+time 25415ms: Process C switching out of CPU; will block on I/O until time 25540ms
+time 25419ms: Process I started using the CPU for 49ms burst [Q G H]
+time 25468ms: Process I completed a CPU Burst; 19 bursts to go [Q G H]
+time 25468ms: Recalculate tau = 65ms for Process I [Q G H]
+time 25468ms: Process I switching out of CPU; will block on I/O until time 25545ms
+time 25472ms: Process G started using the CPU for 43ms burst [Q H]
+time 25515ms: Process G completed a CPU Burst; 31 bursts to go [Q H]
+time 25515ms: Recalculate tau = 78ms for Process G [Q H]
+time 25515ms: Process G switching out of CPU; will block on I/O until time 25618ms
+time 25519ms: Process H started using the CPU for 31ms burst [Q <empty>]
+time 25540ms: Process C (tau 68ms) completed I/O; added to ready queue[Q C]
+time 25545ms: Process I (tau 65ms) completed I/O; added to ready queue[Q C I]
+time 25550ms: Process H completed a CPU Burst; 36 bursts to go [Q C I]
+time 25550ms: Recalculate tau = 75ms for Process H [Q C I]
+time 25550ms: Process H switching out of CPU; will block on I/O until time 25598ms
+time 25554ms: Process C started using the CPU for 12ms burst [Q I]
+time 25566ms: Process C completed a CPU Burst; 36 bursts to go [Q I]
+time 25566ms: Recalculate tau = 40ms for Process C [Q I]
+time 25566ms: Process C switching out of CPU; will block on I/O until time 25575ms
+time 25570ms: Process I started using the CPU for 33ms burst [Q <empty>]
+time 25575ms: Process C (tau 40ms) completed I/O; added to ready queue[Q C]
+time 25598ms: Process H (tau 75ms) completed I/O; added to ready queue[Q C H]
+time 25603ms: Process I completed a CPU Burst; 18 bursts to go [Q C H]
+time 25603ms: Recalculate tau = 49ms for Process I [Q C H]
+time 25603ms: Process I switching out of CPU; will block on I/O until time 25653ms
+time 25607ms: Process C started using the CPU for 198ms burst [Q H]
+time 25618ms: Process G (tau 78ms) completed I/O; added to ready queue[Q H G]
+time 25653ms: Process I (tau 49ms) completed I/O; added to ready queue[Q H G I]
+time 25805ms: Process C completed a CPU Burst; 35 bursts to go [Q H G I]
+time 25805ms: Recalculate tau = 119ms for Process C [Q H G I]
+time 25805ms: Process C switching out of CPU; will block on I/O until time 25920ms
+time 25809ms: Process H started using the CPU for 140ms burst [Q G I]
+time 25920ms: Process C (tau 119ms) completed I/O; added to ready queue[Q G I C]
+time 25949ms: Process H completed a CPU Burst; 35 bursts to go [Q G I C]
+time 25949ms: Recalculate tau = 108ms for Process H [Q G I C]
+time 25949ms: Process H switching out of CPU; will block on I/O until time 25959ms
+time 25953ms: Process G started using the CPU for 8ms burst [Q I C]
+time 25959ms: Process H (tau 108ms) completed I/O; added to ready queue[Q I C H]
+time 25961ms: Process G completed a CPU Burst; 30 bursts to go [Q I C H]
+time 25961ms: Recalculate tau = 43ms for Process G [Q I C H]
+time 25961ms: Process G switching out of CPU; will block on I/O until time 25986ms
+time 25965ms: Process I started using the CPU for 25ms burst [Q C H]
+time 25986ms: Process G (tau 43ms) completed I/O; added to ready queue[Q C H G]
+time 25990ms: Process I completed a CPU Burst; 17 bursts to go [Q C H G]
+time 25990ms: Recalculate tau = 37ms for Process I [Q C H G]
+time 25990ms: Process I switching out of CPU; will block on I/O until time 26013ms
+time 25994ms: Process C started using the CPU for 117ms burst [Q H G]
+time 26013ms: Process I (tau 37ms) completed I/O; added to ready queue[Q H G I]
+time 26111ms: Process C completed a CPU Burst; 34 bursts to go [Q H G I]
+time 26111ms: Recalculate tau = 118ms for Process C [Q H G I]
+time 26111ms: Process C switching out of CPU; will block on I/O until time 26217ms
+time 26115ms: Process H started using the CPU for 137ms burst [Q G I]
+time 26217ms: Process C (tau 118ms) completed I/O; added to ready queue[Q G I C]
+time 26252ms: Process H completed a CPU Burst; 34 bursts to go [Q G I C]
+time 26252ms: Recalculate tau = 123ms for Process H [Q G I C]
+time 26252ms: Process H switching out of CPU; will block on I/O until time 26390ms
+time 26256ms: Process G started using the CPU for 128ms burst [Q I C]
+time 26384ms: Process G completed a CPU Burst; 29 bursts to go [Q I C]
+time 26384ms: Recalculate tau = 86ms for Process G [Q I C]
+time 26384ms: Process G switching out of CPU; will block on I/O until time 26472ms
+time 26388ms: Process I started using the CPU for 90ms burst [Q C]
+time 26390ms: Process H (tau 123ms) completed I/O; added to ready queue[Q C H]
+time 26472ms: Process G (tau 86ms) completed I/O; added to ready queue[Q C H G]
+time 26478ms: Process I completed a CPU Burst; 16 bursts to go [Q C H G]
+time 26478ms: Recalculate tau = 64ms for Process I [Q C H G]
+time 26478ms: Process I switching out of CPU; will block on I/O until time 26626ms
+time 26482ms: Process C started using the CPU for 106ms burst [Q H G]
+time 26588ms: Process C completed a CPU Burst; 33 bursts to go [Q H G]
+time 26588ms: Recalculate tau = 112ms for Process C [Q H G]
+time 26588ms: Process C switching out of CPU; will block on I/O until time 26618ms
+time 26592ms: Process H started using the CPU for 155ms burst [Q G]
+time 26618ms: Process C (tau 112ms) completed I/O; added to ready queue[Q G C]
+time 26626ms: Process I (tau 64ms) completed I/O; added to ready queue[Q G C I]
+time 26747ms: Process H completed a CPU Burst; 33 bursts to go [Q G C I]
+time 26747ms: Recalculate tau = 139ms for Process H [Q G C I]
+time 26747ms: Process H switching out of CPU; will block on I/O until time 26839ms
+time 26751ms: Process G started using the CPU for 2ms burst [Q C I]
+time 26753ms: Process G completed a CPU Burst; 28 bursts to go [Q C I]
+time 26753ms: Recalculate tau = 44ms for Process G [Q C I]
+time 26753ms: Process G switching out of CPU; will block on I/O until time 26762ms
+time 26757ms: Process C started using the CPU for 20ms burst [Q I]
+time 26762ms: Process G (tau 44ms) completed I/O; added to ready queue[Q I G]
+time 26777ms: Process C completed a CPU Burst; 32 bursts to go [Q I G]
+time 26777ms: Recalculate tau = 66ms for Process C [Q I G]
+time 26777ms: Process C switching out of CPU; will block on I/O until time 26893ms
+time 26781ms: Process I started using the CPU for 109ms burst [Q G]
+time 26839ms: Process H (tau 139ms) completed I/O; added to ready queue[Q G H]
+time 26890ms: Process I completed a CPU Burst; 15 bursts to go [Q G H]
+time 26890ms: Recalculate tau = 87ms for Process I [Q G H]
+time 26890ms: Process I switching out of CPU; will block on I/O until time 27023ms
+time 26893ms: Process C (tau 66ms) completed I/O; added to ready queue[Q H C]
+time 26894ms: Process G started using the CPU for 14ms burst [Q H C]
+time 26908ms: Process G completed a CPU Burst; 27 bursts to go [Q H C]
+time 26908ms: Recalculate tau = 29ms for Process G [Q H C]
+time 26908ms: Process G switching out of CPU; will block on I/O until time 26964ms
+time 26912ms: Process H started using the CPU for 77ms burst [Q C]
+time 26964ms: Process G (tau 29ms) completed I/O; added to ready queue[Q C G]
+time 26989ms: Process H completed a CPU Burst; 32 bursts to go [Q C G]
+time 26989ms: Recalculate tau = 108ms for Process H [Q C G]
+time 26989ms: Process H switching out of CPU; will block on I/O until time 27114ms
+time 26993ms: Process C started using the CPU for 19ms burst [Q G]
+time 27012ms: Process C completed a CPU Burst; 31 bursts to go [Q G]
+time 27012ms: Recalculate tau = 43ms for Process C [Q G]
+time 27012ms: Process C switching out of CPU; will block on I/O until time 27027ms
+time 27016ms: Process G started using the CPU for 3ms burst [Q <empty>]
+time 27019ms: Process G completed a CPU Burst; 26 bursts to go [Q <empty>]
+time 27019ms: Recalculate tau = 16ms for Process G [Q <empty>]
+time 27019ms: Process G switching out of CPU; will block on I/O until time 27083ms
+time 27023ms: Process I (tau 87ms) completed I/O; added to ready queue[Q I]
+time 27025ms: Process I started using the CPU for 40ms burst [Q <empty>]
+time 27027ms: Process C (tau 43ms) completed I/O; added to ready queue[Q C]
+time 27065ms: Process I completed a CPU Burst; 14 bursts to go [Q C]
+time 27065ms: Recalculate tau = 64ms for Process I [Q C]
+time 27065ms: Process I switching out of CPU; will block on I/O until time 27080ms
+time 27069ms: Process C started using the CPU for 10ms burst [Q <empty>]
+time 27079ms: Process C completed a CPU Burst; 30 bursts to go [Q <empty>]
+time 27079ms: Recalculate tau = 27ms for Process C [Q <empty>]
+time 27079ms: Process C switching out of CPU; will block on I/O until time 27107ms
+time 27080ms: Process I (tau 64ms) completed I/O; added to ready queue[Q I]
+time 27083ms: Process I started using the CPU for 38ms burst [Q G]
+time 27083ms: Process G (tau 16ms) completed I/O; added to ready queue[Q G]
+time 27107ms: Process C (tau 27ms) completed I/O; added to ready queue[Q G C]
+time 27114ms: Process H (tau 108ms) completed I/O; added to ready queue[Q G C H]
+time 27121ms: Process I completed a CPU Burst; 13 bursts to go [Q G C H]
+time 27121ms: Recalculate tau = 51ms for Process I [Q G C H]
+time 27121ms: Process I switching out of CPU; will block on I/O until time 27144ms
+time 27125ms: Process G started using the CPU for 79ms burst [Q C H]
+time 27144ms: Process I (tau 51ms) completed I/O; added to ready queue[Q C H I]
+time 27204ms: Process G completed a CPU Burst; 25 bursts to go [Q C H I]
+time 27204ms: Recalculate tau = 48ms for Process G [Q C H I]
+time 27204ms: Process G switching out of CPU; will block on I/O until time 27217ms
+time 27208ms: Process C started using the CPU for 106ms burst [Q H I]
+time 27217ms: Process G (tau 48ms) completed I/O; added to ready queue[Q H I G]
+time 27314ms: Process C completed a CPU Burst; 29 bursts to go [Q H I G]
+time 27314ms: Recalculate tau = 67ms for Process C [Q H I G]
+time 27314ms: Process C switching out of CPU; will block on I/O until time 27455ms
+time 27318ms: Process H started using the CPU for 82ms burst [Q I G]
+time 27400ms: Process H completed a CPU Burst; 31 bursts to go [Q I G]
+time 27400ms: Recalculate tau = 95ms for Process H [Q I G]
+time 27400ms: Process H switching out of CPU; will block on I/O until time 27439ms
+time 27404ms: Process I started using the CPU for 35ms burst [Q G]
+time 27439ms: Process I completed a CPU Burst; 12 bursts to go [Q G H]
+time 27439ms: Recalculate tau = 43ms for Process I [Q G H]
+time 27439ms: Process I switching out of CPU; will block on I/O until time 27450ms
+time 27439ms: Process H (tau 95ms) completed I/O; added to ready queue[Q G H]
+time 27443ms: Process G started using the CPU for 185ms burst [Q H]
+time 27450ms: Process I (tau 43ms) completed I/O; added to ready queue[Q H I]
+time 27455ms: Process C (tau 67ms) completed I/O; added to ready queue[Q H I C]
+time 27628ms: Process G completed a CPU Burst; 24 bursts to go [Q H I C]
+time 27628ms: Recalculate tau = 117ms for Process G [Q H I C]
+time 27628ms: Process G switching out of CPU; will block on I/O until time 27643ms
+time 27632ms: Process H started using the CPU for 18ms burst [Q I C]
+time 27643ms: Process G (tau 117ms) completed I/O; added to ready queue[Q I C G]
+time 27650ms: Process H completed a CPU Burst; 30 bursts to go [Q I C G]
+time 27650ms: Recalculate tau = 57ms for Process H [Q I C G]
+time 27650ms: Process H switching out of CPU; will block on I/O until time 27676ms
+time 27654ms: Process I started using the CPU for 192ms burst [Q C G]
+time 27676ms: Process H (tau 57ms) completed I/O; added to ready queue[Q C G H]
+time 27846ms: Process I completed a CPU Burst; 11 bursts to go [Q C G H]
+time 27846ms: Recalculate tau = 118ms for Process I [Q C G H]
+time 27846ms: Process I switching out of CPU; will block on I/O until time 27887ms
+time 27850ms: Process C started using the CPU for 14ms burst [Q G H]
+time 27864ms: Process C completed a CPU Burst; 28 bursts to go [Q G H]
+time 27864ms: Recalculate tau = 41ms for Process C [Q G H]
+time 27864ms: Process C switching out of CPU; will block on I/O until time 27896ms
+time 27868ms: Process G started using the CPU for 192ms burst [Q H]
+time 27887ms: Process I (tau 118ms) completed I/O; added to ready queue[Q H I]
+time 27896ms: Process C (tau 41ms) completed I/O; added to ready queue[Q H I C]
+time 28060ms: Process G completed a CPU Burst; 23 bursts to go [Q H I C]
+time 28060ms: Recalculate tau = 155ms for Process G [Q H I C]
+time 28060ms: Process G switching out of CPU; will block on I/O until time 28092ms
+time 28064ms: Process H started using the CPU for 64ms burst [Q I C]
+time 28092ms: Process G (tau 155ms) completed I/O; added to ready queue[Q I C G]
+time 28128ms: Process H completed a CPU Burst; 29 bursts to go [Q I C G]
+time 28128ms: Recalculate tau = 61ms for Process H [Q I C G]
+time 28128ms: Process H switching out of CPU; will block on I/O until time 28147ms
+time 28132ms: Process I started using the CPU for 51ms burst [Q C G]
+time 28147ms: Process H (tau 61ms) completed I/O; added to ready queue[Q C G H]
+time 28183ms: Process I completed a CPU Burst; 10 bursts to go [Q C G H]
+time 28183ms: Recalculate tau = 85ms for Process I [Q C G H]
+time 28183ms: Process I switching out of CPU; will block on I/O until time 28308ms
+time 28187ms: Process C started using the CPU for 70ms burst [Q G H]
+time 28257ms: Process C completed a CPU Burst; 27 bursts to go [Q G H]
+time 28257ms: Recalculate tau = 56ms for Process C [Q G H]
+time 28257ms: Process C switching out of CPU; will block on I/O until time 28361ms
+time 28261ms: Process G started using the CPU for 16ms burst [Q H]
+time 28277ms: Process G completed a CPU Burst; 22 bursts to go [Q H]
+time 28277ms: Recalculate tau = 86ms for Process G [Q H]
+time 28277ms: Process G switching out of CPU; will block on I/O until time 28405ms
+time 28281ms: Process H started using the CPU for 11ms burst [Q <empty>]
+time 28292ms: Process H completed a CPU Burst; 28 bursts to go [Q <empty>]
+time 28292ms: Recalculate tau = 36ms for Process H [Q <empty>]
+time 28292ms: Process H switching out of CPU; will block on I/O until time 28493ms
+time 28308ms: Process I (tau 85ms) completed I/O; added to ready queue[Q I]
+time 28310ms: Process I started using the CPU for 119ms burst [Q <empty>]
+time 28361ms: Process C (tau 56ms) completed I/O; added to ready queue[Q C]
+time 28405ms: Process G (tau 86ms) completed I/O; added to ready queue[Q C G]
+time 28429ms: Process I completed a CPU Burst; 9 bursts to go [Q C G]
+time 28429ms: Recalculate tau = 102ms for Process I [Q C G]
+time 28429ms: Process I switching out of CPU; will block on I/O until time 28446ms
+time 28433ms: Process C started using the CPU for 32ms burst [Q G]
+time 28446ms: Process I (tau 102ms) completed I/O; added to ready queue[Q G I]
+time 28465ms: Process C completed a CPU Burst; 26 bursts to go [Q G I]
+time 28465ms: Recalculate tau = 44ms for Process C [Q G I]
+time 28465ms: Process C switching out of CPU; will block on I/O until time 28589ms
+time 28469ms: Process G started using the CPU for 15ms burst [Q I]
+time 28484ms: Process G completed a CPU Burst; 21 bursts to go [Q I]
+time 28484ms: Recalculate tau = 51ms for Process G [Q I]
+time 28484ms: Process G switching out of CPU; will block on I/O until time 28561ms
+time 28488ms: Process I started using the CPU for 132ms burst [Q <empty>]
+time 28493ms: Process H (tau 36ms) completed I/O; added to ready queue[Q H]
+time 28561ms: Process G (tau 51ms) completed I/O; added to ready queue[Q H G]
+time 28589ms: Process C (tau 44ms) completed I/O; added to ready queue[Q H G C]
+time 28620ms: Process I completed a CPU Burst; 8 bursts to go [Q H G C]
+time 28620ms: Recalculate tau = 117ms for Process I [Q H G C]
+time 28620ms: Process I switching out of CPU; will block on I/O until time 28782ms
+time 28624ms: Process H started using the CPU for 55ms burst [Q G C]
+time 28679ms: Process H completed a CPU Burst; 27 bursts to go [Q G C]
+time 28679ms: Recalculate tau = 46ms for Process H [Q G C]
+time 28679ms: Process H switching out of CPU; will block on I/O until time 28781ms
+time 28683ms: Process G started using the CPU for 57ms burst [Q C]
+time 28740ms: Process G completed a CPU Burst; 20 bursts to go [Q C]
+time 28740ms: Recalculate tau = 54ms for Process G [Q C]
+time 28740ms: Process G switching out of CPU; will block on I/O until time 28810ms
+time 28744ms: Process C started using the CPU for 25ms burst [Q <empty>]
+time 28769ms: Process C completed a CPU Burst; 25 bursts to go [Q <empty>]
+time 28769ms: Recalculate tau = 35ms for Process C [Q <empty>]
+time 28769ms: Process C switching out of CPU; will block on I/O until time 28924ms
+time 28781ms: Process H (tau 46ms) completed I/O; added to ready queue[Q H]
+time 28782ms: Process I (tau 117ms) completed I/O; added to ready queue[Q I]
+time 28783ms: Process H started using the CPU for 9ms burst [Q I]
+time 28792ms: Process H completed a CPU Burst; 26 bursts to go [Q I]
+time 28792ms: Recalculate tau = 28ms for Process H [Q I]
+time 28792ms: Process H switching out of CPU; will block on I/O until time 28798ms
+time 28796ms: Process I started using the CPU for 17ms burst [Q <empty>]
+time 28798ms: Process H (tau 28ms) completed I/O; added to ready queue[Q H]
+time 28810ms: Process G (tau 54ms) completed I/O; added to ready queue[Q H G]
+time 28813ms: Process I completed a CPU Burst; 7 bursts to go [Q H G]
+time 28813ms: Recalculate tau = 67ms for Process I [Q H G]
+time 28813ms: Process I switching out of CPU; will block on I/O until time 28890ms
+time 28817ms: Process H started using the CPU for 101ms burst [Q G]
+time 28890ms: Process I (tau 67ms) completed I/O; added to ready queue[Q G I]
+time 28918ms: Process H completed a CPU Burst; 25 bursts to go [Q G I]
+time 28918ms: Recalculate tau = 65ms for Process H [Q G I]
+time 28918ms: Process H switching out of CPU; will block on I/O until time 28939ms
+time 28922ms: Process G started using the CPU for 34ms burst [Q I]
+time 28924ms: Process C (tau 35ms) completed I/O; added to ready queue[Q I C]
+time 28939ms: Process H (tau 65ms) completed I/O; added to ready queue[Q I C H]
+time 28956ms: Process G completed a CPU Burst; 19 bursts to go [Q I C H]
+time 28956ms: Recalculate tau = 44ms for Process G [Q I C H]
+time 28956ms: Process G switching out of CPU; will block on I/O until time 29060ms
+time 28960ms: Process I started using the CPU for 71ms burst [Q C H]
+time 29031ms: Process I completed a CPU Burst; 6 bursts to go [Q C H]
+time 29031ms: Recalculate tau = 69ms for Process I [Q C H]
+time 29031ms: Process I switching out of CPU; will block on I/O until time 29227ms
+time 29035ms: Process C started using the CPU for 40ms burst [Q H]
+time 29060ms: Process G (tau 44ms) completed I/O; added to ready queue[Q H G]
+time 29075ms: Process C completed a CPU Burst; 24 bursts to go [Q H G]
+time 29075ms: Recalculate tau = 38ms for Process C [Q H G]
+time 29075ms: Process C switching out of CPU; will block on I/O until time 29085ms
+time 29079ms: Process H started using the CPU for 43ms burst [Q G]
+time 29085ms: Process C (tau 38ms) completed I/O; added to ready queue[Q G C]
+time 29122ms: Process H completed a CPU Burst; 24 bursts to go [Q G C]
+time 29122ms: Recalculate tau = 54ms for Process H [Q G C]
+time 29122ms: Process H switching out of CPU; will block on I/O until time 29141ms
+time 29126ms: Process G started using the CPU for 43ms burst [Q C]
+time 29141ms: Process H (tau 54ms) completed I/O; added to ready queue[Q C H]
+time 29169ms: Process G completed a CPU Burst; 18 bursts to go [Q C H]
+time 29169ms: Recalculate tau = 44ms for Process G [Q C H]
+time 29169ms: Process G switching out of CPU; will block on I/O until time 29260ms
+time 29173ms: Process C started using the CPU for 73ms burst [Q H]
+time 29227ms: Process I (tau 69ms) completed I/O; added to ready queue[Q H I]
+time 29246ms: Process C completed a CPU Burst; 23 bursts to go [Q H I]
+time 29246ms: Recalculate tau = 56ms for Process C [Q H I]
+time 29246ms: Process C switching out of CPU; will block on I/O until time 29253ms
+time 29250ms: Process H started using the CPU for 2ms burst [Q I]
+time 29252ms: Process H completed a CPU Burst; 23 bursts to go [Q I]
+time 29252ms: Recalculate tau = 28ms for Process H [Q I]
+time 29252ms: Process H switching out of CPU; will block on I/O until time 29261ms
+time 29253ms: Process C (tau 56ms) completed I/O; added to ready queue[Q I C]
+time 29256ms: Process I started using the CPU for 27ms burst [Q C]
+time 29260ms: Process G (tau 44ms) completed I/O; added to ready queue[Q C G]
+time 29261ms: Process H (tau 28ms) completed I/O; added to ready queue[Q C G H]
+time 29283ms: Process I completed a CPU Burst; 5 bursts to go [Q C G H]
+time 29283ms: Recalculate tau = 48ms for Process I [Q C G H]
+time 29283ms: Process I switching out of CPU; will block on I/O until time 29312ms
+time 29287ms: Process C started using the CPU for 51ms burst [Q G H]
+time 29312ms: Process I (tau 48ms) completed I/O; added to ready queue[Q G H I]
+time 29338ms: Process C completed a CPU Burst; 22 bursts to go [Q G H I]
+time 29338ms: Recalculate tau = 54ms for Process C [Q G H I]
+time 29338ms: Process C switching out of CPU; will block on I/O until time 29400ms
+time 29342ms: Process G started using the CPU for 1ms burst [Q H I]
+time 29343ms: Process G completed a CPU Burst; 17 bursts to go [Q H I]
+time 29343ms: Recalculate tau = 23ms for Process G [Q H I]
+time 29343ms: Process G switching out of CPU; will block on I/O until time 29360ms
+time 29347ms: Process H started using the CPU for 54ms burst [Q I]
+time 29360ms: Process G (tau 23ms) completed I/O; added to ready queue[Q I G]
+time 29400ms: Process C (tau 54ms) completed I/O; added to ready queue[Q I G C]
+time 29401ms: Process H completed a CPU Burst; 22 bursts to go [Q I G C]
+time 29401ms: Recalculate tau = 41ms for Process H [Q I G C]
+time 29401ms: Process H switching out of CPU; will block on I/O until time 29498ms
+time 29405ms: Process I started using the CPU for 57ms burst [Q G C]
+time 29462ms: Process I completed a CPU Burst; 4 bursts to go [Q G C]
+time 29462ms: Recalculate tau = 53ms for Process I [Q G C]
+time 29462ms: Process I switching out of CPU; will block on I/O until time 29474ms
+time 29466ms: Process G started using the CPU for 23ms burst [Q C]
+time 29474ms: Process I (tau 53ms) completed I/O; added to ready queue[Q C I]
+time 29489ms: Process G completed a CPU Burst; 16 bursts to go [Q C I]
+time 29489ms: Recalculate tau = 23ms for Process G [Q C I]
+time 29489ms: Process G switching out of CPU; will block on I/O until time 29545ms
+time 29493ms: Process C started using the CPU for 27ms burst [Q I]
+time 29498ms: Process H (tau 41ms) completed I/O; added to ready queue[Q I H]
+time 29520ms: Process C completed a CPU Burst; 21 bursts to go [Q I H]
+time 29520ms: Recalculate tau = 41ms for Process C [Q I H]
+time 29520ms: Process C switching out of CPU; will block on I/O until time 29573ms
+time 29524ms: Process I started using the CPU for 84ms burst [Q H]
+time 29545ms: Process G (tau 23ms) completed I/O; added to ready queue[Q H G]
+time 29573ms: Process C (tau 41ms) completed I/O; added to ready queue[Q H G C]
+time 29608ms: Process I completed a CPU Burst; 3 bursts to go [Q H G C]
+time 29608ms: Recalculate tau = 69ms for Process I [Q H G C]
+time 29608ms: Process I switching out of CPU; will block on I/O until time 29612ms
+time 29612ms: Process I (tau 69ms) completed I/O; added to ready queue[Q G C I]
+time 29612ms: Process H started using the CPU for 49ms burst [Q G C I]
+time 29661ms: Process H completed a CPU Burst; 21 bursts to go [Q G C I]
+time 29661ms: Recalculate tau = 45ms for Process H [Q G C I]
+time 29661ms: Process H switching out of CPU; will block on I/O until time 29664ms
+time 29664ms: Process H (tau 45ms) completed I/O; added to ready queue[Q C I H]
+time 29665ms: Process G started using the CPU for 37ms burst [Q C I H]
+time 29702ms: Process G completed a CPU Burst; 15 bursts to go [Q C I H]
+time 29702ms: Recalculate tau = 30ms for Process G [Q C I H]
+time 29702ms: Process G switching out of CPU; will block on I/O until time 29838ms
+time 29706ms: Process C started using the CPU for 47ms burst [Q I H]
+time 29753ms: Process C completed a CPU Burst; 20 bursts to go [Q I H]
+time 29753ms: Recalculate tau = 44ms for Process C [Q I H]
+time 29753ms: Process C switching out of CPU; will block on I/O until time 29794ms
+time 29757ms: Process I started using the CPU for 131ms burst [Q H]
+time 29794ms: Process C (tau 44ms) completed I/O; added to ready queue[Q H C]
+time 29838ms: Process G (tau 30ms) completed I/O; added to ready queue[Q H C G]
+time 29888ms: Process I completed a CPU Burst; 2 bursts to go [Q H C G]
+time 29888ms: Recalculate tau = 100ms for Process I [Q H C G]
+time 29888ms: Process I switching out of CPU; will block on I/O until time 29913ms
+time 29892ms: Process H started using the CPU for 40ms burst [Q C G]
+time 29913ms: Process I (tau 100ms) completed I/O; added to ready queue[Q C G I]
+time 29932ms: Process H completed a CPU Burst; 20 bursts to go [Q C G I]
+time 29932ms: Recalculate tau = 43ms for Process H [Q C G I]
+time 29932ms: Process H switching out of CPU; will block on I/O until time 29937ms
+time 29936ms: Process C started using the CPU for 12ms burst [Q G I]
+time 29937ms: Process H (tau 43ms) completed I/O; added to ready queue[Q G I H]
+time 29948ms: Process C completed a CPU Burst; 19 bursts to go [Q G I H]
+time 29948ms: Recalculate tau = 28ms for Process C [Q G I H]
+time 29948ms: Process C switching out of CPU; will block on I/O until time 30081ms
+time 29952ms: Process G started using the CPU for 96ms burst [Q I H]
+time 30048ms: Process G completed a CPU Burst; 14 bursts to go [Q I H]
+time 30048ms: Recalculate tau = 63ms for Process G [Q I H]
+time 30048ms: Process G switching out of CPU; will block on I/O until time 30187ms
+time 30052ms: Process I started using the CPU for 5ms burst [Q H]
+time 30057ms: Process I completed a CPU Burst; 1 bursts to go [Q H]
+time 30057ms: Recalculate tau = 53ms for Process I [Q H]
+time 30057ms: Process I switching out of CPU; will block on I/O until time 30207ms
+time 30061ms: Process H started using the CPU for 70ms burst [Q <empty>]
+time 30081ms: Process C (tau 28ms) completed I/O; added to ready queue[Q C]
+time 30131ms: Process H completed a CPU Burst; 19 bursts to go [Q C]
+time 30131ms: Recalculate tau = 57ms for Process H [Q C]
+time 30131ms: Process H switching out of CPU; will block on I/O until time 30161ms
+time 30135ms: Process C started using the CPU for 107ms burst [Q <empty>]
+time 30161ms: Process H (tau 57ms) completed I/O; added to ready queue[Q H]
+time 30187ms: Process G (tau 63ms) completed I/O; added to ready queue[Q H G]
+time 30207ms: Process I (tau 53ms) completed I/O; added to ready queue[Q H G I]
+time 30242ms: Process C completed a CPU Burst; 18 bursts to go [Q H G I]
+time 30242ms: Recalculate tau = 68ms for Process C [Q H G I]
+time 30242ms: Process C switching out of CPU; will block on I/O until time 30353ms
+time 30246ms: Process H started using the CPU for 22ms burst [Q G I]
+time 30268ms: Process H completed a CPU Burst; 18 bursts to go [Q G I]
+time 30268ms: Recalculate tau = 40ms for Process H [Q G I]
+time 30268ms: Process H switching out of CPU; will block on I/O until time 30390ms
+time 30272ms: Process G started using the CPU for 96ms burst [Q I]
+time 30353ms: Process C (tau 68ms) completed I/O; added to ready queue[Q I C]
+time 30368ms: Process G completed a CPU Burst; 13 bursts to go [Q I C]
+time 30368ms: Recalculate tau = 80ms for Process G [Q I C]
+time 30368ms: Process G switching out of CPU; will block on I/O until time 30454ms
+time 30372ms: Process I started using the CPU for 138ms burst [Q C]
+time 30390ms: Process H (tau 40ms) completed I/O; added to ready queue[Q C H]
+time 30454ms: Process G (tau 80ms) completed I/O; added to ready queue[Q C H G]
+time 30510ms: Process I terminated [Q C H G]
+time 30514ms: Process C started using the CPU for 129ms burst [Q H G]
+time 30643ms: Process C completed a CPU Burst; 17 bursts to go [Q H G]
+time 30643ms: Recalculate tau = 99ms for Process C [Q H G]
+time 30643ms: Process C switching out of CPU; will block on I/O until time 30702ms
+time 30647ms: Process H started using the CPU for 56ms burst [Q G]
+time 30702ms: Process C (tau 99ms) completed I/O; added to ready queue[Q G C]
+time 30703ms: Process H completed a CPU Burst; 17 bursts to go [Q G C]
+time 30703ms: Recalculate tau = 48ms for Process H [Q G C]
+time 30703ms: Process H switching out of CPU; will block on I/O until time 30736ms
+time 30707ms: Process G started using the CPU for 26ms burst [Q C]
+time 30733ms: Process G completed a CPU Burst; 12 bursts to go [Q C]
+time 30733ms: Recalculate tau = 53ms for Process G [Q C]
+time 30733ms: Process G switching out of CPU; will block on I/O until time 30806ms
+time 30736ms: Process H (tau 48ms) completed I/O; added to ready queue[Q H]
+time 30737ms: Process C started using the CPU for 39ms burst [Q H]
+time 30776ms: Process C completed a CPU Burst; 16 bursts to go [Q H]
+time 30776ms: Recalculate tau = 69ms for Process C [Q H]
+time 30776ms: Process C switching out of CPU; will block on I/O until time 30843ms
+time 30780ms: Process H started using the CPU for 86ms burst [Q <empty>]
+time 30806ms: Process G (tau 53ms) completed I/O; added to ready queue[Q G]
+time 30843ms: Process C (tau 69ms) completed I/O; added to ready queue[Q G C]
+time 30866ms: Process H completed a CPU Burst; 16 bursts to go [Q G C]
+time 30866ms: Recalculate tau = 67ms for Process H [Q G C]
+time 30866ms: Process H switching out of CPU; will block on I/O until time 30900ms
+time 30870ms: Process G started using the CPU for 52ms burst [Q C]
+time 30900ms: Process H (tau 67ms) completed I/O; added to ready queue[Q C H]
+time 30922ms: Process G completed a CPU Burst; 11 bursts to go [Q C H]
+time 30922ms: Recalculate tau = 53ms for Process G [Q C H]
+time 30922ms: Process G switching out of CPU; will block on I/O until time 31068ms
+time 30926ms: Process C started using the CPU for 195ms burst [Q H]
+time 31068ms: Process G (tau 53ms) completed I/O; added to ready queue[Q H G]
+time 31121ms: Process C completed a CPU Burst; 15 bursts to go [Q H G]
+time 31121ms: Recalculate tau = 132ms for Process C [Q H G]
+time 31121ms: Process C switching out of CPU; will block on I/O until time 31124ms
+time 31124ms: Process C (tau 132ms) completed I/O; added to ready queue[Q G C]
+time 31125ms: Process H started using the CPU for 13ms burst [Q G C]
+time 31138ms: Process H completed a CPU Burst; 15 bursts to go [Q G C]
+time 31138ms: Recalculate tau = 40ms for Process H [Q G C]
+time 31138ms: Process H switching out of CPU; will block on I/O until time 31163ms
+time 31142ms: Process G started using the CPU for 93ms burst [Q C]
+time 31163ms: Process H (tau 40ms) completed I/O; added to ready queue[Q C H]
+time 31235ms: Process G completed a CPU Burst; 10 bursts to go [Q C H]
+time 31235ms: Recalculate tau = 73ms for Process G [Q C H]
+time 31235ms: Process G switching out of CPU; will block on I/O until time 31306ms
+time 31239ms: Process C started using the CPU for 72ms burst [Q H]
+time 31306ms: Process G (tau 73ms) completed I/O; added to ready queue[Q H G]
+time 31311ms: Process C completed a CPU Burst; 14 bursts to go [Q H G]
+time 31311ms: Recalculate tau = 102ms for Process C [Q H G]
+time 31311ms: Process C switching out of CPU; will block on I/O until time 31339ms
+time 31315ms: Process H started using the CPU for 16ms burst [Q G]
+time 31331ms: Process H completed a CPU Burst; 14 bursts to go [Q G]
+time 31331ms: Recalculate tau = 28ms for Process H [Q G]
+time 31331ms: Process H switching out of CPU; will block on I/O until time 31384ms
+time 31335ms: Process G started using the CPU for 27ms burst [Q <empty>]
+time 31339ms: Process C (tau 102ms) completed I/O; added to ready queue[Q C]
+time 31362ms: Process G completed a CPU Burst; 9 bursts to go [Q C]
+time 31362ms: Recalculate tau = 50ms for Process G [Q C]
+time 31362ms: Process G switching out of CPU; will block on I/O until time 31383ms
+time 31366ms: Process C started using the CPU for 8ms burst [Q <empty>]
+time 31374ms: Process C completed a CPU Burst; 13 bursts to go [Q <empty>]
+time 31374ms: Recalculate tau = 55ms for Process C [Q <empty>]
+time 31374ms: Process C switching out of CPU; will block on I/O until time 31409ms
+time 31383ms: Process G (tau 50ms) completed I/O; added to ready queue[Q G]
+time 31384ms: Process H (tau 28ms) completed I/O; added to ready queue[Q H]
+time 31385ms: Process G started using the CPU for 16ms burst [Q H]
+time 31401ms: Process G completed a CPU Burst; 8 bursts to go [Q H]
+time 31401ms: Recalculate tau = 33ms for Process G [Q H]
+time 31401ms: Process G switching out of CPU; will block on I/O until time 31579ms
+time 31405ms: Process H started using the CPU for 97ms burst [Q <empty>]
+time 31409ms: Process C (tau 55ms) completed I/O; added to ready queue[Q C]
+time 31502ms: Process H completed a CPU Burst; 13 bursts to go [Q C]
+time 31502ms: Recalculate tau = 63ms for Process H [Q C]
+time 31502ms: Process H switching out of CPU; will block on I/O until time 31512ms
+time 31506ms: Process C started using the CPU for 3ms burst [Q <empty>]
+time 31509ms: Process C completed a CPU Burst; 12 bursts to go [Q <empty>]
+time 31509ms: Recalculate tau = 29ms for Process C [Q <empty>]
+time 31509ms: Process C switching out of CPU; will block on I/O until time 31544ms
+time 31512ms: Process H (tau 63ms) completed I/O; added to ready queue[Q H]
+time 31514ms: Process H started using the CPU for 7ms burst [Q <empty>]
+time 31521ms: Process H completed a CPU Burst; 12 bursts to go [Q <empty>]
+time 31521ms: Recalculate tau = 35ms for Process H [Q <empty>]
+time 31521ms: Process H switching out of CPU; will block on I/O until time 31531ms
+time 31531ms: Process H (tau 35ms) completed I/O; added to ready queue[Q H]
+time 31533ms: Process H started using the CPU for 64ms burst [Q <empty>]
+time 31544ms: Process C (tau 29ms) completed I/O; added to ready queue[Q C]
+time 31579ms: Process G (tau 33ms) completed I/O; added to ready queue[Q C G]
+time 31597ms: Process H completed a CPU Burst; 11 bursts to go [Q C G]
+time 31597ms: Recalculate tau = 50ms for Process H [Q C G]
+time 31597ms: Process H switching out of CPU; will block on I/O until time 31695ms
+time 31601ms: Process C started using the CPU for 56ms burst [Q G]
+time 31657ms: Process C completed a CPU Burst; 11 bursts to go [Q G]
+time 31657ms: Recalculate tau = 43ms for Process C [Q G]
+time 31657ms: Process C switching out of CPU; will block on I/O until time 31735ms
+time 31661ms: Process G started using the CPU for 26ms burst [Q <empty>]
+time 31687ms: Process G completed a CPU Burst; 7 bursts to go [Q <empty>]
+time 31687ms: Recalculate tau = 30ms for Process G [Q <empty>]
+time 31687ms: Process G switching out of CPU; will block on I/O until time 31752ms
+time 31695ms: Process H (tau 50ms) completed I/O; added to ready queue[Q H]
+time 31697ms: Process H started using the CPU for 56ms burst [Q <empty>]
+time 31735ms: Process C (tau 43ms) completed I/O; added to ready queue[Q C]
+time 31752ms: Process G (tau 30ms) completed I/O; added to ready queue[Q C G]
+time 31753ms: Process H completed a CPU Burst; 10 bursts to go [Q C G]
+time 31753ms: Recalculate tau = 53ms for Process H [Q C G]
+time 31753ms: Process H switching out of CPU; will block on I/O until time 31828ms
+time 31757ms: Process C started using the CPU for 38ms burst [Q G]
+time 31795ms: Process C completed a CPU Burst; 10 bursts to go [Q G]
+time 31795ms: Recalculate tau = 41ms for Process C [Q G]
+time 31795ms: Process C switching out of CPU; will block on I/O until time 31904ms
+time 31799ms: Process G started using the CPU for 45ms burst [Q <empty>]
+time 31828ms: Process H (tau 53ms) completed I/O; added to ready queue[Q H]
+time 31844ms: Process G completed a CPU Burst; 6 bursts to go [Q H]
+time 31844ms: Recalculate tau = 38ms for Process G [Q H]
+time 31844ms: Process G switching out of CPU; will block on I/O until time 31876ms
+time 31848ms: Process H started using the CPU for 6ms burst [Q <empty>]
+time 31854ms: Process H completed a CPU Burst; 9 bursts to go [Q <empty>]
+time 31854ms: Recalculate tau = 30ms for Process H [Q <empty>]
+time 31854ms: Process H switching out of CPU; will block on I/O until time 31926ms
+time 31876ms: Process G (tau 38ms) completed I/O; added to ready queue[Q G]
+time 31878ms: Process G started using the CPU for 38ms burst [Q <empty>]
+time 31904ms: Process C (tau 41ms) completed I/O; added to ready queue[Q C]
+time 31916ms: Process G completed a CPU Burst; 5 bursts to go [Q C]
+time 31916ms: Recalculate tau = 38ms for Process G [Q C]
+time 31916ms: Process G switching out of CPU; will block on I/O until time 31976ms
+time 31920ms: Process C started using the CPU for 18ms burst [Q <empty>]
+time 31926ms: Process H (tau 30ms) completed I/O; added to ready queue[Q H]
+time 31938ms: Process C completed a CPU Burst; 9 bursts to go [Q H]
+time 31938ms: Recalculate tau = 30ms for Process C [Q H]
+time 31938ms: Process C switching out of CPU; will block on I/O until time 32029ms
+time 31942ms: Process H started using the CPU for 6ms burst [Q <empty>]
+time 31948ms: Process H completed a CPU Burst; 8 bursts to go [Q <empty>]
+time 31948ms: Recalculate tau = 18ms for Process H [Q <empty>]
+time 31948ms: Process H switching out of CPU; will block on I/O until time 32025ms
+time 31976ms: Process G (tau 38ms) completed I/O; added to ready queue[Q G]
+time 31978ms: Process G started using the CPU for 79ms burst [Q <empty>]
+time 32025ms: Process H (tau 18ms) completed I/O; added to ready queue[Q H]
+time 32029ms: Process C (tau 30ms) completed I/O; added to ready queue[Q H C]
+time 32057ms: Process G completed a CPU Burst; 4 bursts to go [Q H C]
+time 32057ms: Recalculate tau = 59ms for Process G [Q H C]
+time 32057ms: Process G switching out of CPU; will block on I/O until time 32175ms
+time 32061ms: Process H started using the CPU for 157ms burst [Q C]
+time 32175ms: Process G (tau 59ms) completed I/O; added to ready queue[Q C G]
+time 32218ms: Process H completed a CPU Burst; 7 bursts to go [Q C G]
+time 32218ms: Recalculate tau = 88ms for Process H [Q C G]
+time 32218ms: Process H switching out of CPU; will block on I/O until time 32236ms
+time 32222ms: Process C started using the CPU for 83ms burst [Q G]
+time 32236ms: Process H (tau 88ms) completed I/O; added to ready queue[Q G H]
+time 32305ms: Process C completed a CPU Burst; 8 bursts to go [Q G H]
+time 32305ms: Recalculate tau = 57ms for Process C [Q G H]
+time 32305ms: Process C switching out of CPU; will block on I/O until time 32409ms
+time 32309ms: Process G started using the CPU for 84ms burst [Q H]
+time 32393ms: Process G completed a CPU Burst; 3 bursts to go [Q H]
+time 32393ms: Recalculate tau = 72ms for Process G [Q H]
+time 32393ms: Process G switching out of CPU; will block on I/O until time 32446ms
+time 32397ms: Process H started using the CPU for 104ms burst [Q <empty>]
+time 32409ms: Process C (tau 57ms) completed I/O; added to ready queue[Q C]
+time 32446ms: Process G (tau 72ms) completed I/O; added to ready queue[Q C G]
+time 32501ms: Process H completed a CPU Burst; 6 bursts to go [Q C G]
+time 32501ms: Recalculate tau = 96ms for Process H [Q C G]
+time 32501ms: Process H switching out of CPU; will block on I/O until time 32648ms
+time 32505ms: Process C started using the CPU for 135ms burst [Q G]
+time 32640ms: Process C completed a CPU Burst; 7 bursts to go [Q G]
+time 32640ms: Recalculate tau = 96ms for Process C [Q G]
+time 32640ms: Process C switching out of CPU; will block on I/O until time 32789ms
+time 32644ms: Process G started using the CPU for 27ms burst [Q <empty>]
+time 32648ms: Process H (tau 96ms) completed I/O; added to ready queue[Q H]
+time 32671ms: Process G completed a CPU Burst; 2 bursts to go [Q H]
+time 32671ms: Recalculate tau = 50ms for Process G [Q H]
+time 32671ms: Process G switching out of CPU; will block on I/O until time 32863ms
+time 32675ms: Process H started using the CPU for 86ms burst [Q <empty>]
+time 32761ms: Process H completed a CPU Burst; 5 bursts to go [Q <empty>]
+time 32761ms: Recalculate tau = 91ms for Process H [Q <empty>]
+time 32761ms: Process H switching out of CPU; will block on I/O until time 32791ms
+time 32789ms: Process C (tau 96ms) completed I/O; added to ready queue[Q C]
+time 32791ms: Process C started using the CPU for 5ms burst [Q H]
+time 32791ms: Process H (tau 91ms) completed I/O; added to ready queue[Q H]
+time 32796ms: Process C completed a CPU Burst; 6 bursts to go [Q H]
+time 32796ms: Recalculate tau = 51ms for Process C [Q H]
+time 32796ms: Process C switching out of CPU; will block on I/O until time 32895ms
+time 32800ms: Process H started using the CPU for 50ms burst [Q <empty>]
+time 32850ms: Process H completed a CPU Burst; 4 bursts to go [Q <empty>]
+time 32850ms: Recalculate tau = 71ms for Process H [Q <empty>]
+time 32850ms: Process H switching out of CPU; will block on I/O until time 32902ms
+time 32863ms: Process G (tau 50ms) completed I/O; added to ready queue[Q G]
+time 32865ms: Process G started using the CPU for 70ms burst [Q <empty>]
+time 32895ms: Process C (tau 51ms) completed I/O; added to ready queue[Q C]
+time 32902ms: Process H (tau 71ms) completed I/O; added to ready queue[Q C H]
+time 32935ms: Process G completed a CPU Burst; 1 bursts to go [Q C H]
+time 32935ms: Recalculate tau = 60ms for Process G [Q C H]
+time 32935ms: Process G switching out of CPU; will block on I/O until time 33091ms
+time 32939ms: Process C started using the CPU for 4ms burst [Q H]
+time 32943ms: Process C completed a CPU Burst; 5 bursts to go [Q H]
+time 32943ms: Recalculate tau = 28ms for Process C [Q H]
+time 32943ms: Process C switching out of CPU; will block on I/O until time 33102ms
+time 32947ms: Process H started using the CPU for 4ms burst [Q <empty>]
+time 32951ms: Process H completed a CPU Burst; 3 bursts to go [Q <empty>]
+time 32951ms: Recalculate tau = 38ms for Process H [Q <empty>]
+time 32951ms: Process H switching out of CPU; will block on I/O until time 33013ms
+time 33013ms: Process H (tau 38ms) completed I/O; added to ready queue[Q H]
+time 33015ms: Process H started using the CPU for 21ms burst [Q <empty>]
+time 33036ms: Process H completed a CPU Burst; 2 bursts to go [Q <empty>]
+time 33036ms: Recalculate tau = 30ms for Process H [Q <empty>]
+time 33036ms: Process H switching out of CPU; will block on I/O until time 33103ms
+time 33091ms: Process G (tau 60ms) completed I/O; added to ready queue[Q G]
+time 33093ms: Process G started using the CPU for 107ms burst [Q <empty>]
+time 33102ms: Process C (tau 28ms) completed I/O; added to ready queue[Q C]
+time 33103ms: Process H (tau 30ms) completed I/O; added to ready queue[Q C H]
+time 33200ms: Process G terminated [Q C H]
+time 33204ms: Process C started using the CPU for 10ms burst [Q H]
+time 33214ms: Process C completed a CPU Burst; 4 bursts to go [Q H]
+time 33214ms: Recalculate tau = 19ms for Process C [Q H]
+time 33214ms: Process C switching out of CPU; will block on I/O until time 33240ms
+time 33218ms: Process H started using the CPU for 120ms burst [Q <empty>]
+time 33240ms: Process C (tau 19ms) completed I/O; added to ready queue[Q C]
+time 33338ms: Process H completed a CPU Burst; 1 bursts to go [Q C]
+time 33338ms: Recalculate tau = 75ms for Process H [Q C]
+time 33338ms: Process H switching out of CPU; will block on I/O until time 33409ms
+time 33342ms: Process C started using the CPU for 97ms burst [Q <empty>]
+time 33409ms: Process H (tau 75ms) completed I/O; added to ready queue[Q H]
+time 33439ms: Process C completed a CPU Burst; 3 bursts to go [Q H]
+time 33439ms: Recalculate tau = 58ms for Process C [Q H]
+time 33439ms: Process C switching out of CPU; will block on I/O until time 33472ms
+time 33443ms: Process H started using the CPU for 199ms burst [Q <empty>]
+time 33472ms: Process C (tau 58ms) completed I/O; added to ready queue[Q C]
+time 33642ms: Process H terminated [Q C]
+time 33646ms: Process C started using the CPU for 21ms burst [Q <empty>]
+time 33667ms: Process C completed a CPU Burst; 2 bursts to go [Q <empty>]
+time 33667ms: Recalculate tau = 40ms for Process C [Q <empty>]
+time 33667ms: Process C switching out of CPU; will block on I/O until time 33693ms
+time 33693ms: Process C (tau 40ms) completed I/O; added to ready queue[Q C]
+time 33695ms: Process C started using the CPU for 59ms burst [Q <empty>]
+time 33754ms: Process C completed a CPU Burst; 1 bursts to go [Q <empty>]
+time 33754ms: Recalculate tau = 50ms for Process C [Q <empty>]
+time 33754ms: Process C switching out of CPU; will block on I/O until time 33891ms
+time 33891ms: Process C (tau 50ms) completed I/O; added to ready queue[Q C]
+time 33893ms: Process C started using the CPU for 62ms burst [Q <empty>]
+time 33955ms: Process C terminated [Q <empty>]
+time 33957ms: Simulator ended for SJF [Q <empty>]
