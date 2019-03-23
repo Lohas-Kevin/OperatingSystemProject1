@@ -268,21 +268,25 @@ void ProcessViewer(Process* p){
 }
 
 int queueComparator(const void *p1, const void* p2){
-	int l = ((const Process* )p1)->tau;
-	int r = ((const Process* )p2)->tau;
+	const Process * l = *((Process**) p1);
+	const Process * r = *((Process**) p2);
 	
-	return (l-r);
+	if(l->tau == r->tau){
+		return (l->name - r->name);
+	}else{
+		return (l->tau - r->tau);
+	}
 }
 
 int printComparator(const void *p1, const void*p2){
-	int l = ((const Process*) p1)->returnStatus;
-	int r = ((const Process*) p2)->returnStatus;
+	int l = (*((Process**) p1))->returnStatus;
+	int r = (*((Process**) p2))->returnStatus;
 	
 	if(l > r){
 		return -1;
 	}else if(l == r){
-		char lc = ((const Process*) p1)->name;
-		char rc = ((const Process*) p2)->name;
+		char lc = (*((Process**) p1))->name;
+		char rc = (*((Process**) p2))->name;
 		if(lc < rc){return -1;}
 		if(lc == rc){return 0;}
 		if(lc > rc){return 1;}
@@ -305,70 +309,67 @@ void printQueue(Process** queue, int qCount){
 	
 }
 
-void printInfo(Process* p, Process** queue, int totalTime, int qCount){
+void printInfo(Process* p, Process** queue, int totalTime, int* qCount, int textSwitchTime, double alpha){
 	int v = p->returnStatus;
 	if(v == 3){
 		//cpu burst end
+		//if this in not the final burst
+		p->status = 4;
+		p->timer = textSwitchTime/2;
+		p->tau = calculateTau(alpha, p->tau, p->burstTime[p->burstPointer]);
+		p->burstPointer += 1;
+		
 		//print info to note that finished the cpu burst
-		int remainingBurst = p->burst - p->burstPointer;
+		int remainingBurst = (p->burst) - (p->burstPointer);
 		printf("time %dms: Process %c completed a CPU Burst; %d bursts to go ",totalTime, p->name, remainingBurst);
-		printQueue(queue, qCount);
+		printQueue(queue, *qCount);
 		
 		//recalculate the tau
 		printf("time %dms: Recalculate tau = %dms for Process %c ", totalTime, p->tau, p->name);
-		printQueue(queue, qCount);
+		printQueue(queue, *qCount);
 		
 		//print switch out infomation
 		int finishTime = p->timer + totalTime + p->ioTime[p->ioPointer];
-		printf("time %dms: Process %c switching out of CPU; will block on I/O until time %dms\n",totalTime, p->name, finishTime);
+		printf("time %dms: Process %c switching out of CPU; will block on I/O until time %dms ",totalTime, p->name, finishTime);
+		printQueue(queue, *qCount);
+		
 	}else if(v == 2){
 		//io end
+		p->status = 0;
+		qadd(queue, qCount, p);
+		p->ioPointer += 1;
+		qsort(queue, *qCount, sizeof(Process*), queueComparator);
+		//
+		
 		printf("time %dms: Process %c (tau %dms) completed I/O; added to ready queue",totalTime,p->name,p->tau);
-		printQueue(queue, qCount);
+		printQueue(queue, *qCount);
 	}else if(v == 1){
 		//arrive
+		//do the change in function to avoid queue print bug
+		//so we can add queue then print.
+		p->status = 0;
+		qadd(queue, qCount, p);
+		qsort(queue, *qCount, sizeof(Process*), queueComparator);
+		//then print the infomation
 		printf("time %dms: Process %c (tau %dms) arrived; added to ready queue ",totalTime, p->name, p->tau);
-		printQueue(queue, qCount);
+		printQueue(queue, *qCount);
 	}else if(v == 5){
 		//start using cpu
+		p->status = 3;
+		p->timer = p->burstTime[p->burstPointer];
+		
 		printf("time %dms: Process %c started using the CPU for %dms burst ",totalTime, p->name, p->timer);
-		printQueue(queue, qCount);
+		printQueue(queue, *qCount);
 	}else if(v == -1){
 		//Process end
+		p->status = 4;
+		p->timer = textSwitchTime/2;
 		printf("time %dms: Process %c terminated ",totalTime, p->name);
-		printQueue(queue, qCount);
+		printQueue(queue, *qCount);
 	}
 }
 
-
-int main(int argc, char** argv){
-	
-	int seed = 2;
-	double lambda = 0.01;
-	int threshold = 200;
-	int processNum = 12;
-	int textSwitchTime = 4;
-	double alpha = 0.5;
-	int timeSlice = 120 ;
-	char* addPosition = "END";
-	char* nameString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	
-	
-	//printf("drand48 returns [%f]\n", (-log(drand48()))/ 0.002);
-	//printf("The expRandom returns [%lf] \n", expRandom(lambda,threshold));
-	// the following part is logic for random 
-	Process** ProcessArray = calloc(processNum, sizeof(Process*));
-	srand48(seed);
-	
-	
-	for(int i = 0; i < processNum; i++){
-		ProcessArray[i] = calloc(1, sizeof(Process));
-		createProcess(ProcessArray[i],nameString[i],lambda,threshold);
-		printf("Process %c [NEW] (arrival time %d ms) %d CPU bursts\n",
-		ProcessArray[i]->name, ProcessArray[i]->arriveTime, ProcessArray[i]->burst);
-		
-	}
-	
+void SJF(Process** ProcessArray, int processNum, int textSwitchTime, double alpha){
 	//the following part is for SJF
 	int tracker = 0;
 	int totalTime = 0;
@@ -425,7 +426,7 @@ int main(int argc, char** argv){
 					ProcessArray[i]->status = -1;
 					//print the end info here
 					ProcessArray[i]->returnStatus = -1;
-					printInfo(ProcessArray[i], queue, totalTime, queueLength);
+					printInfo(ProcessArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha);
 					//don't forget to move to context switch out
 					ProcessArray[i]->status = 4;
 					ProcessArray[i]->timer = textSwitchTime/2;
@@ -476,7 +477,7 @@ int main(int argc, char** argv){
 		else{
 			qsort(tempArray, tempLength, sizeof(Process*), printComparator);
 			for(int i = 0; i < tempLength; i++){
-				printInfo(tempArray[i], queue, totalTime, queueLength);
+				printInfo(tempArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha);
 			}
 		}
 		
@@ -492,10 +493,138 @@ int main(int argc, char** argv){
 	printf("time %dms: Simulator ended for SJF [Q <empty>]\n",totalTime);
 	
 	
+}
+
+
+int main(int argc, char** argv){
+	
+	int seed = 2;
+	double lambda = 0.01;
+	int threshold = 200;
+	int processNum = 12;
+	int textSwitchTime = 4;
+	double alpha = 0.5;
+	int timeSlice = 120 ;
+	char* addPosition = "END";
+	char* nameString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	
+	
+	//printf("drand48 returns [%f]\n", (-log(drand48()))/ 0.002);
+	//printf("The expRandom returns [%lf] \n", expRandom(lambda,threshold));
+	// the following part is logic for random 
+	Process** ProcessArray = calloc(processNum, sizeof(Process*));
+	srand48(seed);
+	
+	//Process** test = calloc(processNum, sizeof(Process*))
+	for(int i = 0; i < processNum; i++){
+		ProcessArray[i] = calloc(1, sizeof(Process));
+		createProcess(ProcessArray[i],nameString[i],lambda,threshold);
+		printf("Process %c [NEW] (arrival time %d ms) %d CPU bursts\n",
+		ProcessArray[i]->name, ProcessArray[i]->arriveTime, ProcessArray[i]->burst);
+		//ProcessViewer(ProcessArray[i]);
+		
+	}
+	
+	//SJF(ProcessArray, processNum, textSwitchTime, alpha);
+	
+	//the following part is for SJF
+	int tracker = 0;
+	int totalTime = 0;
+	Process** queue = calloc(processNum, sizeof(Process*));
+	int queueLength = 0;
+	Process* inCPU = NULL;
+	int Preemp = 0;
+	
+	printf("time 0ms: Simulator started for SJF [Q <empty>]\n");
+	while(tracker != processNum){
+		totalTime++;
+		Process** tempArray = calloc(processNum, sizeof(Process*));
+		int tempLength = 0;
+		for(int i = 0; i < processNum; i++){
+			//handle the decreament signal here
+			int temp = decreament(ProcessArray[i]);
+			if(temp == 1){
+				//process arrived
+				ProcessArray[i]->returnStatus = 1;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;
+			}else if(temp == 2){
+				//io end
+				ProcessArray[i]->returnStatus = 2;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;	
+			}else if(temp == 3){
+				//cpu burst end
+				if(ProcessArray[i]->burstPointer < ((ProcessArray[i]->burst) - 1)){
+					ProcessArray[i]->returnStatus = 3;
+					tempArray[tempLength] = ProcessArray[i];
+					tempLength += 1;
+				
+				}
+				//add a special case, the process ends the last burst
+				else{
+					ProcessArray[i]->status = -1;
+					//print the end info here
+					ProcessArray[i]->returnStatus = -1;
+					//special case, we call printinfo once the cpu burst ends.
+					printInfo(ProcessArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha);
+					
+				}
+			}else if(temp == 4){
+				//switch out end
+				//we don't need to print any info here
+				//we perform the io
+				//also set the cpu to not be used
+				
+				if(ProcessArray[i] -> returnStatus == 3){
+					//if the process has not ended
+					ProcessArray[i]->status = 2;
+					ProcessArray[i]->timer = ProcessArray[i]->ioTime[ProcessArray[i]->ioPointer];
+					inCPU = NULL;
+				}else if(ProcessArray[i] -> returnStatus == -1){
+					//if the process has ended
+					ProcessArray[i]->status = -1;
+					inCPU = NULL;
+					ProcessArray[i]->timer = -1;
+					tracker += 1;
+				}
+			}else if(temp == 5){
+				//switch in end
+				ProcessArray[i]->returnStatus = 5;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;	
+			}
+		}
+
+		
+		//after all increament
+		//check the print info
+		//1. nothing happened
+		if(tempLength == 0){free(tempArray);}
+		else{
+			qsort(tempArray, tempLength, sizeof(Process*), printComparator);
+			for(int i = 0; i < tempLength; i++){
+				printInfo(tempArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha);
+			}
+		}
+		
+		//After printing out every info
+		//we choose the next process in cpu
+		if(queueLength > 0 && inCPU == NULL){
+			inCPU = qpop(queue, &queueLength);
+			//set the process we chosed to context switch in state
+			inCPU->status = 5;
+			inCPU->timer = (textSwitchTime / 2);
+		}
+	}
+	printf("time %dms: Simulator ended for SJF [Q <empty>]\n",totalTime);
+	
+	
+	
 	for(int i = 0; i < processNum; i++){
 		freeProcess(ProcessArray[i]);
 	}
-	
+	free(queue);
 	free(ProcessArray);
 	
 	/*
