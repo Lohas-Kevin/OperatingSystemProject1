@@ -32,6 +32,8 @@ typedef struct{
 	int timer;
 	int tau;
 	int returnStatus;
+	int preemp;
+	int preempTime;
 } Process;
 
 
@@ -212,6 +214,7 @@ int decreament(Process* p){
 }
 
 
+
 int qadd(Process** array, int* size, Process* info){
 	
 	if(array[*size] != NULL){return 1;}
@@ -309,7 +312,7 @@ void printQueue(Process** queue, int qCount){
 	
 }
 
-void printInfo(Process* p, Process** queue, int totalTime, int* qCount, int textSwitchTime, double alpha){
+void printInfo(Process* p, Process** queue, int totalTime, int* qCount, int textSwitchTime, double alpha, int sort){
 	int v = p->returnStatus;
 	if(v == 3){
 		//cpu burst end
@@ -338,7 +341,10 @@ void printInfo(Process* p, Process** queue, int totalTime, int* qCount, int text
 		p->status = 0;
 		qadd(queue, qCount, p);
 		p->ioPointer += 1;
-		qsort(queue, *qCount, sizeof(Process*), queueComparator);
+		if(sort == 1){
+			qsort(queue, *qCount, sizeof(Process*), queueComparator);
+		}
+		
 		//
 		
 		printf("time %dms: Process %c (tau %dms) completed I/O; added to ready queue",totalTime,p->name,p->tau);
@@ -349,7 +355,9 @@ void printInfo(Process* p, Process** queue, int totalTime, int* qCount, int text
 		//so we can add queue then print.
 		p->status = 0;
 		qadd(queue, qCount, p);
-		qsort(queue, *qCount, sizeof(Process*), queueComparator);
+		if(sort == 1){
+			qsort(queue, *qCount, sizeof(Process*), queueComparator);
+		}
 		//then print the infomation
 		printf("time %dms: Process %c (tau %dms) arrived; added to ready queue ",totalTime, p->name, p->tau);
 		printQueue(queue, *qCount);
@@ -369,7 +377,158 @@ void printInfo(Process* p, Process** queue, int totalTime, int* qCount, int text
 	}
 }
 
-void SJF(Process** ProcessArray, int processNum, int textSwitchTime, double alpha){
+int checkPreemp(Process* p, Process* inCPU){
+	//0 for not preempt
+	//1 for preempt now
+	//2 for preempt after context switch
+	if(inCPU == NULL){
+		return 0;
+	}else{
+		int e1 = 0;
+		int e2 = 0;
+		if(p->preemp == 1){
+			e1 = p->burstTime[p->burstPointer] - p->preempTime;
+		}
+		
+		
+		
+		//check the status of inCPU process
+		if(inCPU->status == 3){
+			//if inCPU is using CPU
+			e2 = inCPU->burstTime[inCPU->burstPointer] - inCPU->timer;
+			if(((p->tau)-e1) < ((inCPU->tau)-e2)){
+				return 1;
+			}else{
+				return 0;
+			}
+		}if(inCPU->status == 5){
+			//if inCPU is switching in
+			if(inCPU->preemp == 1){
+				e2 = inCPU->burstTime[inCPU->burstPointer]-inCPU->preempTime;
+			}
+			if(((p->tau)-e1) < ((inCPU->tau)-e2)){
+				return 2;
+			}else{
+				return 0;
+			}
+		}
+	}
+	//the remaining conditions should return 0
+	return 0;
+}
+
+void printInfoWithPreemp(Process* p, Process** queue, int totalTime, int* qCount, int textSwitchTime, double alpha, int sort, Process* inCPU){
+	int v = p->returnStatus;
+	if(v == 3){
+		//cpu burst end
+		//if this in not the final burst
+		p->status = 4;
+		p->timer = textSwitchTime/2;
+		p->tau = calculateTau(alpha, p->tau, p->burstTime[p->burstPointer]);
+		p->burstPointer += 1;
+		
+		//print info to note that finished the cpu burst
+		int remainingBurst = (p->burst) - (p->burstPointer);
+		printf("time %dms: Process %c completed a CPU Burst; %d bursts to go ",totalTime, p->name, remainingBurst);
+		printQueue(queue, *qCount);
+		
+		//recalculate the tau
+		printf("time %dms: Recalculate tau = %dms for Process %c ", totalTime, p->tau, p->name);
+		printQueue(queue, *qCount);
+		
+		//print switch out infomation
+		int finishTime = p->timer + totalTime + p->ioTime[p->ioPointer];
+		printf("time %dms: Process %c switching out of CPU; will block on I/O until time %dms ",totalTime, p->name, finishTime);
+		printQueue(queue, *qCount);
+		
+	}else if(v == 2){
+		//io end
+		p->status = 0;
+		qadd(queue, qCount, p);
+		p->ioPointer += 1;
+		if(sort == 1){
+			qsort(queue, *qCount, sizeof(Process*), queueComparator);
+		}
+		
+		//we should check the remaining time
+		int r = checkPreemp(p, inCPU);
+		if(totalTime<410 && totalTime>402){
+			printf("r = %d\n",r); 
+		}
+		if(r == 0){
+			//if no preemp
+			printf("time %dms: Process %c (tau %dms) completed I/O; added to ready queue ",totalTime,p->name,p->tau);
+			printQueue(queue, *qCount);
+		}else if(r == 1){
+			//if preemp without wait
+			inCPU->status = 4;
+			inCPU->preempTime = inCPU->timer;
+			inCPU->timer = textSwitchTime/2;
+			inCPU->preemp = 1;
+			printf("time %dms: Process %c (tau %dms) completed I/O and will preempt %c ", totalTime, p->name, p->tau, inCPU->name);
+			printQueue(queue, *qCount);
+			//also, we need to add the old process to the queue
+			//in switch out status
+		}else if(r == 2){
+			//if preemp with wait
+			//leave the remaining action to
+			//switch in end part
+			inCPU->preemp = 2;
+		}
+		
+	}else if(v == 1){
+		//arrive
+		//do the change in function to avoid queue print bug
+		//so we can add queue then print.
+		p->status = 0;
+		qadd(queue, qCount, p);
+		if(sort == 1){
+			qsort(queue, *qCount, sizeof(Process*), queueComparator);
+		}
+		
+		//then print the infomation
+		printf("time %dms: Process %c (tau %dms) arrived; added to ready queue ",totalTime, p->name, p->tau);
+		printQueue(queue, *qCount);
+	}else if(v == 5){
+		//start using cpu
+		if(p->preemp == 0){
+			p->status = 3;
+			p->timer = p->burstTime[p->burstPointer];
+		
+			printf("time %dms: Process %c started using the CPU for %dms burst ",totalTime, p->name, p->timer);
+			printQueue(queue, *qCount);
+		}else if(p->preemp == 2){
+			//if we need to switch out once
+			//the switch in finished
+			p->status = 4;
+			inCPU->preempTime = p->burstTime[p->burstPointer];
+			inCPU->timer = inCPU->preempTime;
+			
+			printf("time %dms: Process %c started using the CPU for %dms burst ",totalTime, p->name, p->timer);
+			printQueue(queue, *qCount);
+			inCPU->timer = textSwitchTime/2;
+			printf("time %dms: Process %c (tau %dms) will preempt %c ",totalTime, queue[0]->name, queue[0]->tau, p->name);
+			printQueue(queue, *qCount);
+		}else if(p->preemp == 1){
+			//if the process resumes using CPU
+			p->status = 3;
+			p->timer = p->preempTime;
+			p->preemp = 0;
+		
+			printf("time %dms: Process %c started using the CPU with %dms remaining ",totalTime, p->name, p->timer);
+			printQueue(queue, *qCount);
+		}
+		
+	}else if(v == -1){
+		//Process end
+		p->status = 4;
+		p->timer = textSwitchTime/2;
+		printf("time %dms: Process %c terminated ",totalTime, p->name);
+		printQueue(queue, *qCount);
+	}
+}
+
+void SJF(Process** ProcessArray, int processNum, int textSwitchTime, double alpha, int sort){
 	//the following part is for SJF
 	int tracker = 0;
 	int totalTime = 0;
@@ -426,7 +585,7 @@ void SJF(Process** ProcessArray, int processNum, int textSwitchTime, double alph
 					ProcessArray[i]->status = -1;
 					//print the end info here
 					ProcessArray[i]->returnStatus = -1;
-					printInfo(ProcessArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha);
+					printInfo(ProcessArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha, 1);
 					//don't forget to move to context switch out
 					ProcessArray[i]->status = 4;
 					ProcessArray[i]->timer = textSwitchTime/2;
@@ -467,9 +626,6 @@ void SJF(Process** ProcessArray, int processNum, int textSwitchTime, double alph
 				
 			}
 		}
-		//before check the print info,, sort the queue firstly
-		qsort(queue, queueLength, sizeof(Process*), queueComparator);
-		
 		//after all increament
 		//check the print info
 		//1. nothing happened
@@ -477,7 +633,7 @@ void SJF(Process** ProcessArray, int processNum, int textSwitchTime, double alph
 		else{
 			qsort(tempArray, tempLength, sizeof(Process*), printComparator);
 			for(int i = 0; i < tempLength; i++){
-				printInfo(tempArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha);
+				printInfo(tempArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha, 1);
 			}
 		}
 		
@@ -501,7 +657,7 @@ int main(int argc, char** argv){
 	int seed = 2;
 	double lambda = 0.01;
 	int threshold = 200;
-	int processNum = 12;
+	int processNum = 2;
 	int textSwitchTime = 4;
 	double alpha = 0.5;
 	int timeSlice = 120 ;
@@ -533,7 +689,7 @@ int main(int argc, char** argv){
 	Process** queue = calloc(processNum, sizeof(Process*));
 	int queueLength = 0;
 	Process* inCPU = NULL;
-	int Preemp = 0;
+	int sort = 1;
 	
 	printf("time 0ms: Simulator started for SJF [Q <empty>]\n");
 	while(tracker != processNum){
@@ -567,7 +723,7 @@ int main(int argc, char** argv){
 					//print the end info here
 					ProcessArray[i]->returnStatus = -1;
 					//special case, we call printinfo once the cpu burst ends.
-					printInfo(ProcessArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha);
+					printInfoWithPreemp(ProcessArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha, 1, inCPU);
 					
 				}
 			}else if(temp == 4){
@@ -575,19 +731,41 @@ int main(int argc, char** argv){
 				//we don't need to print any info here
 				//we perform the io
 				//also set the cpu to not be used
-				
-				if(ProcessArray[i] -> returnStatus == 3){
-					//if the process has not ended
-					ProcessArray[i]->status = 2;
-					ProcessArray[i]->timer = ProcessArray[i]->ioTime[ProcessArray[i]->ioPointer];
+				if(ProcessArray[i]->preemp == 0){
+					//if the process finish its burst
+					if(ProcessArray[i] -> returnStatus == 3){
+						//if the process has not ended
+						ProcessArray[i]->status = 2;
+						ProcessArray[i]->timer = ProcessArray[i]->ioTime[ProcessArray[i]->ioPointer];
+						inCPU = NULL;
+					}else if(ProcessArray[i] -> returnStatus == -1){
+						//if the process has ended
+						ProcessArray[i]->status = -1;
+						inCPU = NULL;
+						ProcessArray[i]->timer = -1;
+						tracker += 1;
+					}
+				}else if(ProcessArray[i]->preemp == 1){
+					//if switch out immediately
+					ProcessArray[i]->status = 0;
+					qadd(queue, &queueLength, ProcessArray[i]);
+					if(sort == 1){
+						qsort(queue, queueLength, sizeof(Process*), queueComparator);
+					}
 					inCPU = NULL;
-				}else if(ProcessArray[i] -> returnStatus == -1){
-					//if the process has ended
-					ProcessArray[i]->status = -1;
+				}else if(ProcessArray[i]->preemp == 2){
+					//if switch out after switch in
+					//set the preemp to 1 in order to
+					//run the process normally 
+					ProcessArray[i]->preemp = 0;
+					ProcessArray[i]->status = 0;
+					qadd(queue, &queueLength, ProcessArray[i]);
+					if(sort == 1){
+						qsort(queue, queueLength, sizeof(Process*), queueComparator);
+					}
 					inCPU = NULL;
-					ProcessArray[i]->timer = -1;
-					tracker += 1;
 				}
+				
 			}else if(temp == 5){
 				//switch in end
 				ProcessArray[i]->returnStatus = 5;
@@ -604,7 +782,7 @@ int main(int argc, char** argv){
 		else{
 			qsort(tempArray, tempLength, sizeof(Process*), printComparator);
 			for(int i = 0; i < tempLength; i++){
-				printInfo(tempArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha);
+				printInfoWithPreemp(tempArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha, 1, inCPU);
 			}
 		}
 		
