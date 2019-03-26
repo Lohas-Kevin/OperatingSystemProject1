@@ -955,6 +955,126 @@ void printInfoWithSlice(Process* p, Process** queue, int totalTime, int* qCount,
 	}
 }
 
+void RR(Process** ProcessArray, int processNum, int textSwitchTime, double alpha, int timeSlice, int addfront){
+	int tracker = 0;
+	int totalTime = 0;
+	Process** queue = calloc(processNum, sizeof(Process*));
+	int queueLength = 0;
+	Process* inCPU = NULL;
+	int slice = 0;
+	
+	
+	printf("time 0ms: Simulator started for RR [Q <empty>]\n");
+	while(tracker != processNum){
+		
+		totalTime++;
+		Process** tempArray = calloc(processNum, sizeof(Process*));
+		int tempLength = 0;
+		if(inCPU != NULL){
+			if(inCPU->status == 3){
+				slice -= 1;
+			}
+		}
+		for(int i = 0; i < processNum; i++){
+			//handle the decreament signal here
+			int temp = decreament(ProcessArray[i]);
+			if(temp == 1){
+				//process arrived
+				ProcessArray[i]->returnStatus = 1;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;
+			}else if(temp == 2){
+				//io end
+				ProcessArray[i]->returnStatus = 2;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;	
+			}else if(temp == 3){
+				//cpu burst end
+				if(ProcessArray[i]->burstPointer < ((ProcessArray[i]->burst) - 1)){
+					ProcessArray[i]->returnStatus = 3;
+					tempArray[tempLength] = ProcessArray[i];
+					tempLength += 1;
+				
+				}
+				//add a special case, the process ends the last burst
+				else{
+					ProcessArray[i]->status = -1;
+					//print the end info here
+					ProcessArray[i]->returnStatus = -1;
+					//special case, we call printinfo once the cpu burst ends.
+					printInfoWithSlice(ProcessArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha,slice, addfront);
+					
+				}
+			}else if(temp == 4){
+				//switch out end
+				//we don't need to print any info here
+				//we perform the io
+				//also set the cpu to not be used
+				if(ProcessArray[i]->preemp == 0){
+					//if the process finish its burst
+					if(ProcessArray[i] -> returnStatus == 3){
+						//if the process has not ended
+						ProcessArray[i]->status = 2;
+						ProcessArray[i]->timer = ProcessArray[i]->ioTime[ProcessArray[i]->ioPointer];
+						inCPU = NULL;
+					}else if(ProcessArray[i] -> returnStatus == -1){
+						//if the process has ended
+						ProcessArray[i]->status = -1;
+						inCPU = NULL;
+						ProcessArray[i]->timer = -1;
+						tracker += 1;
+					}
+				}else if(ProcessArray[i]->preemp == 1){
+					//if the process is preempted out
+					ProcessArray[i]->status = 0;
+					qadd(queue, &queueLength, ProcessArray[i]);
+					inCPU = NULL;
+				}
+				
+			}else if(temp == 5){
+				//switch in end
+				ProcessArray[i]->returnStatus = 5;
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;
+				//reset the time slice once a Process starts
+				slice = timeSlice;
+			}else if(temp == 0 && ProcessArray[i]->status == 3 && slice == 0){
+				//here is the special case for timeslice expired if a process
+				//haven't finished its burst, we put this at the very end of
+				//check. So if a process ends burst at the same time with the
+				//slice expiring, it will switch out firstly.
+				ProcessArray[i]->returnStatus = 6;
+				//over here return status == 6 means we need to preemp out
+				tempArray[tempLength] = ProcessArray[i];
+				tempLength += 1;
+			}
+		}
+
+		
+		//after all increament
+		//check the print info
+		//1. nothing happened
+		if(tempLength == 0){free(tempArray);}
+		else{
+			qsort(tempArray, tempLength, sizeof(Process*), printComparator);
+			for(int i = 0; i < tempLength; i++){
+				printInfoWithSlice(tempArray[i], queue, totalTime, &queueLength, textSwitchTime, alpha,slice, addfront);
+			}
+		}
+		
+		//After printing out every info
+		//we choose the next process in cpu
+		if(queueLength > 0 && inCPU == NULL){
+			inCPU = qpop(queue, &queueLength);
+			//set the process we chosed to context switch in state
+			inCPU->status = 5;
+			inCPU->timer = (textSwitchTime / 2);
+		}
+	}
+	printf("time %dms: Simulator ended for RR [Q <empty>]\n",totalTime);
+	free(queue);
+}
+
 int main(int argc, char** argv){
 	
 	int seed = 73;
@@ -989,8 +1109,9 @@ int main(int argc, char** argv){
 		
 	}
 	
-	SJF(ProcessArray, processNum, textSwitchTime, alpha,1);
+	RR(ProcessArray, processNum, textSwitchTime, alpha,timeSlice,0);
 	
+	/*
 	int tracker = 0;
 	int totalTime = 0;
 	Process** queue = calloc(processNum, sizeof(Process*));
@@ -999,7 +1120,7 @@ int main(int argc, char** argv){
 	int sort = 1;
 	int slice = 0;
 	
-	/*
+	
 	printf("time 0ms: Simulator started for RR [Q <empty>]\n");
 	while(tracker != processNum){
 		
